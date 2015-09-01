@@ -111,3 +111,13 @@ any :: (a -> Bool) -> [a] -> Bool
 all = foldr (&&) False
 </pre>
 
+<h4>Sieve of Eratosthenes</h4>
+
+<pre>
+sieve :: [Integer] -> [Integer]
+sieve (n:ns) = n : sieve ( filter (\m -> rem m n /= 0) ns)
+
+eprimes = sieve [2..]
+</pre>
+
+This only works because of lazy list processing. (Due to the co-recursion and infinite list)
