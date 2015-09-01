@@ -1,0 +1,113 @@
+<h1>Week 1: 2015-08-31</h1>
+<h4>Lazy Lists</h4>
+
+<strong>What is a lazy list?</strong>
+<p>A list that is possibly infinite and evaluates lazy</p>
+
+Example:
+<pre>take 10 [0..]</pre>
+
+
+<h4>List Processing</h4>
+
+With list processing you always have at least two cases. The empty case and the non-empty.
+
+<pre>
+mytake :: Int -> [a] -> [a]
+mytake _ []     = []
+mytake n (x:xs) = if n <= 0 then [] else x : mytake (n-1) xs
+</pre>
+
+<pre>
+sentence = "sentences can go on " ++ andOn
+andOn    = "and on" ++ andOn
+</pre>
+
+<p>Definition by recursion: <code>mytake</code></p>
+<p>Definition by co-recursion: <code>sentence</code></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Corecursion">Co-recursion:</a> There is no base case. Can only produce
+    infinite lists.</p>
+
+
+<pre>
+sentences = "sentences can go on " : andSoOn
+andSoOn = map (++ "and so on") sentences
+</pre>
+
+<pre>
+mymap :: (a -> b) -> [a] -> [b]
+mymap _ [] = []
+mymap f (x:xs) = f x : mymap f xs
+</pre>
+
+<h4>Properties</h4>
+<p>All of the form <code>(a -> Bool)</code>.</p>
+
+<p>
+    Suppose the domain $\mathbb{N}$ <code>{1, 2, 3, ...}</code><br>
+    Properties of $\mathbb{N}$ are <code>odd</code>, <code>even</code>, <code>prime</code>.<br>
+    Relations are: $\lt$, $\leq$, <code>d x y</code>.
+</p>
+
+<p>From these definitions (domain, properties and relations) we can talk about $\mathbb{N}$ with logical formulas.</p>
+<pre>
+nats :: [Integer]
+nats = [0..]
+</pre>
+
+<ul style="list-style: none">
+    <li>
+        <h5><i>"There is no largest natural number"</i></h5>
+        <p>$\forall n \in \mathbb{N} \exists m \in \mathbb{N} n \lt m$</p>
+
+    </li>
+    <li>
+        <h5><i>"There is a smallest natural number"</i></h5>
+        <p>$\exists n \in \mathbb{N} \forall m \in \mathbb{N} n \leq m$</p>
+    </li>
+</ul>
+
+<p>We can say these two formulas, we reason about them that they are correct, but we cannot prove them. The reason why these properties are hard to check is because of the universal quantifier.</p>
+
+<table class="table">
+    <tr><td>Existential</td><td>Universal</td></tr>
+    <tr>
+        <td>$\exists n \in \mathbb{N} Odd(n)$<br><code>any odd nats</code></td>
+        <td>$\forall n \in \mathbb{N} Even(n)$<br><code>all odd nats</code></td>
+    </tr>
+    <tr>
+        <td>We can verify this, but not falsify it.</td>
+        <td>We can falsify this, but not verify it.</td>
+    </tr>
+</table>
+
+<h4>Implementation of some functions</h4>
+
+<pre>
+myall :: (a -> Bool) -> [a] -> Bool
+myall p []     = True
+myall p (x:xs) = p x && myall p xs
+</pre>
+
+<pre>
+myany p :: (a -> Bool) -> [a] -> Bool
+myany p []     = False
+myany p (x:xs) = p x || myany p xs
+</pre>
+
+We can see duplications in the code. <strong>A (good) functional programmer abstracts patterns</strong>.
+
+<p><strong>Official implementations</strong></p>
+<pre>
+foldr :: (a -> b -> b) -> b -> [a] -> b
+foldr f z []     = z
+foldr f z (x:xs) = f x (foldr f z xs)
+
+all :: (a -> Bool) -> [a] -> Bool
+all = foldr (&&) True
+
+any :: (a -> Bool) -> [a] -> Bool
+all = foldr (&&) False
+</pre>
+

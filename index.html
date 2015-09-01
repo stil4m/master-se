@@ -1,5 +1,141 @@
-<html>
-        <body>
-                <h1>Hello</h1>
-        </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Master Software Engineering - stil4m</title>
+
+    <script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css" rel="stylesheet">
+    <link href="libs/startbootstrap-sb-admin-2-1.0.7/css/timeline.css" rel="stylesheet">
+    <link href="libs/startbootstrap-sb-admin-2-1.0.7/css/sb-admin-2.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app="masterSE">
+
+<div id="wrapper" data-ng-controller="MainCtrl">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+            <a class="navbar-brand" href="index.html">Master Software Engineering - stil4m </a>
+        </div>
+        <!-- /.navbar-header -->
+
+        <!--<ul class="nav navbar-top-links navbar-right">-->
+            <!--<li class="dropdown">-->
+                <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#">-->
+                    <!--<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>-->
+                <!--</a>-->
+                <!--<ul class="dropdown-menu dropdown-user">-->
+                    <!--<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>-->
+                    <!--</li>-->
+                    <!--<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>-->
+                    <!--</li>-->
+                    <!--<li class="divider"></li>-->
+                    <!--<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+            <!--&lt;!&ndash; /.dropdown &ndash;&gt;-->
+        <!--</ul>-->
+        <!-- /.navbar-top-links -->
+
+        <div class="navbar-default sidebar" style="width: 300px" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li>
+                        <a href="#software-testing/index"><i class="fa fa-sitemap fa-fw"></i> Software Testing<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="#software-testing/notes">Notes <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#software-testing/notes/1">W1 2015-08-31</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+                            <li>
+                                <a href="#software-testing/workshops">Workshops <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#software-testing/workshops/1">W1 - Introduction and Recursion</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+                            <li>
+                                <a href="#software-testing/labs">Lab <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li>
+                                        <a href="#software-testing/labs/1">Third Level Item</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-third-level -->
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+                </ul>
+            </div>
+            <!-- /.sidebar-collapse -->
+        </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+
+    <div id="page-wrapper" style="margin-left: 300px">
+        <div class="panel-heading">
+            <div ng-if="data.template" data-ng-include="data.template + '.html'"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="libs/startbootstrap-sb-admin-2-1.0.7/js/sb-admin-2.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+<script src="./js/main.js"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes: true
+        }
+    });
+</script>
+</body>
+
 </html>
+
