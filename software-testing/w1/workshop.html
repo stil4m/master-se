@@ -8,7 +8,7 @@
     <div class="panel-body">
         <p>To be proved: $1 + 2 + \cdots + n = \frac{n(n+1)}{2}$.</p>
 
-        <p><strong>Base case:</strong> 0</p>
+        <p><strong>Base case:</strong></p>
 
         <p>For $n = 0$ then $\frac{0(0+1)}{2} = 0$ which is clearly the sum of all natural numbers up to 0. Thus the
             base case holds.</p>
@@ -198,6 +198,40 @@ lenght $ perms [1..5] = -- 120
 
 <div class="panel panel-default">
     <div class="panel-heading">
+        Prove by induction that it holds for all natural numbers $n$ that:<br>
+        $3^{2n+3} + 2^n$ is divisible by $7$.
+    </div>
+    <div class="panel-body">
+        <p><strong>Base case:</strong></p>
+
+        <p>For $n = 0$ then $3^{2 \cdot 0+3} + 2^0 = 28$. Which is clearly divisible by 7. Thus the base case holds</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume 3^{2n+3} + 2^n is divisible by 7 and thus is equal to $7a$.</p>
+
+        <p>$3^{2(n+1)+3} + 2^{n+1}$</p>
+
+        <p>$\rightarrow 3^{2n + 2 + 3} + 2 \cdot 2^{n}$</p>
+
+        <p>$\rightarrow 3^2 + 3^{2n + 3} + 3^2 * 2^n - (3^2 - 2) 2^{n}$</p>
+
+        <p>$\rightarrow 3^2(3^{2n + 3} + 2^n) - 7 \cdot 2^{n}$</p>
+
+        <p>$\stackrel{ih}{\rightarrow} 3^2\cdot 7a - 7 \cdot 2^{n}$</p>
+
+        <p>$\rightarrow 7(3^2 a - 2^{n})$</p>
+
+        <p>Which is clearly divisible by 7.</p>
+
+        <p>Thus the assertion holds.</p>
+    </div>
+</div>
+
+<h4>Base case not equal to 0</h4>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
         Show by induction that for all natural numbers $n$ with $n \ge 3$ it holds that $n^2 \gt 2n$.
     </div>
     <div class="panel-body">
@@ -284,6 +318,8 @@ lenght $ perms [1..5] = -- 120
     </div>
 </div>
 
+<h4>Structural Induction</h4>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         Recall the definition of formulas of propositional logic:<br>
@@ -312,10 +348,10 @@ lenght $ perms [1..5] = -- 120
     <div class="panel-body">
         <p>The definition would be:</p>
         <ul style="list-style: none">
-            <li>$S(p) = 1$</li>
-            <li>$S(\neg \phi) = S(\phi)$</li>
-            <li>$S(\phi \land \psi) = S(\phi \lor \psi) = S(\phi \rightarrow \psi) = S(\phi \leftrightarrow \psi) =
-                C(\phi) + C(\psi)$
+            <li>$A(p) = 1$</li>
+            <li>$A(\neg \phi) = A(\phi)$</li>
+            <li>$A(\phi \land \psi) = A(\phi \lor \psi) = A(\phi \rightarrow \psi) = A(\phi \leftrightarrow \psi) =
+                A(\phi) + A(\psi)$
             </li>
         </ul>
     </div>
@@ -323,15 +359,41 @@ lenght $ perms [1..5] = -- 120
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        Let $S(\phi)$ be the number of occurrences of subformulas of a propositional formula $\phi$, let $A(\phi)$ be the
+        Let $S(\phi)$ be the number of occurrences of subformulas of a propositional formula $\phi$, let $A(\phi)$ be
+        the
         number of atoms of $\phi$, and let $C(\phi)$ be the number of connectives of $\phi$. Prove by structural
         induction:<br>
         $S(\phi) = A(\phi) + C(\phi)$, for all propositional formulas $\phi$.
     </div>
     <div class="panel-body">
         <p><strong>Base case:</strong> Let $\phi = p$, then $S(\phi) = 1 = 1 + 0 + A(\phi) + C(\phi)$</p>
-        <p>TODO</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume $S(\phi) = A(\phi) + C(\phi)$ holds for $\phi_1$ and $\phi_2$.</p>
+
+        <p>We have to prove for all connectives that the they hold.</p>
+        <ul style="list-style: none">
+            <li>
+                $S(\neg \phi) = S(\phi) + 1 \stackrel{ih}{=} A(\phi) + 1 + C(\phi) = A(\neg \phi) + C(\neg \phi)$
+            </li>
+            <li>
+                $S(\phi_1 \land \phi_2) = S(\phi_1) + S(\phi_2) + 1 \stackrel{ih}{=} A(\phi_1) + A(\phi_2) + C(\phi_1) +
+                C(\phi_2) + 1 = A(\phi_1 \land \phi_2) + C(\phi_1 \land \phi_2) $
+            </li>
+        </ul>
+        <p>The rest of the cases like $\lor$ $\leftrightarrow$ and $\rightarrow$ are the same as $\land$.</p>
+
+        <p>Thus the assertion holds.</p>
     </div>
 </div>
 
+<h4>Structural Induction (Trees)</h4>
 
+<p>Consider the following definition of binary trees:</p>
+<pre>data Btree a = Leaf a | Node (Btree a) (Btree a) deriving (Eq,Show)</pre>
+<p>The depth of a binary tree is given by:</p>
+<pre>
+depth :: Btree a -> Int
+depth (Leaf _) = 0
+depth (Node t1 t2) = max (depth t1) (depth t2) + 1</pre>
