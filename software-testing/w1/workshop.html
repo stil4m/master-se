@@ -165,6 +165,7 @@ perms (x:xs) = concat (map (insrt x) (perms xs)) where
             guess by induction.</p>
     </div>
     <div class="panel-body">
+        <p>When executing the code:</p>
         <pre>
 lenght $ perms [] = -- 1
 lenght $ perms [1] = -- 1
@@ -182,7 +183,8 @@ lenght $ perms [1..5] = -- 120
 
         <p>
             Assume $n!$ is the number of permutations for $A$ when $|A| = n$.
-            Suppose we would add an element $x$ to $A$, we can add it before each element in $A$ or at the end, thus we have
+            Suppose we would add an element $x$ to $A$, we can add it before each element in $A$ or at the end, thus we
+            have
             $|A| + 1 = n + 1$ positions to place $x$.
             The number of permutation for $A \cup \{x\}$ would then be $n! + (n+1)$, which is $(n+1)!$.
         </p>
@@ -194,3 +196,55 @@ lenght $ perms [1..5] = -- 120
         </p>
     </div>
 </div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p>Show by induction that for all natural numbers $n$ with $n \ge 3$ it holds that $n^2 \gt 2n$.</p>
+    </div>
+    <div class="panel-body">
+        <p>To be proved: $n^2 \gt 2n$ for $n \ge 3$.</p>
+
+        <p><strong>Base case:</strong> Let $n = 3$, then $3^2 = 9 \gt \gt 2 \cdot 3 = 6$. Thus the base case holds.</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume $n^2 \gt 2n$ holds for $n \ge 3$.</p>
+
+        <p>We have to prove $(n+1)^2 \gt 2(n+1)$</p>
+
+        <p>$(n+1)^2 \gt 2(n+1) \rightarrow n^2 + 2n + 1 \gt 2n + 2$</p>
+
+        <p>$(n+1)^2 \gt 2(n+1) \rightarrow n^2 + 1 \gt 2$</p>
+
+        <p>Since $n \ge 3$, $n^2 + 1$ will always be greater than $2$ and thus $(n+1)^2 \gt 2(n+1)$ will hold.</p>
+
+        <p>Thus the equation holds.</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p>Show by induction that for all natural numbers $n$ with $n \ge 5$ it holds that $2^n \gt n^2$.</p>
+    </div>
+    <div class="panel-body">
+        <p>To be proved: $2^n \gt n^2$ for $n \ge 5$.</p>
+
+        <p><strong>Base case:</strong> Let $n = 5$, then $2^5 = 32 \gt 5^2 = 25$. Thus the base case holds.</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume $2^n \gt n^2$ holds for $n \ge 5$.</p>
+
+        <p>We have to prove $2^{n+1} \gt (n+1)^2$.</p>
+
+        <p>$2^{n+1} \gt (n+1)^2 \rightarrow 2^n \cdot 2 = 2^n + 2^n \gt n^2 + 2n + 1$</p>
+
+        <p>From the previous exercise $n^2 \gt 2n$ and since $ n \ge 5$, it will hold that $n^2 \ge 2n +1$. Then:</p>
+
+        <p>$2^{n+1} \gt (n+1)^2 \rightarrow 2^n \cdot 2 = 2^n + 2^n \stackrel{ih}{\gt} n^2 + n^2 \ge n^2 + 2n + 1$</p>
+
+        <p>Thus the equation holds.</p>
+
+    </div>
+</div>
+
