@@ -1,0 +1,196 @@
+<h1>Workshop Testing and Formal Methods, Week 1</h1>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p>Prove by induction that it holds for all natural numbers $n$ that:</p>
+
+        <p>$1 + 2 + \cdots + n = \frac{n(n+1)}{2}$</p>
+    </div>
+    <div class="panel-body">
+        <p>To be proved: $1 + 2 + \cdots + n = \frac{n(n+1)}{2}$.</p>
+
+        <p><strong>Base case:</strong> 0</p>
+
+        <p>For $n = 0$ then $\frac{0(0+1)}{2} = 0$ which is clearly the sum of all natural numbers up to 0. Thus the
+            base case holds.</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume $1 + 2 + \cdots + n = \frac{n(n+1)}{2}$.
+            We have to prove that $1 + 2 + \cdots + k + (k+1) = \frac{(k+1)(k+2)}{2}$</p>
+
+        <p>$\frac{(k+1)(k+2)}{2} = 1 + 2 + \cdots + k + (k+1)$</p>
+
+        <p>$\frac{(k+1)(k+2)}{2} \stackrel{ih}{=} \frac{k(k+1)}{2} + (k+1)$</p>
+
+        <p>$\frac{(k+1)(k+2)}{2} = \frac{k(k+1)}{2} + \frac{2(k+1)}{2}$</p>
+
+        <p>$\frac{(k+1)(k+2)}{2} = \frac{k(k+1) + 2(k+1)}{2}$</p>
+
+        <p>$\frac{(k+1)(k+2)}{2} = \frac{(k+1)(k+2)}{2}$</p>
+
+        <p>Thus the equation holds.</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p>Prove by induction that it holds for all natural numbers $n$ that:</p>
+
+        <p>$1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}$</p>
+    </div>
+    <div class="panel-body">
+        <p>To be proved: $1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}$.</p>
+
+        <p><strong>Base case:</strong> 0</p>
+
+        <p>For $n = 1$ then $\frac{1(1+1)(21+1)}{6} = 1 = 1^2$. Thus the base case holds.</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume $1^2 + 2^2 + \cdots + n^2 = \frac{n(n+1)(2n+1)}{6}$.
+            We have to prove that $1^2 + 2^2 + \cdots + k^2 + (k+1)^2 = \frac{(k+1)(k+2)(2(k+1)+1)}{6}$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = 1^2 + 2^2 + \cdots + k^2 + (k+1)^2$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} \stackrel{ih}{=} \frac{k(k+1)(2k+1)}{6} + (k+1)^2$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = \frac{k(k+1)(2k+1)}{6} + \frac{6(k+1)^2}{6}$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = \frac{k(k+1)(2k+1) + 6(k+1)^2}{6}$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = \frac{(k+1)(k(2k+1) + 6(k+1))}{6}$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = \frac{(k+1)(2k^2 + 7k + 6)}{6}$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = \frac{(k+1)(k+2)(2k + 3)}{6}$</p>
+
+        <p>$\frac{(k+1)(k+2)(2(k+1)+1)}{6} = \frac{(k+1)(k+2)(2(k+1) + 1)}{6}$</p>
+
+        <p>Thus the equation holds.</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <p>Prove by induction that it holds for all natural numbers $n$ that:</p>
+
+        <p>$1^3 + 2^3 + \cdots + n^3 = \left(\frac{n(n+1)}{2}\right)^2$</p>
+    </div>
+    <div class="panel-body">
+        <p>To be proved: $1^3 + 2^3 + \cdots + n^3 = \left(\frac{n(n+1)}{2}\right)^2$.</p>
+
+        <p><strong>Base case:</strong> 0</p>
+
+        <p>For $n = 1$ then $\left(\frac{1(1+1)}{2}\right)^2 = 1 = 1^3$. Thus the base case holds.</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume $1^3 + 2^3 + \cdots + n^3 = \left(\frac{n(n+1)}{2}\right)^2$.
+            We have to prove that $1^3 + 2^3 + \cdots + k^3 + (k+1)^3 = \left(\frac{(k+1)(k+2)}{2}\right)^2$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = 1^3 + 2^3 + \cdots + k^3 + (k+1)^3$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 \stackrel{ih}{=} \left(\frac{k(k+1)}{2}\right)^2 + (k+1)^3$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = \left(\frac{k^2(k+1)^2}{4}\right) + (k+1)^3$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = \left(\frac{k^2(k+1)^2}{4}\right) + \frac{4 (k+1)^3}{4}$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = \frac{k^2(k+1)^2 + 4 (k+1)^3}{4}$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = \frac{(k+1)^2(k^2 + 4k + 4)}{4}$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = \frac{(k+1)^2(k+2)^2}{4}$</p>
+
+        <p>$\left(\frac{(k+1)(k+2)}{2}\right)^2 = \left(\frac{(k+1)(k+2)}{2}\right)^2$</p>
+
+        <p>Thus the equation holds.</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <presented-item></presented-item>
+        <p>Prove by induction that if A is a finite set with $|A| = n$, then $|\varphi(A)| = 2^n$</p>
+    </div>
+    <div class="panel-body">
+        <p><strong>Power set implementation</strong></p>
+        <pre>
+pow :: [a] -> [[]]
+pow []     = []
+pow (x:xs) = map (x:) (pow xs) ++ (pow xs)</pre>
+
+        <p><strong>Base case:</strong> $|\emptyset| = 0$ and $2^0 = 1$ which holds because
+            $\varphi(\emptyset) = \{\emptyset\}$</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>Assume that if $|A| = k$, then $|\varphi(B)| = 2^k$</p>
+
+        <p>We have to show that if $|B| = k + 1$, then $|\varphi(B) = 2^{k+1}$</p>
+
+        <p>Assume we have an arbitrary $B$ (which is a non empty set).</p>
+
+        <p>There is some $A \subseteq B$ for which $|A| = k$.</p>
+
+        <p>There is a $x \in B$ for which $B = A \cup \{x\}$.</p>
+
+        <p>$\varphi(B) = \varphi(A \cup \{x\}) \land x \not\in A$</p>
+
+        <p>$\varphi(B) = \varphi(A) \cup \{ \{x\} \cup c\ |\ c \in \varphi(A) \}$</p>
+
+        <p>$|\varphi(B)| = |\varphi(A)| + |\{ \{x\} \cup c\ |\ c \in \varphi(A) \}|$
+            <small>-- Only for disjoints! ($x \not \in A$)</small>
+        </p>
+
+        <p>$|\varphi(B)| = 2^k + 2^k$</p>
+
+        <p>$|\varphi(B)| = 2^{k+1}$</p>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <presented-item></presented-item>
+        <p>A permutation of a list is a reordering of the members of a list. Here is a Haskell implementation:</p>
+        <pre>
+perms :: [a] ->[[a]]
+perms [] = [[]]
+perms (x:xs) = concat (map (insrt x) (perms xs)) where
+  insrt x [] = [[x]]
+  insrt x (y:ys) = (x:y:ys) : map (y:) (insrt x ys)
+        </pre>
+        <p>Find a formula (closed form) for the number of permutations of a list of n distinct objects, and prove your
+            guess by induction.</p>
+    </div>
+    <div class="panel-body">
+        <pre>
+lenght $ perms [] = -- 1
+lenght $ perms [1] = -- 1
+lenght $ perms [1..2] = -- 2
+lenght $ perms [1..3] = -- 6
+lenght $ perms [1..4] = -- 24
+lenght $ perms [1..5] = -- 120
+        </pre>
+        <p>My guess would be $\pi(n) = n!$. Now we have to prove this.</p>
+
+        <p>
+            <strong>Base case:</strong>$\pi(0) = 0! = 1 = |{[]}|$, which holds to the given implementation.</p>
+
+        <p><strong>Induction step:</strong></p>
+
+        <p>
+            Assume $n!$ is the number of permutations for $A$ when $|A| = n$.
+            Suppose we would add an element $x$ to $A$, we can add it before each element in $A$ or at the end, thus we have
+            $|A| + 1 = n + 1$ positions to place $x$.
+            The number of permutation for $A \cup \{x\}$ would then be $n! + (n+1)$, which is $(n+1)!$.
+        </p>
+
+        <p>Thus the equation $\pi(n) = n!$ holds.</p>
+
+        <p class="alert alert-warning">
+            <strong>Interesting note from Malvin:</strong> Proving can be more helpful than testing
+        </p>
+    </div>
+</div>
