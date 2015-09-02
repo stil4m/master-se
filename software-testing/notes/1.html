@@ -135,98 +135,98 @@ This only works because of lazy list processing. (Due to the co-recursion and in
     then we can prove that all domino's can be dropped.
 </p>
 
-<h4>Warm Up Exercises</h4>
+<!--<h4>Warm Up Exercises</h4>-->
 
-<div class="panel panel-default">
-    <div class="panel-heading">1. Give definitions <code>mynot</code>, <code>myand</code>, <code>myor</code>, <code>myall</code>,
-        <code>myany</code>, of not, and, or, all, any.
-    </div>
-    <div class="panel-body">
-        <table class="table">
-            <tr>
-                <td><code>mynot</code></td>
-                <td>
-            <pre>
-mynot :: Bool -> Bool
-mynot = (== False)
-            </pre>
-                </td>
-            </tr>
-            <tr>
-                <td><code>myand</code></td>
-                <td><pre>
-myand :: [Bool] -> Bool
-myand = foldr (&&) True
-        </pre>
-                </td>
-            </tr>
-            <tr>
-                <td><code>myor</code></td>
-                <td><pre>
-myor :: [Bool] -> Bool
-myor = foldr (&&) False
-        </pre>
-                </td>
-            </tr>
-        </table>
-        <p><i><code>myall</code> and <code>myany</code> were already given by the lecturer and can be found in the notes
-            above</i>.</p>
-    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading">2. The number 13 has the property that it is prime and its reversal, the number
-        31, is also prime. Find all primes < 10000 with this property.
-        <presented-item></presented-item>
-    </div>
-    <div class="panel-body">
-        <pre>
--- Reverse implementation. Not official. foldl would be faster with the array concatenation.
-reverse :: [a]
-reverse = foldr (\x ys -> ys ++ [x]) []
+<!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">1. Give definitions <code>mynot</code>, <code>myand</code>, <code>myor</code>, <code>myall</code>,-->
+        <!--<code>myany</code>, of not, and, or, all, any.-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+        <!--<table class="table">-->
+            <!--<tr>-->
+                <!--<td><code>mynot</code></td>-->
+                <!--<td>-->
+            <!--<pre>-->
+<!--mynot :: Bool -> Bool-->
+<!--mynot = (== False)-->
+            <!--</pre>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td><code>myand</code></td>-->
+                <!--<td><pre>-->
+<!--myand :: [Bool] -> Bool-->
+<!--myand = foldr (&&) True-->
+        <!--</pre>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td><code>myor</code></td>-->
+                <!--<td><pre>-->
+<!--myor :: [Bool] -> Bool-->
+<!--myor = foldr (&&) False-->
+        <!--</pre>-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+        <!--<p><i><code>myall</code> and <code>myany</code> were already given by the lecturer and can be found in the notes-->
+            <!--above</i>.</p>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">2. The number 13 has the property that it is prime and its reversal, the number-->
+        <!--31, is also prime. Find all primes < 10000 with this property.-->
+        <!--<presented-item></presented-item>-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+        <!--<pre>-->
+<!--&#45;&#45; Reverse implementation. Not official. foldl would be faster with the array concatenation.-->
+<!--reverse :: [a]-->
+<!--reverse = foldr (\x ys -> ys ++ [x]) []-->
 
-invert :: Integer -> Integer
-invert = read . reverse . show
+<!--invert :: Integer -> Integer-->
+<!--invert = read . reverse . show-->
 
-primes = takeWhile (\n -> n < 10000) (filter (isPrime . invert) primes)
-</pre>
-    </div>
-</div>
+<!--primes = takeWhile (\n -> n < 10000) (filter (isPrime . invert) primes)-->
+<!--</pre>-->
+    <!--</div>-->
+<!--</div>-->
 
-<div class="panel panel-default">
-    <div class="panel-heading">3. A prime pair is a pair (p,p+2) with the property that both p and p+2 are primes. The
-        first prime pair is (3,5). Implement a function for generating prime pairs, and use this to find the first 100
-        prime pairs.
-        <presented-item></presented-item>
-    </div>
-    <div class="panel-body">
-        <pre>
--- No empty array case because we assume we get an infinite list of primes
-checkPairs :: [Integer] -> [(Integer, Integer)]
-checkPairs = (x:y:zs) | x + 2 == y = (x,y) : checkPairs(y:zs)
-                      | otherwise  = checkPairs(y:zs)
+<!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">3. A prime pair is a pair (p,p+2) with the property that both p and p+2 are primes. The-->
+        <!--first prime pair is (3,5). Implement a function for generating prime pairs, and use this to find the first 100-->
+        <!--prime pairs.-->
+        <!--<presented-item></presented-item>-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+        <!--<pre>-->
+<!--&#45;&#45; No empty array case because we assume we get an infinite list of primes-->
+<!--checkPairs :: [Integer] -> [(Integer, Integer)]-->
+<!--checkPairs = (x:y:zs) | x + 2 == y = (x,y) : checkPairs(y:zs)-->
+                      <!--| otherwise  = checkPairs(y:zs)-->
 
-primePairs = take 100 (checkPairs primes)
-        </pre>
-    </div>
-</div>
+<!--primePairs = take 100 (checkPairs primes)-->
+        <!--</pre>-->
+    <!--</div>-->
+<!--</div>-->
 
-<div class="panel panel-default">
-    <div class="panel-heading">4. A prime triple is a triple (n,m,k) such that n &lt; m &lt; k and n,m,k are all prime,
-        and n and k differ by six. The first prime triple is (5,7,11). Implement a function for generating prime
-        triples, and use this to find the first 100 prime triples.
-        <presented-item></presented-item>
-    </div>
-    <div class="panel-body">
-        <p>
-            This cannot work with two steps of 2 because that always one member of the triplet will be divisible by 3
-            (see
-            Haskell Road to Logic).
-        </p>
-        <pre>
-checkTriples :: [Integer] -> [(Integer, Integer, Integer)]
-checkTriples (x:y:z:rest) | x + 6 == z = (x,y,z) : checkTriples (y:z:rest)
-                          | otherwise  = checkTriples (y:z:rest)
-        </pre>
-    </div>
-</div>
+<!--<div class="panel panel-default">-->
+    <!--<div class="panel-heading">4. A prime triple is a triple (n,m,k) such that n &lt; m &lt; k and n,m,k are all prime,-->
+        <!--and n and k differ by six. The first prime triple is (5,7,11). Implement a function for generating prime-->
+        <!--triples, and use this to find the first 100 prime triples.-->
+        <!--<presented-item></presented-item>-->
+    <!--</div>-->
+    <!--<div class="panel-body">-->
+        <!--<p>-->
+            <!--This cannot work with two steps of 2 because that always one member of the triplet will be divisible by 3-->
+            <!--(see-->
+            <!--Haskell Road to Logic).-->
+        <!--</p>-->
+        <!--<pre>-->
+<!--checkTriples :: [Integer] -> [(Integer, Integer, Integer)]-->
+<!--checkTriples (x:y:z:rest) | x + 6 == z = (x,y,z) : checkTriples (y:z:rest)-->
+                          <!--| otherwise  = checkTriples (y:z:rest)-->
+        <!--</pre>-->
+    <!--</div>-->
+<!--</div>-->
 
