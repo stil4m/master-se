@@ -17,5 +17,10 @@ angular.module('masterSE', ['ngRoute'])
         MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
       }, 100);
     });
-
+  })
+  .directive('presentedItem', function() {
+    return {
+      restrict : 'E',
+      template : '<span class="presented-by-lecturer">Presented by the lecturer.</span>'
+    }
   });

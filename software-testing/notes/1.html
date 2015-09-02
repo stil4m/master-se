@@ -59,19 +59,25 @@ nats = [0..]
 <ul style="list-style: none">
     <li>
         <h5><i>"There is no largest natural number"</i></h5>
+
         <p>$\forall n \in \mathbb{N} \exists m \in \mathbb{N} n \lt m$</p>
 
     </li>
     <li>
         <h5><i>"There is a smallest natural number"</i></h5>
+
         <p>$\exists n \in \mathbb{N} \forall m \in \mathbb{N} n \leq m$</p>
     </li>
 </ul>
 
-<p>We can say these two formulas, we reason about them that they are correct, but we cannot prove them. The reason why these properties are hard to check is because of the universal quantifier.</p>
+<p>We can say these two formulas, we reason about them that they are correct, but we cannot prove them. The reason why
+    these properties are hard to check is because of the universal quantifier.</p>
 
 <table class="table">
-    <tr><td>Existential</td><td>Universal</td></tr>
+    <tr>
+        <td>Existential</td>
+        <td>Universal</td>
+    </tr>
     <tr>
         <td>$\exists n \in \mathbb{N} Odd(n)$<br><code>any odd nats</code></td>
         <td>$\forall n \in \mathbb{N} Even(n)$<br><code>all odd nats</code></td>
@@ -108,7 +114,7 @@ all :: (a -> Bool) -> [a] -> Bool
 all = foldr (&&) True
 
 any :: (a -> Bool) -> [a] -> Bool
-all = foldr (&&) False
+any = foldr (&&) False
 </pre>
 
 <h4>Sieve of Eratosthenes</h4>
@@ -121,3 +127,106 @@ eprimes = sieve [2..]
 </pre>
 
 This only works because of lazy list processing. (Due to the co-recursion and infinite list)
+
+<h4>Induction</h4>
+<p><strong>Proof with domino's as metaphor:</strong></p>
+<p>
+    If we can prove we can drop the first domino and we can prove that a domino will be dropped by the preceding domino
+    then we can prove that all domino's can be dropped.
+</p>
+
+<h4>Warm Up Exercises</h4>
+
+<div class="panel panel-default">
+    <div class="panel-heading">1. Give definitions <code>mynot</code>, <code>myand</code>, <code>myor</code>, <code>myall</code>,
+        <code>myany</code>, of not, and, or, all, any.
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <td><code>mynot</code></td>
+                <td>
+            <pre>
+mynot :: Bool -> Bool
+mynot = (== False)
+            </pre>
+                </td>
+            </tr>
+            <tr>
+                <td><code>myand</code></td>
+                <td><pre>
+myand :: [Bool] -> Bool
+myand = foldr (&&) True
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td><code>myor</code></td>
+                <td><pre>
+myor :: [Bool] -> Bool
+myor = foldr (&&) False
+        </pre>
+                </td>
+            </tr>
+        </table>
+        <p><i><code>myall</code> and <code>myany</code> were already given by the lecturer and can be found in the notes
+            above</i>.</p>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">2. The number 13 has the property that it is prime and its reversal, the number
+        31, is also prime. Find all primes < 10000 with this property.
+        <presented-item></presented-item>
+    </div>
+    <div class="panel-body">
+        <pre>
+-- Reverse implementation. Not official. foldl would be faster with the array concatenation.
+reverse :: [a]
+reverse = foldr (\x ys -> ys ++ [x]) []
+
+invert :: Integer -> Integer
+invert = read . reverse . show
+
+primes = takeWhile (\n -> n < 10000) (filter (isPrime . invert) primes)
+</pre>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">3. A prime pair is a pair (p,p+2) with the property that both p and p+2 are primes. The
+        first prime pair is (3,5). Implement a function for generating prime pairs, and use this to find the first 100
+        prime pairs.
+        <presented-item></presented-item>
+    </div>
+    <div class="panel-body">
+        <pre>
+-- No empty array case because we assume we get an infinite list of primes
+checkPairs :: [Integer] -> [(Integer, Integer)]
+checkPairs = (x:y:zs) | x + 2 == y = (x,y) : checkPairs(y:zs)
+                      | otherwise  = checkPairs(y:zs)
+
+primePairs = take 100 (checkPairs primes)
+        </pre>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">4. A prime triple is a triple (n,m,k) such that n &lt; m &lt; k and n,m,k are all prime,
+        and n and k differ by six. The first prime triple is (5,7,11). Implement a function for generating prime
+        triples, and use this to find the first 100 prime triples.
+        <presented-item></presented-item>
+    </div>
+    <div class="panel-body">
+        <p>
+            This cannot work with two steps of 2 because that always one member of the triplet will be divisible by 3
+            (see
+            Haskell Road to Logic).
+        </p>
+        <pre>
+checkTriples :: [Integer] -> [(Integer, Integer, Integer)]
+checkTriples (x:y:z:rest) | x + 6 == z = (x,y,z) : checkTriples (y:z:rest)
+                          | otherwise  = checkTriples (y:z:rest)
+        </pre>
+    </div>
+</div>
+
