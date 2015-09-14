@@ -1,0 +1,55 @@
+<h1>Lecture 3: More on Hoare Logic and Propositional Logic</h1>
+
+<h4>Questions Session</h4>
+
+<p>
+  <strong>How to implement  a stop command?</strong>
+</p>
+<pre>
+iterate :: (a -> a) -> a -> [a]
+iterate = ...
+
+iterate succ 0
+
+
+iterateWithStop :: (a -> a) -> (a -> Bool) -> a -> [a]
+iterateWithStop f p a =  testIt (iterate f x) where
+  testIt (x:xs) = if p x then [] else x : testIt
+  -- alternative implementation
+  testIt = takeWhile (not.p)
+</pre>
+
+<h4>Impertive programming in an functional language</h4>
+
+<code>x:= x + 1</code> needs an environment (and memory allocation).
+
+<pre>
+until :: (a -> Bool) -> (a -> a) -> a -> a
+until p f x  = if p x then x else until p f (f x)
+
+until clean (lather # rinse)
+-- needs env as param (x)
+</pre>
+
+<h4>How not to write fibonaci</h4>
+
+<pre>
+fib :: Integer -> Integer
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n - 2) + fib (n - 1)
+</pre>
+
+<p>
+  This requires recomputation. Better perserve state with an $n$.
+</p>
+
+<p class="alert alert-warning">
+  Exponential blow up can be identified with a recursive definition that calls itself at least twice.
+</p>
+
+<h4>Testing</h4>
+
+<p>
+  Relevant tests are tests that satisfy the preconditions.
+</p>

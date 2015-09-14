@@ -1,0 +1,287 @@
+<h1>Workshop Testing and Formal Methods, Week 3</h1>
+
+<h4>Question 1 and 2</h4>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <td colspan="2">
+        1) $\neg (\neg ( \neg p ) )$
+      </td>
+    </tr>
+  <tr>
+    <td>
+<pre>
+¬(¬(¬p))
+     |
+  ¬(¬p)
+     |
+    ¬p
+     |
+     p
+</pre>
+    </td>
+    <td>
+<pre>
+  ¬
+  |
+  ¬
+  |
+  ¬
+  |
+  p
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      2) $\neg (p \lor (\neg q))$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+¬(p | (¬q) )
+    |
+  p | (¬q)
+  |     |
+  p    ¬q
+        |
+        q
+      </pre>
+    </td>
+    <td>
+      <pre>
+    ¬
+    |
+   (|)
+  |   |
+  p   ¬
+      |
+      q
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      3) $\neg((\neg p) \land (\neg q))$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+¬((¬p) ^ (¬q))
+       |
+  (¬p) ^ (¬q)
+    |      |
+   ¬p     ¬q
+    |      |
+    p      q
+      </pre>
+    </td>
+    <td>
+      <pre>
+    ¬
+    |
+    ^
+  |   |
+  ¬   ¬
+  |   |
+  p   q
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      4) $(p \rightarrow q) \leftrightarrow ((\neg q) \rightarrow (\neg p))$
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+(p → q) ↔ ((¬q) → (¬p))
+   |            |
+(p → q)    (¬q) → (¬p)
+ |   |       |      |
+ p   q      ¬q     ¬p
+             |      |
+             q      p
+      </pre>
+    </td>
+    <td>
+      <pre>
+      ↔
+     / \
+    /   \
+    →     →
+  /  \   / \
+ p   q  ¬   ¬
+        |   |
+        q   p
+      </pre>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+<h4>Question 3</h4>
+Give a definition of the set of subformulas of a formula $\varphi$.
+
+<p>
+  $sf(\varphi) = \{\varphi\}$<br>
+  $sf(\neg\varphi) = \{\neg\varphi\} \cup sf(\varphi)$<br>
+  $sf(\varphi_1 \land \varphi_2) = \{\varphi_1 \land \varphi_2\} \cup sf(\varphi_1) \cup sf(\varphi_2)$<br>
+  ect... (for the other binary operators)
+</p>
+
+<h4>Question 4</h4>
+
+<pre>
+subfs :: Form -> [Form]
+subfs (Prop x) = [Prop x]
+subfs (Neg f) = Neg f : subfs f
+etcetera for the other binary operators
+
+subfsize = length.num.subfs
+</pre>
+
+<h4>Question 5</h4>
+<strong>1)</strong>
+<pre>
+¬(¬(¬ p))
+0 1 0 1
+1 0 1 0
+*
+</pre>
+
+<strong>2)</strong>
+<pre>
+¬(p | (¬ q) )
+0 1 1  0 1
+0 1 1  1 0
+1 0 0  0 1
+0 0 1  1 0
+*
+</pre>
+
+<strong>3)</strong>
+<pre>
+¬((¬ p) ^ (¬ q))
+1  0 1  0  0 1
+1  0 1  0  1 0
+1  1 0  0  0 1
+0  1 0  1  1 0
+*
+</pre>
+
+<strong>4)</strong>
+<pre>
+(p → q) ↔ ((¬ q) → (¬ p))
+ 1 1 1  1   0 1  1  0 1
+ 1 0 0  1   1 0  0  0 1
+ 0 1 1  1   0 1  1  1 0
+ 0 1 0  1   1 0  1  1 0
+        *
+</pre>
+
+<h4>Question 6</h4>
+
+CNF:
+<pre>
+L ::= P | ¬p
+D ::= L | L or D
+C ::= D | D ^ C
+</pre>
+
+<ol>
+  <li><code>¬(¬(¬ p))</code> as <code>¬p</code></li>
+  <li><code>¬(p | (¬ q) )</code> as <code>¬p ^ q</code></li>
+  <li><code>¬((¬ p) ^ (¬ q))</code> as <code>p | q</code></li>
+  <li><code>(p → q) ↔ ((¬ q) → (¬ p))</code> as <code>p | ¬p</code></li>
+</ol>
+
+<h4>Question 7</h4>
+<p>
+  DNF:
+</p>
+<pre>
+L ::= P | ¬p
+C ::= L | L ^ C
+C ::= C | C or D
+</pre>
+
+<h4>Question 8</h4>
+<ul>
+  <li>Tautology: 3</li>
+  <li>Contradiction: 2, 4</li>
+  <li>Satisfiable: 1, 2, 4, 5</li>
+</ul>
+
+<h4>Question 9</h4>
+Simplify
+
+<pre>
+if not (guess != secret1 &amp;&amp; guess != secret2)
+  print "You win."
+else
+  print "You lose."
+end
+</pre>
+
+as
+
+<pre>
+if (guess == secret1 &amp;&amp; guess == secret2)
+  print "You win."
+else
+  print "You lose."
+end
+</pre>
+
+<h4>Question 10</h4>
+Simplify
+
+<pre>
+if guess != secret1
+  if guess != secret2 print "You lose." else print "You win."
+else
+  print "You win."
+end
+</pre>
+
+<pre>
+if guess != secret1 &amp;&amp; guess != secret2
+  print "You lose."
+else
+  print "You win."
+end
+</pre>
+
+<h4>Question 11</h4>
+<pre>
+quess1 != secret1 &amp;&amp; quess2 != secret2 &amp;&amp; quess3 == secret3
+</pre>
+
+<h4>Question 12</h4>
+<small>All truths in the truth table with a disjunction.</small>
+
+<p>
+$
+(\neg p \land q \land r) \lor
+(p \land \neg q \land r) \lor
+(\neg p \land q \land \neg r) \lor
+(p \land \neg q \land \neg r) \lor
+(\neg p \land \neg q \land \neg r)
+$
+</p>
+
+<h4>Question 13</h4>
+<small>All falses with a negation in front of them.</small>
+
+<p>
+$
+(\neg p \lor \neg q \lor \neg r) \land
+(p \lor q \lor \neg r) \land
+(\neg p \lor \neg q \lor r)
+$
+</p>
