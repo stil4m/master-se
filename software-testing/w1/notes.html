@@ -114,7 +114,7 @@ all :: (a -> Bool) -> [a] -> Bool
 all = foldr (&&) True
 
 any :: (a -> Bool) -> [a] -> Bool
-any = foldr (&&) False
+any = foldr (||) False
 </pre>
 
 <h4>Sieve of Eratosthenes</h4>
