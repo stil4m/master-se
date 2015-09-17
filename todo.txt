@@ -1,2 +1,3 @@
 - Read about loop invariant
 - Mike gordon's notes
+- Exam Preparation
