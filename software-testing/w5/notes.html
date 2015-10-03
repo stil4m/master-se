@@ -1,0 +1,35 @@
+<h1>Lecture 5: Sudoku Problem Solving and Problem Generation</h1>
+
+<h4>Relations as Functions</h4>
+
+A relation is implemented as a function (a property).
+
+<pre>
+Rel a => a -> a -> Bool
+</pre>
+
+<h4>P vs. NP</h4>
+
+<ul>
+  <li>Polynomial time</li>
+  <li>Nondeterministic Polynomial time</li>
+</ul>
+
+<h5>SAT solving for propositional logic</h5>
+<ul>
+  <li>Given $\varphi$ is there a $V$ that makes $\varphi$ true? (NP)</li>
+  <li>Given $\varphi$ and $V$, does make $V$ $\varphi$ true? (P)</li>
+</ul>
+
+<h4>Sudoku Problem Solving</h4>
+
+<p>Use an injective function to check the solution. When all map to 1, the solution is unique.</p>
+
+<h4>Partial Application (Techday)</h4>
+
+<pre>
+Rel a => a -> a -> Bool
+
+> r :: Rel Int
+> r 5 :: Int -> Bool
+</pre>
