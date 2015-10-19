@@ -25,7 +25,7 @@ However when the property fails, there is a counter-example, thus a 'False' resu
 
 \subsection*{Problem 3}
 
-See Assignment 3.hs. I could have used the following snippet (then I could have removed the base case in the mergeC), but had to introduce another case for freqList to handle empty strings.
+See Assignment3.hs. I could have used the following snippet (then I could have removed the base case in the mergeC), but had to introduce another case for freqList to handle empty strings.
 
 \begin{lstlisting}
 foldr mergeC [(last (sort s), 1)] (init (sort s))
@@ -34,4 +34,5 @@ foldr mergeC [(last (sort s), 1)] (init (sort s))
 
 \subsection*{Problem 4}
 
-
+See Assignment4.hs. The question states `any frequency list`. A valid frequencey list may be an empty list, however the given implementation of createTree is non-exhaustive,
+thus I have added a precondition that checks if the input is a non-empty list.
