@@ -13,12 +13,12 @@ A first example would be the abs function that takes a number and converts it to
 Other examples may be functions of the form $\lambda x \mapsto x^n$, where $n$ is an even integer. \\
 \\
 \noindent
-\textbf{2) Explain why it is impossible to write an algorithm that checks whether a function of type Float -> Float is even.}\\
+\textbf{2) Explain why it is impossible to write an algorithm that checks whether a function of type Float $\mapsto$ Float is even.}\\
 This function has universal quantification. We will have to check all floats as input for this function to verify this property and this is not possible since this is an infinite set.
 As from the lecture: It is \textbf{not} possible to verify universal quantification, we can only falsify it. \\
 \\
 \noindent
-\textbf{3) Implement a test maybeEven for evenness of functions, and explain why the outcome False of this test is more reliable than the outcome True.}
+\textbf{3) Implement a test maybeEven for evenness of functions, and explain why the outcome False of this test is more reliable than the outcome True.} \\
 The code of this question is located in Assignment2.hs. As described in the previous paragraph, we can not verify a infinite set of numbers.
 When you run a lot of test you may start to assume that a certain property hold, but you are never sure.
 However when the property fails, there is a counter-example, thus a 'False' result is always more reliable.
@@ -39,12 +39,12 @@ thus I have added a precondition that checks if the input is a non-empty list.
 
 \subsection*{Problem 5}
 
-The buildTree function first sorts the input table based on the weight (the first element in the list will have the least occurence).
+The buildTree function first sorts the input table based on the weight (the first element in the list will have the least occurences).
 This is followed by mapping all items in the sorted frequency list to Leafs (the implementation could use an uncurry).
-In the end it wil build the tree by taking the first two items of the sorted list, merging them to a new Form and than insert this fork on the correct position (insertBy) to make sure the list is still ordered.
-The last step is recursively and will continue until only one element is left and returns this element.
+In the end it will build the tree by taking the first two items of the sorted list, merging them to a new Form and than insert this fork on the correct position (insertBy) to make sure the list is still ordered.
+The last step is recursively and will continued until only one element is left and returns this element.
 The result will be a tree with the smallest elements as deep as possible in the tree. \\
-The test for this implementation is provided in Assignment5.hs. The same not-empty precondition as Problem 4 must hold for this test.
+The test for this implementation is provided in Assignment5.hs. The same not-empty precondition as in Problem 4 must hold for this test.
 
 \subsection*{Problem 6}
 
@@ -79,5 +79,3 @@ Therefor I have added a arbitrary instance DecodeInput to generate valid input t
 \noindent
 \textbf{Conclusion} \\
 I've tested the output of encode by using decode and vice versa and caught some small bugs. After this I can say I am quite confident that the functions are tested enough.
-r
-
