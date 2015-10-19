@@ -45,3 +45,34 @@ In the end it wil build the tree by taking the first two items of the sorted lis
 The last step is recursively and will continue until only one element is left and returns this element.
 The result will be a tree with the smallest elements as deep as possible in the tree. \\
 The test for this implementation is provided in Assignment5.hs. The same not-empty precondition as Problem 4 must hold for this test.
+
+\subsection*{Problem 6}
+
+\textbf{Implementation} \\
+To test the encode message I make sure that 'fqs' contains all the characters in 'message'. To do this I've created an arbitrary instance for 'FrequencyMessage' that will make sure that 'message' is a sub list of 'fqs.
+Next there should be a precondition that checks that the 'fqs' is non-trivial. This is implemented in 'validFrequencyMessage'. \\
+
+\noindent
+\textbf{Properties} \\
+The first property that I identified is the property that encode end decode should be inverses from each other as long as the preconditions are met. This is tested with testEncodeDecode and testDecodeEncode.
+The next property is that encode should fail when 'message' contains a character that is not in 'fqs'. \\
+
+\noindent
+\textbf{Problems} \\
+The first problem was found with the testDecodeEncode. The 'decode' function was non-exhaustive for empty bit-lists. For example 'decode "abc" [].
+This problem could be fixed by add the following case to 'decode': \\
+
+\begin{lstlisting}
+decode _ [] = ""
+\end{lstlisting}
+
+\noindent
+I have patched the LabExam.hs for this change. \\
+
+\noindent
+Another problem was shown with a bit list where the path of ones and zeros does not match any node in the HTree.
+For example with the string "abc" and the bit list [1] as input for decode, the single 1 does not match any path in the tree.
+I have added another case for 'dcd' to handle Fork's when the bit list is empty. This case throws an exception.
+To actually test the right-inverse decode on $encode \cdot decode$, the input is very strong. Therefor I have added a arbitrary instance DecodeInput to generate valid input to test this inverse.
+
+

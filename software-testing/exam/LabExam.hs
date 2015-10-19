@@ -56,9 +56,11 @@ encode :: String -> String -> Code
 encode fqs message = ecd (string2table fqs) message
 
 decode :: String -> Code -> String
-decode s = dcd tree
+decode _ [] = ""
+decode s c = dcd tree c
     where  tree = buildTree $ freqList s
            dcd :: HTree -> Code -> String
            dcd (Leaf c _) []        = [c]
            dcd (Leaf c _) bs        = c : dcd tree bs
+           dcd Fork{} []            = error "Invalid bit list to decode with provided frequency string"
            dcd (Fork l r _) (b:bs)  = dcd (if b == 0 then l else r) bs

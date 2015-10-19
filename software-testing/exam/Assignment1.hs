@@ -2,9 +2,7 @@ module Assignment1
 
 where
 import Test.QuickCheck
-
--- Assignment 1
-type Code = [Int]
+import LabExam
 
 -- Translate bit lists to the corresponding (non-negative) integers.
 
