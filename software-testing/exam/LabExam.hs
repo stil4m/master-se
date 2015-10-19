@@ -3,6 +3,7 @@ module LabExam where
 import Data.List
 import Data.Ord
 import Test.QuickCheck
+import Assignment3
 
 type Code = [Int]
 
@@ -61,6 +62,3 @@ decode s = dcd tree
            dcd (Leaf c _) []        = [c]
            dcd (Leaf c _) bs        = c : dcd tree bs
            dcd (Fork l r _) (b:bs)  = dcd (if b == 0 then l else r) bs
-
-freqList :: String -> [(Char,Int)]
-freqList s = []

@@ -25,4 +25,13 @@ However when the property fails, there is a counter-example, thus a 'False' resu
 
 \subsection*{Problem 3}
 
-See Assignment 3.hs
+See Assignment 3.hs. I could have used the following snippet (then I could have removed the base case in the mergeC), but had to introduce another case for freqList to handle empty strings.
+
+\begin{lstlisting}
+foldr mergeC [(last (sort s), 1)] (init (sort s))
+\end{lstlisting}
+
+
+\subsection*{Problem 4}
+
+
