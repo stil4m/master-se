@@ -73,6 +73,11 @@ I have patched the LabExam.hs for this change. \\
 Another problem was shown with a bit list where the path of ones and zeros does not match any node in the HTree.
 For example with the string "abc" and the bit list [1] as input for decode, the single 1 does not match any path in the tree.
 I have added another case for 'dcd' to handle Fork's when the bit list is empty. This case throws an exception.
-To actually test the right-inverse decode on $encode \cdot decode$, the input is very strong. Therefor I have added a arbitrary instance DecodeInput to generate valid input to test this inverse.
+To actually test the right-inverse 'decode' on the bijection $encode \cdot decode$, the precondition on the input is very strong.
+Therefor I have added a arbitrary instance DecodeInput to generate valid input to test this inverse.
 
+\noindent
+\textbf{Conclusion} \\
+I've tested the output of encode by using decode and vice versa and caught some small bugs. After this I can say I am quite confident that the functions are tested enough.
+r
 
