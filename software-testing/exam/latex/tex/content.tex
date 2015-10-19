@@ -34,5 +34,14 @@ foldr mergeC [(last (sort s), 1)] (init (sort s))
 
 \subsection*{Problem 4}
 
-See Assignment4.hs. The question states `any frequency list`. A valid frequencey list may be an empty list, however the given implementation of createTree is non-exhaustive,
+See Assignment4.hs. The question states `any frequency list`. A valid frequency list may be an empty list, however the given implementation of createTree is non-exhaustive,
 thus I have added a precondition that checks if the input is a non-empty list.
+
+\subsection*{Problem 5}
+
+The buildTree function first sorts the input table based on the weight (the first element in the list will have the least occurence).
+This is followed by mapping all items in the sorted frequency list to Leafs (the implementation could use an uncurry).
+In the end it wil build the tree by taking the first two items of the sorted list, merging them to a new Form and than insert this fork on the correct position (insertBy) to make sure the list is still ordered.
+The last step is recursively and will continue until only one element is left and returns this element.
+The result will be a tree with the smallest elements as deep as possible in the tree. \\
+The test for this implementation is provided in Assignment5.hs. The same not-empty precondition as Problem 4 must hold for this test.
