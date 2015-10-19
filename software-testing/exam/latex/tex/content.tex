@@ -1,0 +1,28 @@
+\section*{Software Specification and Testing 2015 \\ Lab Exam - Mats Stijlaart (11152990)}
+
+\subsection*{Problem 1}
+
+See Assignment1.hs
+
+\subsection*{Problem 2}
+
+\textbf{1) Give one more example of an even function on the real numbers.}\\
+
+\noindent
+A first example would be the abs function that takes a number and converts it to its absolute ($\lambda x \mapsto |x|$).
+Other examples may be functions of the form $\lambda x \mapsto x^n$, where $n$ is an even integer. \\
+\\
+\noindent
+\textbf{2) Explain why it is impossible to write an algorithm that checks whether a function of type Float -> Float is even.}\\
+This function has universal quantification. We will have to check all floats as input for this function to verify this property and this is not possible since this is an infinite set.
+As from the lecture: It is \textbf{not} possible to verify universal quantification, we can only falsify it. \\
+\\
+\noindent
+\textbf{3) Implement a test maybeEven for evenness of functions, and explain why the outcome False of this test is more reliable than the outcome True.}
+The code of this question is located in Assignment2.hs. As described in the previous paragraph, we can not verify a infinite set of numbers.
+When you run a lot of test you may start to assume that a certain property hold, but you are never sure.
+However when the property fails, there is a counter-example, thus a 'False' result is always more reliable.
+
+\subsection*{Problem 3}
+
+See Assignment 3.hs
