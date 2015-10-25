@@ -3,28 +3,27 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>Master Software Engineering - stil4m</title>
+  <title>Master Software Engineering - stil4m</title>
 
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css" rel="stylesheet">
-    <link href="libs/startbootstrap-sb-admin-2-1.0.7/css/timeline.css" rel="stylesheet">
-    <link href="libs/startbootstrap-sb-admin-2-1.0.7/css/sb-admin-2.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="./css/main.css" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.css" rel="stylesheet">
+  <link href="libs/startbootstrap-sb-admin-2-1.0.7/css/timeline.css" rel="stylesheet">
+  <link href="libs/startbootstrap-sb-admin-2-1.0.7/css/sb-admin-2.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="./css/main.css" rel="stylesheet" type="text/css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -33,153 +32,170 @@
 
 <body ng-app="masterSE">
 
-<div id="wrapper" data-ng-controller="MainCtrl">
+  <div id="wrapper" data-ng-controller="MainCtrl">
 
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">Master Software Engineering - stil4m </a>
-        </div>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Master Software Engineering - stil4m </a>
+      </div>
 
-        <div class="navbar-default sidebar" style="width: 300px" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
+      <div class="navbar-default sidebar" style="width: 300px" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+          <ul class="nav" id="side-menu">
+            <li>
+              <a href="#software-testing/index">Software Testing<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li>
+                  <a href="#software-testing/w1">Week 1: 2015-08-31 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
                     <li>
-                        <a href="#software-testing/index">Software Testing<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#software-testing/w1">Week 1: 2015-08-31 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#software-testing/w1/notes">Notes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w1/workshop">Workshop</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w1/lab">Lab</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#software-testing/w2">Week 2: 2015-09-07 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#software-testing/w2/notes">Notes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w2/workshop">Workshop</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w2/lab">Lab</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#software-testing/w3">Week 3: 2015-09-14 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#software-testing/w3/notes">Notes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w3/workshop">Workshop</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w3/lab">Lab</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#software-testing/w3">Week 4: 2015-09-21 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#software-testing/w4/notes">Notes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w4/workshop">Workshop</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w4/lab">Lab</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#software-testing/w3">Week 5: 2015-09-28 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#software-testing/w5/notes">Notes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w5/workshop">Workshop</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w5/lab">Lab</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#software-testing/w3">Week 6: 2015-10-05 <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#software-testing/w6/notes">Notes</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w6/workshop">Workshop</a>
-                                    </li>
-                                    <li>
-                                        <a href="#software-testing/w6/lab">Lab</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#software-testing/resources">Resources</a>
-                            </li>
-                            <li>
-                                <a href="#software-testing/test-preparation">Test Preparation</a>
-                            </li>
-                            <li>
-                                <a href="#software-testing/literature">Literature</a>
-                            </li>
-                        </ul>
+                      <a href="#software-testing/w1/notes">Notes</a>
                     </li>
                     <li>
-                        <a href="#paper-sessions/index">Paper Sessions<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                          <li>
-                              <a href="#paper-sessions/session1">Session 1 (2015-09-07)</a>
-                          </li>
-                        </ul>
+                      <a href="#software-testing/w1/workshop">Workshop</a>
                     </li>
-                </ul>
-            </div>
+                    <li>
+                      <a href="#software-testing/w1/lab">Lab</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#software-testing/w2">Week 2: 2015-09-07 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a href="#software-testing/w2/notes">Notes</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w2/workshop">Workshop</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w2/lab">Lab</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#software-testing/w3">Week 3: 2015-09-14 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a href="#software-testing/w3/notes">Notes</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w3/workshop">Workshop</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w3/lab">Lab</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#software-testing/w3">Week 4: 2015-09-21 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a href="#software-testing/w4/notes">Notes</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w4/workshop">Workshop</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w4/lab">Lab</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#software-testing/w3">Week 5: 2015-09-28 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a href="#software-testing/w5/notes">Notes</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w5/workshop">Workshop</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w5/lab">Lab</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#software-testing/w3">Week 6: 2015-10-05 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a href="#software-testing/w6/notes">Notes</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w6/workshop">Workshop</a>
+                    </li>
+                    <li>
+                      <a href="#software-testing/w6/lab">Lab</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#software-testing/resources">Resources</a>
+                </li>
+                <li>
+                  <a href="#software-testing/test-preparation">Test Preparation</a>
+                </li>
+                <li>
+                  <a href="#software-testing/literature">Literature</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#software-testing/index">Software Evolution<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li>
+                  <a href="#software-evolution/w1">Week 1: 2015-10-26 <span class="fa arrow"></span></a>
+                  <ul class="nav nav-third-level">
+                    <li>
+                      <a href="#software-evolution/w1/notes">Notes</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#paper-sessions/index">Paper Sessions<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li>
+                  <a href="#paper-sessions/session1">Session 1 (2015-09-07)</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div id="page-wrapper" style="margin-left: 300px">
-        <div class="panel-heading">
-            <div ng-if="data.template" data-ng-include="data.template + '.html'"></div>
-        </div>
+      <div class="panel-heading">
+        <div ng-if="data.template" data-ng-include="data.template + '.html'"></div>
+      </div>
     </div>
 
-</div>
+  </div>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-<script src="libs/startbootstrap-sb-admin-2-1.0.7/js/sb-admin-2.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ=="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/2.1.0/metisMenu.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.4/raphael-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  <script src="libs/startbootstrap-sb-admin-2-1.0.7/js/sb-admin-2.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
-<script src="./js/main.js"></script>
-<script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
     MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [['$','$'], ['\\(','\\)']],
-            processEscapes: true
-        }
+      tex2jax: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ],
+        processEscapes: true
+      }
     });
-</script>
+  </script>
 </body>
 
 </html>
