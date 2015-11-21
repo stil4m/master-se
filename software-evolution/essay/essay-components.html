@@ -1,0 +1,188 @@
+<h2>Recap</h2>
+
+<p>
+    The paper of matter is 'A Metrics Suite for Object Oriented Design' by S. Chidamber and C Kermerer. As the adoption
+    of object oriented (OO) design starts to unfold in the industry, the need to have insight in the the quality and
+    form of software increases. While the known metrics do not cover the 'aspects' introduced by OO, the paper tends to
+    introduce a suite of 6 metrics especially focuses on the unique aspects of OO like classes, inheritance, method
+    passing and encapsulation. <br/>
+    The six methods introduced are 'Weighted Methods Per Class' (WMC), 'Depth of Inheritance Tree' (DIT), 'Number of
+    Children' (NOC), 'Coupling between object classes' (CBO), 'Response For a Class' (RFC) and 'Lack of Cohesion of
+    Methods' (LCOM). The suggested methods are 'held against' the software metric properties that were introduced by
+    Weyuker and found to comply with most of them (more on this in ...). To show the application of the metrics, a tool
+    was developed to automatically measure the suite on two different OO applications (C++ and Smalltalk)
+</p>
+
+<h1>Contributions</h1>
+
+<p>
+    The contribution of this paper is a suite of metrics that should give global insight on the internals of an OO
+    design which are theoretically grounded. In addition it implicitly states a point of view how we should look at OO
+    code and what principles of OO should be considered when measuring this.
+</p>
+
+<h1>Structure</h1>
+
+<p>The paper is structured as follows:</p>
+<ul>
+    <li>
+        The paper starts with an abstract where it introduces the research in the paper. It does not contain a wrap up
+        from the conclusion, it only goes up to the empirical research setup. However it recaps the problem nicely.
+    </li>
+    <li>
+        The introduction shows why the research was needed based on two arguments:
+        <ol>
+            <li>
+                The first argument states that the industry is in need for new or improved approaches to software
+                development and has an increased focus on process improvement. (This is actually addressed in two
+                different arguments.)
+            </li>
+            <li>
+                Previous research has lacked certain aspects:
+                <ul>
+                    <li>Lack of theoretical basis.</li>
+                    <li>Lack of desirable measurement properties.</li>
+                    <li>Not generalized enough or technology dependent.</li>
+                    <li>Too labor intensive to collect.</li>
+                </ul>
+            </li>
+        </ol>
+        This is followed by a illumination of the paper structure. (As expected/required.)
+    </li>
+    <li>
+        Section II describes the research problem.
+    </li>
+    <li>
+        Section III sets a basis for the theory that is used to reflect on the introduced metrics. It consists of three
+        parts. 1) An introduction to OO design based on [Booch]. 2) A slight introduction on the measurement theory.
+        3) A definition of the identified
+    </li>
+    <li>
+        Section IV sets the choice of evaluation criteria (Weyuker) for the metrics and creates a shortlist of the
+        metrics that
+        should be evaluated. The metrics that are missing on the shortlist are not applicable.
+    </li>
+    <li>
+        Section V defines the setup for the empirical data collection. (C++ and Smalltalk)
+    </li>
+    <li>
+        Section VI iterates over each of the introduced metrics and for each:
+        <ul>
+            <li>States the definition, the theoretical basis and the POV.</li>
+            <li>The analytical evaluation, which Weyuker properties holds.</li>
+            <li>The empirical data and the interpretation of this data.</li>
+        </ul>
+
+        Because this section is quite big, it was ended with a summary of one and a half page.
+    </li>
+    <li>Section VII holds the concluding remarks.</li>
+</ul>
+
+<p>
+    There is no research question, but they state a research problem and how they want to solve this. They actually
+    tackle this problem with:
+</p>
+
+<ul>
+    <li>A introduction with a definition of how the metric is implied</li>
+    <li>A theoretical basis to reason what a metric would imply</li>
+    <li>A point of view (which values of the metric should be good, or what the values would mean)</li>
+    <li>Their a proof that the metrics comply to a model [Weyuker]</li>
+    <li>Empirical data from real life projects</li>
+    <li>Interpretation of this data</li>
+</ul>
+
+<h2>Purpose</h2>
+
+<p>
+    There is both a summary and concluding remarks. The summary does not really summarize the Results section. It adds a
+    little more content and combines the different metrics into combination that may indicate certain software
+    properties.
+</p>
+
+<p>
+    The concluding remarks are not really concluding, it contains some future work and how organisations 'may/can'
+    benefit from the work.
+</p>
+
+<h2>Problem</h2>
+
+<p>
+    The problem is that the current work on metrics for OO design lack the following properties/are criticised as:
+</p>
+
+<ul>
+    <li>Not on a theoretical basis;</li>
+    <li>Traditional software complexity metrics do not possess appropriate mathematical properties;</li>
+    <li>Existing metrics to not lend themselves for OO design;</li>
+    <li>No empirical results have been published.</li>
+</ul>
+
+<p>
+    The problem gives is the main flow through the paper, so it gives almost all of the content reason. The paper should
+    be read in detail again to address the lack of purpose.
+</p>
+
+<h2>Assumptions</h2>
+
+<ul>
+    <li>
+        The need for OO metrics. 'seems appropriate'/'this research addresses these needs'. However when these
+        statements are made, the writer does not really make clear why. Later on in the paper he describes with other
+        research that current metrics have shortcomings, papers that suggest rule of thumb.
+    </li>
+    <li>
+        'The larger the number of methods that can be invoked from a class, the greater the complexity of the class.'.
+        Not true. Accessors/mutators.
+    </li>
+    <li>
+        The notion of complexity is not handled. For example: 'Low cohesion increases complexity', one may argue that
+        low cohesion does not increase complexity, but only decrease changeability and analysability.
+    </li>
+    <li>
+        The writer assumes that the need for the lack of metrics for OO can be resolved with a suite of metrics that
+        surround the concept of complexity or the notion that they influence complexity. There is a wide variety of the
+        type of metrics which are not noted and the writer does not set its point of view merely to the complexity
+        metrics. The title may be renamed to 'A Complexity Metrics Suite ...'.
+    </li>
+</ul>
+
+<h2>Point of View</h2>
+
+<p>
+    The point of view is clearly stated in the paper. The writer introduces his point of view before going in depth.
+    There are no further remarks on this. Omitting the complexity thingy.
+</p>
+
+<h2>Data</h2>
+
+<p>
+    The data consists of two parts, the first is the proof that the metrics comply to the [Weyuker] properties, the
+    second part are the histograms that plot the data when the metrics were applied to two real world projects.
+</p>
+<p>
+    The data from the second part is not traceable, but from the time the paper was written open source projects were
+    not that commonly used. The question is if it is acceptable that this data is missing. It is not noted in the paper
+    why the data is missing.
+</p>
+
+<p>
+    There is direct motivation to think the data is unbelievable. The writer explains in depth what caused each outlier.
+    The experiment could be easily conducted again to verify the outcome. However it may be hard to find a representing
+    data set constructed with the same ideology. Since the publication of the paper, new ideas of software have emerged
+    [MVVM] or [CDI] which could influence the metrics.
+</p>
+
+<h2>Inferences</h2>
+
+<p>I find the number of scientific references pretty low</p>
+
+<p>When property 6 did not hold, the summary arguments this. Couldn't this been foreseen?</p>
+
+<h2>Consequences</h2>
+
+<p>
+    The writer introduced 6 metrics that focus on the properties introduced by OO with a prove on theoretical base and
+    empirical results.
+</p>
+
