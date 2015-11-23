@@ -1,7 +1,7 @@
 \paragraph{}
 \textbf{
 Abstract - This is an essay on the paper 'A Metrics Suite for Object Oriented Design' by S. Chidamber and C.
-Kermerer which is dated from June 1994. Firstly there will be a brief summary about the paper itself followed by
+Kermerer which is dated from June 1994. First there will be a brief summary about the paper itself followed by
 its merits and drawbacks.
 }
 
@@ -10,51 +10,51 @@ When object oriented design (OOD) starts to unfold in the industry, the need for
 development increases. The writer addresses the problems that cause the need for a metrics suite that provides the
 required feedback on OOD. The existing metrics lack the theoretical ground, are not sufficient of OOD,
 technology dependent or too labor-intensive to collect.
-The paper introduces six metrics as a suite: 'Weighted Methods Per Class' (WMC), 'Depth of Inheritance Tree' (DIT),
-'Number of Children' (NOC), 'Coupling between object classes' (CBO), 'Response For a Class' (RFC) and 'Lack of
-Cohesion of Methods' (LCOM). These metrics are assessed with the software complexity metric properties introduced by
+The paper introduces six metrics as a suite: Weighted Methods Per Class (WMC), Depth of Inheritance Tree (DIT),
+Number of Children (NOC), Coupling between object classes (CBO), Response For a Class (RFC) and Lack of
+Cohesion of Methods (LCOM). These metrics are assessed with the software complexity metric properties introduced by
 Weyuker [TODO cite weyuker] and found to comply with most of the specified properties.
-Criticism on previous research was the lack of theoretical basis which is refuted on this paper by the use of the
-model provided by Weyuker and lack of empirical data, which is added by applying the metrics on two different OO
+Criticism on previous research was the lack of theoretical basis, which is refuted on this paper by the use of the
+model provided by Weyuker, and lack of empirical data, which is added by applying the metrics on two different OO
 applications (C++ and Smalltalk) using an automated tool. The main contribution of the paper can be summarized as a
-suite of six individual software complexity methods that can be combined to illuminate design problems and/or choices
+suite of six individual software complexity metrics that can be combined to illuminate design problems and/or choices
 within an OOD.
 
 \paragraph{}
 The paper is well structured and meets the expectations from the reader. Where the writer introduces the problem
-(section II), he succeeds this with separate sections on the point of view and approach. First the writer show how he
-approaches the properties introduced by an OOD and which metrics were abstracted (section III), secondly he shows how the
+(section II), he succeeds this with separate sections on the point of view and approach. First the writer shows how he
+approaches the properties introduced by OOD and which metrics were abstracted (section III), secondly he shows how the
 lack of theoretical ground is tackled in this research (section IV) and ends this with a presentation of the empirical
 data collection (section V). Section VI contains the research results. The writer iterates over different metrics and
 accompanies each metric with a point of view, performs an analytical evaluation and presents the empirical data and its
 interpretation. This section concludes with a summary. The paper ends with the concluding remarks.
 
 \paragraph{}
-While the paper does not have a research question it has a clear research problem, which is actually tackled.
+While the paper does not contain a research question the writer states a clear research problem, which is actually tackled.
 The problem is divided in two parts. The first is the lack of metrics that relate to the properties that emerge from an
 OOD, which indicate the need for such metrics. The second part concentrates on the theoretical criticism of metrics
-applied to conventional non-OO applications. The second part is an argument to include a theoretical base in the
+applied to conventional non-OO applications. Focussing on the second part, this is the argument to include a theoretical base in the
 research, but the provided substantiating research introduced by the writer merely focuses on complexity metrics instead
-of metrics in general. The writer lacks of explicitly scoping the research to complexity metrics, but abides to this
+of metrics in general. The writer lacks to explicitly scope the research to complexity metrics, but abides to this
 point of view throughout the rest of the paper. With the constructive use of complexity as point of view and the use of
-a theoretical basis that is based on the complexity measures by Weyuker, the writer should have addressed this scope in
+a theoretical basis that reflected on the complexity measures by Weyuker, the writer should have addressed this scope in
 the title, abstract or introduction of the paper. Also the writer does not introduce the the concept of complexity. The concept of
-software complexity could be interpreted in different ways with metrics introduces by McCabe [TODO cite McCabe]
+software complexity can be interpreted in different ways with metrics introduced by McCabe [TODO cite McCabe]
 and Henry [TODO cite Henry].
 
 \paragraph{}
 The writer argues, as mentioned above, that existing metrics do not relate to the properties of OOD, but the writer fails
 to demonstrate this or refer to previous works that indicate this. Although the reader can assume the lack of these
-metrics due to maturity of object oriented development in the industry at that time, the writer should have introduced
+metrics due to the maturity of object oriented development in the industry at that time, the writer should have introduced
 his assumptions or add references to previous work that show this. The previous works that are referenced include suggestions
 and attempts for OOD metrics, but these sources do not address the missing relation of existiting metrics with the OOD
-properties, nor does the author.
+properties, nor does the writer.
 
 \paragraph{}
 In the most important section of the paper the writer iterates over each proposed metric. The writer applies the
 same pattern for each metric, which implicitly sets the expectation for the reader. For each metric the writer gives a
 clear definition, theoretical basis and his point of view. The description and the theoretical basis give the definition and
-the motivation for the metric. The point of view of each metric adds a more vivid argument for the need of each metric.
+motivation for the metric. The point of view of each metric adds a more vivid argument for the need of each metric.
 Some of these arguments are more application-type specific. For example: ``The larger the number of methods that can be
 invoked from a class, the greater the complexity of the class.'' I cannot reason about the types of application that were
 developed at the time of the paper, but in the present day there are a lot of APIs that separate their data from their
@@ -96,12 +96,12 @@ specified by Weyuker.
 \paragraph{}
 The writer summarizes the result in the last part of the paper, but also introduces new concepts on how the metrics
 combined could be used as design indicators, why some properties of the metrics model are not met and why, and the
-future direction of research. I rather have seen this in separate sections, mainly due to the reason that these
+future direction of research. I would rather have seen this in separate sections, mainly due to the reason that these
 components deserve their own section. The introduced point of views of combined metrics is one of the main contributions
 of the paper as it has a closer relation to OOD than the individual metrics.
 
 \paragraph{}
 To conclude, the paper is well structured and has a clear contribution. The research problem is clear, but the
-approach tends to focus mainly on complexity metrics and has some aspects that could be described more explicitly, and it
+approach tends to focus mainly on complexity metrics, has some aspects that could be described more explicitly, and it
 has some inconsistencies in the metric definition and application. However the presented data is solid.
 As intended, the metrics can be used as indicators to prevent faults as Basili et al. [TODO cite basili] showed.
