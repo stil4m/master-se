@@ -1,7 +1,6 @@
 \documentclass[a4paper,fleqn,10pt]{article}
 \usepackage{graphicx,amsfonts,psfrag,fancyhdr,layout,appendix,subfigure}
-\usepackage[sectionbib]{natbib}
-\usepackage{chapterbib}
+\usepackage[backend=bibtex]{biblatex}
 \usepackage[T1]{fontenc}
 \usepackage{titling}
 \usepackage{layout}
@@ -15,12 +14,15 @@
 \author{Mats Stijlaart - University of Amsterdam, The Netherlands}
 \date{December 1, 2015}
 
+\bibliography{main} 
 \begin{document}
 \maketitle
 
 \input{./content}
 
 \newpage
-\input{./references}
+%\input{./references}
+\printbibliography
+
 
 \end{document}

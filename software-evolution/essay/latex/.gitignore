@@ -2,4 +2,7 @@
 *.log
 *.pdf
 *synctex.gz
-
+*-blx.bib
+main.bbl
+main.blg
+main.run.xml

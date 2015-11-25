@@ -13,7 +13,7 @@ technology dependent or too labor-intensive to collect.
 The paper introduces six metrics as a suite: Weighted Methods Per Class (WMC), Depth of Inheritance Tree (DIT),
 Number of Children (NOC), Coupling between object classes (CBO), Response For a Class (RFC) and Lack of
 Cohesion of Methods (LCOM). These metrics are assessed with the software complexity metric properties introduced by
-Weyuker [TODO cite weyuker] and found to comply with most of the specified properties.
+Weyuker \autocite{WEYUKER} and found to comply with most of the specified properties.
 Criticism on previous research was the lack of theoretical basis, which is refuted on this paper by the use of the
 model provided by Weyuker, and lack of empirical data, which is added by applying the metrics on two different OO
 applications (C++ and Smalltalk) using an automated tool. The main contribution of the paper can be summarized as a
@@ -39,8 +39,8 @@ of metrics in general. The writer lacks to explicitly scope the research to comp
 point of view throughout the rest of the paper. With the constructive use of complexity as point of view and the use of
 a theoretical basis that reflected on the complexity measures by Weyuker, the writer should have addressed this scope in
 the title, abstract or introduction of the paper. Also the writer does not introduce the the concept of complexity. The concept of
-software complexity can be interpreted in different ways with metrics introduced by McCabe [TODO cite McCabe]
-and Henry [TODO cite Henry].
+software complexity can be interpreted in different ways with metrics introduced by McCabe \autocite{ICSE-1976-McCabe}
+and Henry \autocite{HENRY}.
 
 \paragraph{}
 The writer argues, as mentioned above, that existing metrics do not relate to the properties of OOD, but the writer fails
@@ -81,7 +81,7 @@ variables: $\{I_1, I_2\}$ and a set of methods $\{M_1, M_2\}$ where $M_1$ uses $
 the LCOM definition, $P = \{( \{I_1\}, \{I_2\} ), ( \{I_2\}, \{I_1\} ) \}$ and
 $Q = \{( \{I_1\}, \{I_1\} ), ( \{I_2\}, \{I_2\} ) \}$. This results in a LCOM value of $0$ that indicates that
 the class is most cohesive, but $M_1$ and $M_2$ do not relate in a single matter. This problem is presented in other
-works such as Basisi et al. [TODO cite basili] and Chai et al. [TODO cite chai]
+works such as Basisi et al. \autocite{BASILI} and Chai et al. \autocite{CHAE}.
 \end{itemize}
 
 \paragraph{}
@@ -101,7 +101,26 @@ components deserve their own section. The introduced point of views of combined 
 of the paper as it has a closer relation to OOD than the individual metrics.
 
 \paragraph{}
-To conclude, the paper is well structured and has a clear contribution. The research problem is clear, but the
-approach tends to focus mainly on complexity metrics, has some aspects that could be described more explicitly, and it
+The contribution of this paper to the field of software engineering is tremendous. A lot of researchers used this paper
+as basis for their research or simply as reference material. Mainly the cohesion metric has been research a lot (possibly
+due to the demonstrated problem and researchers trying to fix this). In literature it is commonly known that there are
+different LCOM versions (1 up to 5) \autocite{TOOLS-USA-2003-BadriB04}, which shows the extension on the initial contribution. Todays research
+tends to focus less on developing new metrics, but instead focus more on how to apply the existing metrics. For example:
+
+\begin{itemize}
+\item the quality of cohesion metrics \autocite{DESOUKY} \autocite{JOHARI},
+\item comparison between different cohesion metrics \autocite{JOSHI},
+\item and finding relations between metrics and faults \autocite{LU} \autocite{SINGH} \autocite{DALLAL}.
+\end{itemize}
+
+In present day there are no papers published with the form of 'A Metrics Suite for Object Oriented Design'. This has possibly
+to do with the saturation on metric reseach and I expect that it is not possible to publish a whole new suite of metrics.
+In contrast to this, most papers on metrics use one or more metrics introduced by Chidamber and Keremer, which shows the
+impact of this paper.
+
+\paragraph{}
+To conclude, the paper is well structured and has a clear contribution. The research problem is clear, but: the
+approach tends to focus mainly on complexity metrics, it has some aspects that could be described more explicitly, and it
 has some inconsistencies in the metric definition and application. However the presented data is solid.
-As intended, the metrics can be used as indicators to prevent faults as Basili et al. [TODO cite basili] showed.
+As intended, the metrics can be used as indicators to prevent faults as Basili et al. \autocite{BASILI} showed, and
+besided this the work is still used in modern research.
