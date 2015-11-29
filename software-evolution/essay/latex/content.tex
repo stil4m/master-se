@@ -1,10 +1,9 @@
 \paragraph{}
 This is an essay on the paper `A Metrics Suite for Object Oriented Design' \autocite{METRICS_SUITE} by S. Chidamber and C.
 Kermerer which is dated from June 1994. First there will be a brief summary about the paper itself followed by
-its merits and drawbacks. The second used to write this essay is
+its merits and drawbacks. The second paper used to write this essay is
 `Quality Analysis of Object Oriented Cohesion Metrics' by P. Joshi and R. K. Joshi \autocite{JOSHI}.
-Although the second paper did not directly relate to the subject paper, it gave enough insight to perform more research
-on the drawbacks of `A Metrics Suite for Object Oriented Design'.
+This paper gave insight to perform more research on the drawbacks of `A Metrics Suite for Object Oriented Design'.
 
 \paragraph{}
 When object oriented design (OOD) starts to unfold in the industry, the need for feedback on this kind of software
@@ -22,10 +21,10 @@ suite of six individual software complexity metrics that can be combined to illu
 within an OOD.
 
 \paragraph{}
-The paper is well structured and meets the expectations from the reader. Where the writers introduce the problem
+The paper is well structured and meets the reader's expectations. Where the writers introduce the problem
 (section II), they succeed this with separate sections on the point of view and approach. First the writers show how they
-approaches the properties introduced by OOD and which metrics were abstracted (section III), secondly they shows how the
-lack of theoretical ground is tackled in this research (section IV) and ends this with a presentation of the empirical
+approaches the properties introduced by OOD and which metrics were abstracted (section III), then they approach how the
+lack of theoretical ground is tackled in this research (section IV) and ends finally they provide a presentation of the empirical
 data collection (section V). Section VI contains the research results. The writers iterate over different metrics and
 accompany each metric with a point of view, perform an analytical evaluation and present the empirical data and its
 interpretation. This section concludes with a summary. The paper ends with the concluding remarks.
@@ -34,8 +33,8 @@ interpretation. This section concludes with a summary. The paper ends with the c
 While the paper does not contain a research question the writers state a clear research problem, which is actually tackled.
 The problem is divided in two parts. The first is the lack of metrics that relate to the properties that emerge from an
 OOD, which indicate the need for such metrics. The second part concentrates on the theoretical criticism of metrics
-applied to conventional non-OO applications. Focussing on the second part, this is the argument to include a theoretical base in the
-research, but the provided substantiating research introduced by the writers merely focus on complexity metrics instead
+applied to conventional non-OO applications. Focusing on the second part, this is the argument to include a theoretical base in the
+research, but the provided substantiating research introduced by the writers merely focuses on complexity metrics instead
 of metrics in general. The writers lack to explicitly scope the research to complexity metrics, but abide to this
 point of view throughout the rest of the paper. With the constructive use of complexity as point of view and the use of
 a theoretical basis that reflected on the complexity measures by Weyuker, the writers should have addressed this scope in
@@ -45,11 +44,10 @@ and Henry \autocite{HENRY}.
 
 \paragraph{}
 The writers argue, as mentioned above, that existing metrics do not relate to the properties of OOD, but they fail
-to demonstrate this or refer to previous works that indicate this. Although the reader can assume the lack of these
-metrics due to the maturity of object oriented development in the industry at that time, the writers should have introduced
-their assumptions or have added references to previous work that indicate this. The previous works that are referenced include suggestions
-and attempts for OOD metrics, but these sources do not address the missing relation of existiting metrics with the OOD
-properties, nor do the writers.
+to demonstrate this or refer to previous work that indicates this. Although the reader can assume the lack of these
+metrics due to the maturity of object-oriented development in the industry at that time, the writers should have introduced
+their assumptions. The previous works that are referenced include suggestions and attempts for OOD metrics, but these
+sources do not address the missing relation of existiting metrics with the OOD properties, nor do the writers.
 
 \paragraph{}
 In the most important section of the paper the writers iterate over each proposed metric. The writers apply the
@@ -61,8 +59,8 @@ invoked from a class, the greater the complexity of the class.'' I cannot reason
 developed at the time of the paper, but in the present day there are a lot of APIs that separate their data from their
 logic. Although this is a more procedural approach than OO, it is applied with OO languages. The method count
 with these designs is higher in the data objects while they tend to be much simpler than the code in the domain-specific
-layer of an application. Aside from a few questionable point of views, the arguments the author makes are solid.
-Where the point of view of the paper is convincing, the theoretical basis lacks detail on a few points. For example:
+layer of an application. Aside from a few questionable point of views, the arguments the writers make are solid.
+While the point of view of the paper is convincing, the theoretical basis lacks detail on a few points. For example:
 
 \begin{itemize}
 \item
@@ -78,7 +76,7 @@ methods). The Cartesian product holds the reflexive relational property, which b
 the outcome with at least the number of elements in the set consisting of the field access sets.
 The theoretical basis of LCOM states ``the larger the number of similar methods, the more cohesive the class'',
 but a simple counter example shows that there is a bug in the definition. Assume we have a set of instance
-variables: $\{I_1, I_2\}$ and a set of methods $\{M_1, M_2\}$ where $M_1$ uses $I_1$ and $M_2$ uses $I_2$, then from
+variables $\{I_1, I_2\}$ and a set of methods $\{M_1, M_2\}$ where $M_1$ uses $I_1$ and $M_2$ uses $I_2$, then from
 the LCOM definition, $P = \{( \{I_1\}, \{I_2\} ), ( \{I_2\}, \{I_1\} ) \}$ and
 $Q = \{( \{I_1\}, \{I_1\} ), ( \{I_2\}, \{I_2\} ) \}$. This results in a LCOM value of $0$ that indicates that
 the class is most cohesive, but $M_1$ and $M_2$ do not relate in a single matter. This problem is presented in other
@@ -96,16 +94,16 @@ specified by Weyuker.
 \paragraph{}
 The writers summarize the result in the last part of the paper, but also introduce new concepts on how the metrics
 combined could be used as design indicators, why some properties of the metrics model are not met and the reason for this, and the
-future direction to research the subject matter. I would rather have seen this in separate sections, mainly due to the reason that these
-components deserve their own section. The introduced point of views on combined metrics is one of the main contributions
+future direction to research the subject matter. I would rather have seen this in separate sections, because these
+components deserve their own section. The introduced points of view on combined metrics is one of the main contributions
 of the paper as it has a closer relation to OOD than the individual metrics.
 
 \paragraph{}
 The contribution of the paper to the field of software engineering is tremendous. A lot of researchers used the paper
 as basis for their research or simply as reference material. Mainly the cohesion metric has been researched a lot (possibly
 due to the demonstrated problem and researchers trying to fix this). In literature it is commonly known that there are
-different LCOM versions (1 up to 5) \autocite{TOOLS-USA-2003-BadriB04}, which shows the extension on the initial contribution. Todays research
-tends to focus less on developing new metrics, but instead focus more on how to apply the existing metrics. For example:
+different LCOM versions (1 up to 5) \autocite{TOOLS-USA-2003-BadriB04}, which shows the extension on the initial contribution. Today's research
+tends to focus less on developing new metrics, but instead focuses more on how to apply the existing metrics. For example:
 
 \begin{itemize}
 \item the quality of cohesion metrics \autocite{DESOUKY} \autocite{JOHARI},
@@ -119,8 +117,8 @@ In contrast to this, most papers on metrics use one or more metrics introduced b
 impact on the field.
 
 \paragraph{}
-To conclude, the paper is well structured and has a clear contribution. The research problem is clear. However the
+To conclude, the paper is well structured and has a clear contribution. The research problem is clear. However, the
 approach tends to focus mainly on complexity metrics, the paper contains some aspects that could be described more explicitly,
-and the metric definitions have some inconsistencies. However the presented data is solid.
-As intended, the metrics can be used as indicators to prevent faults as Basili et al. \autocite{BASILI} showed, and
+and the metric definitions have some inconsistencies. On the other hand the presented data is solid.
+As intended by the writers, the metrics can be used as indicators to prevent faults as Basili et al. \autocite{BASILI} showed, and
 besides this the work is still used in modern research.
