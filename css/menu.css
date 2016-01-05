@@ -1,0 +1,30 @@
+nav-menu {
+  display: block;
+  width: 300px;
+  background: #f8f8f8;
+  flex-direction: column;
+
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  top: 51px;
+  overflow: scroll;
+}
+
+nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav-menu ul li a {
+  display: block;
+  padding: 10px 15px;
+}
+
+nav-menu ul.nav-level2 > li a {
+  padding-left: 30px;
+}
+
+nav-menu ul.nav-level3 > li a {
+  padding-left: 45px;
+}

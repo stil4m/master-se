@@ -1,5 +1,17 @@
-<ul>
-  <li ng-repeat="item in menuData" ng-if="item.parent == null || item.parent.open">
-    <a href="#{{parent}}/{{item.key}}" ng-click="focusItem(item, $event)">{{item.name}}</a>
-  </li>
-</ul>
+<div class="nav-menu-container">
+  <ul class="nav-level1">
+    <li ng-repeat="item1 in menu">
+      <nav-menu-item item="item1" parents="[]"></nav-menu-item>
+      <ul class="nav-level2" ng-if="item1.children && item1.open">
+        <li ng-repeat="item2 in item1.children">
+          <nav-menu-item item="item2" parents="[item1]"></nav-menu-item>
+          <ul class="nav-level3" ng-if="item2.children && item2.open">
+            <li ng-repeat="item3 in item2.children">
+              <nav-menu-item item="item3" parents="[item1, item2]"></nav-menu-item>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

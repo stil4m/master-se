@@ -68,18 +68,6 @@ angular.module('masterSE', ['ngRoute'])
       }
     };
   })
-  .directive('lectureNotesTitle', function () {
-    return {
-      restrict : 'E',
-      templateUrl: 'templates/lecture-notes-title.html',
-      scope: {
-        week: '@',
-        lecturer: '@',
-        title: '@',
-        date: '@'
-      }
-    }
-  })
   .directive('navMenu', function () {
     return {
       templateUrl: 'templates/nav-menu.html',

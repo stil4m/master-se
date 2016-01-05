@@ -1,0 +1,17 @@
+nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav-menu > ul {
+  border: 2px solid gray;
+}
+
+nav-menu ul li a {
+  display: block;
+  padding: 10px 15px;
+}
+
+nav-menu ul.nav-level2 > li a {
+  padding-left: 30px;
+}

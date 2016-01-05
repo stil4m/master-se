@@ -1,13 +1,18 @@
+body {
+  padding-top : 50px;
+}
+
 span.presented-by-lecturer {
-    color: darkgray;
+  color: darkgray;
 }
 
 pre {
-    background-color: #f8f8f8;
-    border: 1px solid #888;
+  background-color: #f8f8f8;
+  border: 1px solid #888;
 }
 
 div.proof ul {
-    list-style: none; !important;
-    padding-left: 20px;
+  list-style: none;
+!important;
+  padding-left: 20px;
 }

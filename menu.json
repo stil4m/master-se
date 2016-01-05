@@ -130,12 +130,40 @@
     "key": "software-evolution",
     "children": [
       {
-        "name": "Week 1: 2015-10-26",
-        "key": "w1",
+        "name": "Notes",
+        "key": "notes",
         "children": [
           {
-            "name": "Notes",
-            "key": "notes"
+            "name": "Week 1: 2015-10-26",
+            "key": "w1"
+          },
+          {
+            "name": "Week 2: 2015-11-02",
+            "key": "w2"
+          },
+          {
+            "name": "Week 3: 2015-11-09",
+            "key": "w3"
+          },
+          {
+            "name": "Week 4: 2015-11-16",
+            "key": "w4"
+          },
+          {
+            "name": "Week 5: 2015-11-23",
+            "key": "w5"
+          },
+          {
+            "name": "Week 6: 2015-12-30",
+            "key": "w6"
+          },
+          {
+            "name": "Week 7: 2015-12-07",
+            "key": "w7"
+          },
+          {
+            "name": "Week 8: 2015-12-14",
+            "key": "w8"
           }
         ]
       },
@@ -162,5 +190,22 @@
         "key": "literature"
       }
     ]
+  },
+  {
+    "name" : "Paper Sessions",
+    "key" : "paper-sessions",
+    "children" : [
+      {"name" : "Session 1 (2015-09-07)", "key" : "session1"},
+      {"name" : "Session 2 (2015-11-02)", "key" : "session2"},
+      {"name" : "Session 3 (2015-11-17)", "key" : "session3"}
+    ]
+  },
+  {
+    "name" : "Master Preparation",
+    "key" : "master-preparation",
+    "children" : [
+      {"name" : "Topics", "key" : "topics"}
+    ]
   }
+
 ]
