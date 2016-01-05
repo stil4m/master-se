@@ -17,6 +17,7 @@ angular.module('masterSE', ['ngRoute'])
         return
       }
       $scope.data.template = "." + $location.path() + ".html?" + new Date().getTime();
+      window.scrollTo(0, 0);
 
       $timeout(function () {
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
