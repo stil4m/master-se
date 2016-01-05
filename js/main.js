@@ -1,11 +1,15 @@
 angular.module('masterSE', ['ngRoute'])
-  .controller('MainCtrl', function ($scope, $location, $timeout, $interval ) {
+  .controller('MainCtrl', function ($scope, $location, $timeout, $interval, $http) {
 
     var inter = null;
 
     $scope.data = {
       template: null
     };
+
+    $http.get('menu.json').success(function (data) {
+      $scope.menu = data
+    });
 
     function loadTemplate(event) {
       if ($location.path() == null || $location.path().length == 0) {
@@ -20,10 +24,10 @@ angular.module('masterSE', ['ngRoute'])
     }
 
     function startInterval() {
-      $interval(function() {
-        $timeout(function(){
+      $interval(function () {
+        $timeout(function () {
           loadTemplate();
-        },1);
+        }, 1);
 
       }, 1000);
     }
@@ -40,7 +44,22 @@ angular.module('masterSE', ['ngRoute'])
       template: '<span class="presented-by-lecturer">Presented by the lecturer.</span>'
     }
   })
-  .directive('jsonTable', function() {
+  .directive('navMenu', function (RecursionHelper) {
     return {
+      templateUrl: 'templates/nav-menu.html',
+      scope: {
+        menu: '='
+      },
+      link: function (scope) {
+        scope.focusItem = function (item, $event) {
+          debugger;
+          if (item.children != null) {
+            item.open = !item.open;
+            $event.preventDefault();
+          } else {
+
+          }
+        }
+      }
     }
   });

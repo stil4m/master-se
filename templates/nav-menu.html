@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="item in menuData" ng-if="item.parent == null || item.parent.open">
+    <a href="#{{parent}}/{{item.key}}" ng-click="focusItem(item, $event)">{{item.name}}</a>
+  </li>
+</ul>
