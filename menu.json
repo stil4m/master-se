@@ -192,6 +192,28 @@
     ]
   },
   {
+    "name": "Software Process",
+    "key": "software-process",
+    "children": [
+      {
+        "name": "Assignments",
+        "key": "assignments",
+        "children": [
+          {
+            "name": "Personal Reading",
+            "key": "personal-reading",
+            "children": [
+              {
+                "name": "0. Reading List",
+                "key": "0-reading-list"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name" : "Paper Sessions",
     "key" : "paper-sessions",
     "children" : [
