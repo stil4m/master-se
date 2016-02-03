@@ -196,6 +196,16 @@
     "key": "software-process",
     "children": [
       {
+        "name": "Week 1: 2015-02-01",
+        "key": "w1",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          }
+        ]
+      },
+      {
         "name": "Assignments",
         "key": "assignments",
         "children": [
@@ -206,7 +216,12 @@
               {
                 "name": "0. Reading List",
                 "key": "0-reading-list"
+              },
+              {
+                "name": "1. Test Driven Development",
+                "key": "1-tdd"
               }
+
             ]
           }
         ]
