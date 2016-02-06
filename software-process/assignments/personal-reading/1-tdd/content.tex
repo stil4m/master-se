@@ -1,14 +1,14 @@
 \subsubsection*{}
 For this weeks reading assignment I have chosen Test Driven Development (TDD) as topic due to two reasons. First because
-it was one of the suggested topics and secondly because I have some experienced from when I applied it in a 6 month project
-and wanted to reference these experienced to scientific research. The main literature for this topic I used is the 'Making Software' \autocite{MAKING_SOFTWARE}
+it was one of the suggested topics and secondly because I have some experience from when I applied it in a 6 month project
+and wanted to reference my experience to scientific research. The main literature I consulted for this topic are the `Making Software' \autocite{MAKING_SOFTWARE}
 book chapter 12 and the paper 'A structured experiment of test-driven development' \autocite{SAC-J-2003-GeorgeW04}.
 The book mainly elaborated on the definition of TDD and presents the results of empirical studies. The paper presents a
 small scale empirical study and a survey on the experience on practicing TDD.
 
 \subsection*{What is Test Driven Development}
 
-As the Making Software book presents, TDD is a software development practice where a repetition of steps should lead
+As presented in the `Making Software' TDD is a software development practice where a repetition of steps should lead to
 robust code. These steps are \autocite[208]{MAKING_SOFTWARE}:
 
 \begin{enumerate}
@@ -21,15 +21,15 @@ robust code. These steps are \autocite[208]{MAKING_SOFTWARE}:
 \end{enumerate}
 
 In general the literature is written with the notion of unit testing as a tool to perform TDD. This complies to the
-first step 'Choose a small task', which may correspond to a testable unit. In the book the writer writes about
-deviations on TDD mentioning Behaviour Driven Development (BDD) and Acceptance Test Driven Development (ATDD). These
+first step 'Choose a small task', which correspond to a testable unit. In the book the writer presents deviations on TDD by
+mentioning Behaviour Driven Development (BDD) and Acceptance Test Driven Development (ATDD). These
 are both extensions on TDD that respectively provide a better framework to work with and connect the business
-expectations closely to the tests. Neither of the referenced literature mentions the usage of different test types,
-such as using integration tests and/or system tests. I will reflect my point of view later on in the section
-'Approach'.
+expectations more closely to the writing of tests. Neither of the referenced literature mentions the usage of different
+test types, such as using integration tests and/or system tests. I will reflect my point of view later on in the section
+`Approach'.
 
-Based on the literature the effectiveness of TDD is uncertain. The results that arise from the performed empirical
-studies are not conclusive that it is likely that practicing TDD will improve a a project in aspects such as:
+The literature shows the effectiveness of TDD is uncertain. The results that arise from the performed empirical
+studies are not conclusive on the fact that it is likely that practicing TDD will improve a a project in aspects such as:
 productivity, internal quality, external quality and test quality \autocite{SAC-J-2003-GeorgeW04} \autocite{MAKING_SOFTWARE}.
 
 \subsection*{Merits and drawbacks}
@@ -42,23 +42,24 @@ creates test assets that utilize (automated) regression testing \autocite[338]{S
 and decreases the chance of defect injection \autocite[338]{SAC-J-2003-GeorgeW04}.
 
 \paragraph{}
-Some of these arguments are are presented clearly with scientific foundation, such as the increase of external quality
+Some of these arguments are presented clearly with scientific foundation, such as the increase of external quality
 when TDD is applied. This effect is pretty straightforward when you study the definition that 1) all new code is
-tested while you are not allowed to write more code than needed (point 4 in the definition) 2) the new code does not
+tested while you are not allowed to write more code than required (point 4 in the definition) 2) new code does not
 break the existing implementation (point 5 in the definition) and 3) the implementation is always feature centric.
-This implies that by definition it is impossible to introduce code that degrades the external quality, because all
-code is introduced intentionally by the developer as he realizes requirements. This statement is verified by the
-advantage that the defect injection chance is decreased.\\
-A what I find more obscure advantage is the statement that TDD utilizes the understanding and management of
-complexity. Firstly, this point is not verified with scientific proof in the researched paper. Secondly as the paper \autocite[338]{SAC-J-2003-GeorgeW04} addressed and the book lacks to do, using TDD does not lead to formal documentation (while the test is your
+This implies that by definition it is impossible to introduce code that degrades the external quality because all
+code which is introduced, is introduced intentionally by the developer as he realizes requirements. This statement is
+verified by the advantage that the defect injection chance is decreased.\\
+What I find more obscure advantage is the statement that TDD utilizes the understanding and management of
+complexity. Firstly, this point is not verified with scientific proof in the researched paper. Secondly as the
+paper \autocite[338]{SAC-J-2003-GeorgeW04} addressed and the book lacks to do, using TDD does not lead to formal documentation (while the test is your
 documentation). The alternative to documentation in TDD are the produced tests, however the required information may
 not be presented to the reader in a glance. For example: \\
 
 \begin{itshape}
 \begin{addmargin}[1em]{1em}
-Suppose there is a functionality `A` with the specification 'When a number is entered between 1 and 10, multiply it by
-2 otherwise throw an exception. Using TDD this will result in at least 3 tests: testing a valid number; testing a
-number beneath 1; and testing a number above 10. When a developer has to search for the specification based on the
+Suppose there is functionality `A` with the specification 'When a number is entered between 1 and 10, multiply it by
+2 otherwise throw an exception. Using TDD this will result in at least 3 test cases: testing a valid number; testing a
+number below 1; and testing a number above 10. When a developer has to search for the specification based on the
 tests he has to look into the details of 3 tests, which possibly will not fit into one developer console due to
 programming language syntactics. Instead a simple comment above the implementing code or a formal requirement may be
 more helpful to the developer.
@@ -66,11 +67,11 @@ more helpful to the developer.
 \end{itshape}
 
 \paragraph{}
-The above example is rather small and in my opinion will cause more problems when functionality grows when there is a
+The above example is rather small and in my opinion will cause more problems when functionality grows and the project has a
 lack of documentation. The reference implementation I got for this problem is an algorithm for medical images to
 transform a 16-bit gray-scale image to a 8-bit gray-scale image with additional parameters to shift the domain and the
 window on the image. The tests written using TDD were created when I knew the domain and the requirements of the
-algorithm. However when you open the test code at this moment it is not possible to figure out what the specification
+algorithm. However when you open the test code at this moment it is unlikely to figure out what the specification
 was. The point here is that you can not assume that the test code is a replacement for formal documentation.
 
 \subsection*{Reliability}
@@ -86,12 +87,12 @@ With unit testing a tester focuses on testing the external quality of a single u
 the tester should 1) remove all dependencies on IO such as file system interaction and network activity 2) take
 control over the instances the unit depends on, performed by mocking dependencies \autocite{XP_EXAMINED}, 3) improve
 testability by introducing patterns such as dependency injection. Suppose the
-tester fully tests functionality `A' and mocks a functionality `B' on which `A' relies When the tester
+tester fully tests functionality `A' and mocks a functionality `B' on which `A' relies. When the tester
 mocks the behaviour of object `B' he should know what the domain and range of the behaviour is to create correct
-tests for `B'. So far, so good. The problems arise when there is a request for change on functionality `B'
-whereas the domain and/or range changes, a developer changes `B' and updates the functionality and its related
-tests to the new specification. There will still be 100% test coverage if both implementations are truly developed
-with TDD and all tests will pass, but with this example we can conclude that functionality `A' is not tested
+tests for `A'. So far, so good. The problems arise when there is a request for change on functionality `B'
+whereas the domain and/or range changes. A developer is asked to modify `B' and he updates the functionality and its related
+tests to the new specification. There will still be 100\% test coverage if both implementations are truly developed
+with TDD and all tests will pass because `B' is mocked in the tests of `A', but with this example we can conclude that functionality `A' is not tested
 properly i.e. it does not integrate properly with functionality `B'.
 \end{addmargin}
 \end{itshape}
@@ -100,36 +101,35 @@ properly i.e. it does not integrate properly with functionality `B'.
 The above example shows that pure TDD development by using the notion of unit tests may lead to the assumption that a
 system is tested properly since most components are tested, however bugs may show up in both tested as untested code.
 The point is that the foundation on which TDD is build, might give a wrong sense of confidence. Although the outlined
-problem can be simply solved by introducing integration tests or system tests, this contradicts with the definition of
-TDD 'Choose a small task'. The developer will write considerably more code before all tests pass.
+problem can be simply solved by using integration tests or system tests instead of unit tests, this contradicts with the definition of
+TDD 'Choose a small task'. With integration and system tests the developer will write considerably more code before all tests pass.
 
 \paragraph{}
-The mentioned confidence is completely inappropriate. The following statement will hold 'When the tests do not
+The mentioned confidence is not completely inappropriate. The following statement will hold 'When the tests do not
 pass, then the code is not correct.', however this does not imply that the inverse will hold: 'When the tests
 pass then the code is correct'. Developers applying TDD must be aware that the inverse of the original statement is a
 dangerous assumption.
 
 \subsection*{Approach}
 
-
 A developer can build functionality with or without TDD in two directions: bottom-up, or top-down. For example when
 requesting a user from a webservice, the developer may start at the endpoint in the server and work its way down, or
 start at the database and work its way up. From my personal experience I encountered that you keep rewriting your
 upper layered implementations because you have encountered that you are missing information in one of the lower
-layers or vice versa. By using TDD the developer needs to rewrite both implementation and test. It is arguable if I
-have enough experience, but as both the paper and the book state TDD will lack upfront design \autocite[338]{SAC-J-2003-GeorgeW04} \autocite[212]{MAKING_SOFTWARE},
+layers or vice versa. By using TDD the developer needs to rewrite both implementation and tests. It is arguable if I
+have enough experience, but as both the paper and the book both state TDD lacks upfront design \autocite[338]{SAC-J-2003-GeorgeW04} \autocite[212]{MAKING_SOFTWARE},
 resulting in a
-greater chance that a developer can't foresee all the aspects of the detailed implementation. I believe that this both
-happens in top-down as bottom-up workflows.
+greater chance that a developer can't foresee all the aspects of the detailed implementation. I believe that this happens in both top-down as bottom-up workflows.
 
 \subsection*{Questionable Aspects}
 
-The research show different aspects of the effects of TDD. Some interesting aspects I want to outline are summarized below.
+The research shows different aspects of the effects of TDD. Some interesting aspects I want to outline are summarized below.
 
 \subsubsection*{Productivity}
 
 The research clearly points out that the productivity decreases (a developer requires more time to develop new
-functionality) when applying TDD, this is understandable when you realizing he developers may actively spend more time
+functionality) when applying TDD \autocite[341]{SAC-J-2003-GeorgeW04} \autocite[213]{MAKING_SOFTWARE},
+this is understandable when you realizing he developers may actively spend more time
 on testing than when developing in a code-first style. This is also shown with the number of tests and the code
 coverage related to the test quality when applying TDD \autocite[341]{SAC-J-2003-GeorgeW04}. A question which remains unanswered is does this
 productivity remain lower in the overall picture? A project where TDD is applied may have less bugs than a system
@@ -140,11 +140,11 @@ find related literature which proves or disproves this.
 
 Both the paper and the book qualify TDD as hard or difficult. Personally I believe, this is not true and the
 difficulty statement is context dependent. I believe mocking input/output, web-requests and database behaviour is hard
-i.e. the side-effects and when a developer starts applying TDD he faces these concepts. This does not make TDD hard,
+i.e. the side-effects and when a developer starts applying TDD he will face these challenges. This does not make TDD hard,
 but only the concept of unit testing. But that was also hard when the developer applied the code-first style. However
-with this style the developer was free to skip testing functionality in full extend. This can be addressed as lack of
-discipline, which brings me to my point to make: Discipline is hard, not TDD. TDD requires discipline, while
-code-first allows developers to cheat. This is may be why developers find TDD hard, they lacked the discipline in the
+with the code-first style the developer was free to skip testing functionality in full extend. This can be addressed as lack of
+discipline, which brings me to my point to make: Discipline is hard, not TDD. TDD requires discipline because you have to strictly adhere to the guidelines,
+while code-first allows developers to cheat. This maybe is why developers find TDD hard, they lacked the discipline in the
 first place to write properly tested code in their code-first style.
 
 \subsection*{Conclusion}
