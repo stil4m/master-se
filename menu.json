@@ -211,18 +211,7 @@
         "children": [
           {
             "name": "Personal Reading",
-            "key": "personal-reading",
-            "children": [
-              {
-                "name": "0. Reading List",
-                "key": "0-reading-list"
-              },
-              {
-                "name": "1. Test Driven Development",
-                "key": "1-tdd"
-              }
-
-            ]
+            "key": "personal-reading/0-reading-list"
           }
         ]
       }
