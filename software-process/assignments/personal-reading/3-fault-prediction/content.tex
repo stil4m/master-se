@@ -1,18 +1,23 @@
 \subsection*{What is Fault Prediction?}
 
-Fault prediction is a process to detect faulty parts in a piece of software.
-This process helps to understand the required maintenance effort for testing and resource allocation \autocite[415]{MAKING_SOFTWARE}.
+Fault prediction is a process to predict parts of a piece of software that are likely to contain a high amount of defects.
+With the of tooling you can process source code and the tooling will address the components that may contain the defects.
+The methods used to perform the fault detection are handled in the section \textit{Forms of Fault Prediction}
+This process helps understanding the required maintenance effort for testing and resource allocation \autocite[415]{MAKING_SOFTWARE}.
 
 Tooling or people give an approximation of the parts of the software that are likely to have more faults.
 Based on this given, the software team can decide on which parts more focus is required or on what components more resources are required \autocite[415-416]{MAKING_SOFTWARE}.
 These decision must also considerate the importance of these software components in the totality of the code base.
 
-The main benefit of fault prediction is the ability to mitigate of risks.
-On the other hand, there is an investment to actually apply the risk mitigation.
+The main benefit of fault prediction is the ability to mitigate risks.
+The amount of defects can be reduced in an early stage making it less likely to have failing software.
+On the other hand, there is an required investment to actually apply the risk mitigation.
+Knowing what parts of the software may contain a lot of defects does not change anything.
+A team must still actively reduce the risk.
 
 \subsection*{Forms of Fault Prediction}
 
-There are different types of fault prediction. Catal et al. classify different studies in four categories \autocite{Catal20097346}:
+There are different types of fault prediction. Catal et al. classifies different studies in four categories \autocite{Catal20097346}. The categories in which he adresses these studies are:
 \begin{itemize}
 \setlength\itemsep{0em}
 \item The type of metrics. This covers if the metrics are applied on method, class, file, component or process level.
@@ -27,7 +32,7 @@ Since it is supposed to be a survey paper, the writer was tempted to add some, i
 For example he concludes that the higher amount of publicly used datasets \autocite[7349]{Catal20097346}
 and there is less motivation to use statistically based methods but instead machine learning \autocite[7350]{Catal20097346}.
 I find this rather easy, since the capabilities of researchers increased over the last years.
-Hardware improved, publicly shared data sets were made easier due to companies as \textit{GitHub} \autocite{github}
+Hardware improved, publicly shared data sets were made easier due to companies as GitHub\footnote{https://github.com}
 and machine learning is easier to apply due to products as \textit{Tensor Flow} \autocite{abaditensorflow}.
 These developments may have made these options feasible.
 Finally, Catal et al. state ``as specified in this review, machine learning models have better features than statistical methods or expert opinion based approaches'' \autocite[7351]{Catal20097346}.
@@ -41,23 +46,23 @@ The point made, we cannot set a limit for 80\%, but we have to look for represen
 The \textit{Making Software} \autocite{MAKING_SOFTWARE} book has another approach. This literature focuses only on metrics, but classifies these metrics in six categories.
 These are Code Coverage, Code Churn, Code Complexity, Code Dependencies, People \& Organizational Metrics and Integrated/Combined approach.
 The results of this study show that Organizational Structure measures show the highest accuracy on their case \autocite[430]{MAKING_SOFTWARE}.
-This result is explainable when you think about that when a lot of different minds work on a single piece of software the ideas may start to differentiate, which may lead to more bugs.
+This result is explainable when you realize that when a lot of different minds work on a single piece of software the ideas may start to differentiate, which may lead to more bugs.
 However, when you turn the idea around, the reason why different people work on the same piece of software may come from different requirements that may be contradict or interfere with each other.
-The point made that the arise of this bugs may not be directly associated with different developers working together, but might originate from another part of the organization.
+The point made that the arise of these bugs may not be directly associated with different developers working together, but might originate from another part of the organization.
 \\
 The discussed research seems to focus on finding breakthroughs to identify what approach shows the best performance.
 The focus on the conduciveness for the industry seems to be low. More on this in the \textit{Questionable Aspects}
 
-\subsection*{When should you use Fault Prediction?}
+\subsection*{When should you apply Fault Prediction?}
 
 The main benefits of Fault Prediction are \autocite[4626]{Catal20114626}:
 
 \begin{itemize}
 \setlength\itemsep{0em}
-\item Reaching a highly dependable system,
-\item Improving test process by focusing on fault-prone modules,
-\item Selection of best design from design alternatives using object-oriented metrics,
-\item Identifying refactoring candidates that are predicted as fault-prone,
+\item Reaching a highly dependable system.
+\item Improving test process by focusing on fault-prone modules.
+\item Selection of best design from design alternatives using object-oriented metrics.
+\item Identifying refactoring candidates that are predicted as fault-prone.
 \item Improving quality by improving test process.
 \end{itemize}
 
@@ -70,16 +75,17 @@ The importance to mitigate risks for companies such as NASA is much higher than 
 I can only assume that it is less likely to apply this process in environments where faults are `allowed'.
 For example, software to scrape a website has much higher fault-tolerance, since it is easy to re-execute these kinds of software.
 
-Another consideration that you should consider when using fault prediction is the possible change in resource allocation.
-As mentioned in \textit{What is Fault Prediction?} the process will give you insight on parts of the software that may require more effort in maintenance.
+Another consideration that you should keep in mind is when using fault prediction is the possible change in resource allocation.
+As mentioned in the first section, the process will give you insight on parts of the software that may require more effort in maintenance.
 The researched literature only states types of fault prediction and its reliability.
-There is no notion of the actions that a team should apply when having the knowledge. Since it is prediction, the team only knows that bugs may occur.
+There is no notion of the actions that a team should apply when having the information where defect may occur.
+Since it is prediction, the team only knows that defects may occur.
 Should the team focus on this prediction, or should the team focus on their current backlog, which probably include concrete bugs?
 Of course, when there are no bugs and the team runs in a NASA like environment, then the focus of the team may shift or expand.
 But should the team allocate new team members on mitigating the risks in these `faulty' modules?
 
 To decide when to use fault prediction a team or company must decide if the risk mitigation is worth it.
-When a risk turns in to a problem it may have a large impact. For example, a exploding space shuttle.
+When a risk turns in to a problem it may have a large impact. For example, an exploding space shuttle.
 Not only the costs, but also people who might get hurt should be included in this consideration.
 
 \subsection*{Questionable Aspects}
@@ -90,16 +96,16 @@ The literature left me with some questionable aspects.
 
 The literature focuses on the quantity of bugs and where they are likely to occur.
 The severity of a single defect might be much greater than a group of other defects.
-Think about a 500 response of web server instead of the required 404 due to a NullPointerException in comparison to a security issue where a user might drop the whole database.
+Think about a 500 response of a web server instead of the required 404 due to some exception in comparison to a security issue where a user might drop the whole database.
 The first may occur in greater numbers in an API module, where the second might occur only once in a database module.
 The fault prediction would push the team's focus towards the API module based on the quantity of defects, which might be less important.
-In the encountered research defect severity was not taken into account, which in my opinion is an important aspect in prioritisation.
+In the encountered research, defect severity was not taken into account, which in my opinion is an important aspect in prioritisation.
 
 \subsubsection*{Minimum Project Size}
 
 A lot of big data sets are used in the research of the different papers.
 With the researched papers I still have no idea on what environment it is applicable to do fault detection.
-What would the minimum lines of code be of the project, does it apply on green field project and/or are their even restrictions on the code base?
+What would the minimum lines of code be of the project, does it apply on greenfield projects and/or are their even restrictions on the code base?
 
 \subsubsection*{Combining Approaches}
 
@@ -108,6 +114,16 @@ the covered research focuses on a certain type of metrics or a fault detection l
 What remains an uncertainty is the effect of combining different metric types or fault detection levels.
 For example, I am curious if it is possible to reach an higher efficiency rate when the `Organizational Structure' approach is combined with `Code Churn' or `Code Complexity'.
 I question if the industry could benefit if the research was focussed on combining approaches to improve efficiency, instead of the decomposition of types that was performed in the literature.
+
+\subsubsection*{Post Risk Reduction}
+
+Suppose a team has used fault detection by other metrics than code coverage.
+They reduce the risks of the components that are likely to contain defect by adding a bunch of tests.
+What will happen if the team applies the fault detection again?
+Does the fault detection indicate other parts of the software that are likely to fail?
+I think it will probably not.
+The fault detection will start addressing other components of the software when the metrics change.
+I wonder how this will change, but I guess this depends on the metric suite.
 
 \subsection*{Conclusion}
 
