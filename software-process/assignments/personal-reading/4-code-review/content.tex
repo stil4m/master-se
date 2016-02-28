@@ -13,30 +13,31 @@ Different types of code review exist. For example \autocite[23--38]{cohen2006bes
 \setlength\itemsep{0em}
 \item \textbf{Formal Inspections} \autocite[23]{cohen2006best}\\
 A Formal Inspection is a meeting where developers come together and review a piece of software.
-For example, the code will be presented on a beamer and the developers will note corrections when they find defects.
+The code might be presented on a beamer and the developers will write down corrections when they find defects.
 The found defects can be formalized and applied after possible discussion.
 \item \textbf{Over-the-Shoulder Reviews} \autocite[26]{cohen2006best}\\
-An Over-the-Shoulder Review is a review session where a colleague inspects a piece of changed software with the guidance of the programmer that built it.
-The developer will talk his colleague through the changes that were made.
+An Over-the-Shoulder Review is a review session where a colleague inspects a piece of changed software with the guidance of the programmer who built it.
+The programmer will talk his colleague through the changes that were made.
 Feedback can be easily addressed or directly fixed in the code base.
 \item \textbf{E-mail Pass-Around Review} \autocite[30]{cohen2006best}\\
-A developer will gather changes on a piece of software for a certain time-frame and will send them around in an email to a group of developers.
-Developers can reply on the email with the defects they have found.
+A developer will gather changes on a piece of software for a certain time-frame and will send them around in an e-mail to a group of developers.
+Developers can reply to the e-mail with the defects they have found.
 \item \textbf{Tool-Assisted Review} \autocite[34]{cohen2006best}\\
-A tool is employed to assist with the code review.
+In a tool-assisted review developers employ a tool to assist with the code review.
 When developers want to perform a code review, they use the tool to invite other developers to perform a review.
-The tool will support the visualisation the changed files and the changed content in a convenient manner.
+The tool will support the visualisation of the changed files and will present the changed content in a convenient manner.
 The other developers can comment on the changed code within the tool.
 \item \textbf{Pair-Programming} \autocite[37]{cohen2006best}\\
 Pair-Programming is a practice where two developers work on a single task behind a single machine.
-One programmer will do the actual programmer (the driver), while the other developer (the navigator) will continuously check the code and gives feedback.
-This feedback is a form of code review, but also contains additional benefits such as learning from each other \autocite{cockburn2000costs}.
+One programmer will do the actual programming (the driver), while the other developer (the navigator) will continuously check the code and give feedback.
+This type of code review contains the additional benefit of learning from each other \autocite{cockburn2000costs}.
 \end{itemize}
 
 Cohen et al. describe these types, but I can imagine there are additional types.
-For example, on Friday afternoon with the delight of a drink you can join with a few colleagues to review a certain module. This may be an informal alternative to Formal Inspection.
+For example, developers can meet up on Friday afternoon and, possibly with the delight of a drink, review a certain module.
+This may be an informal alternative to Formal Inspection.
 Some of these five types are cost-intensive, such as Formal Inspections and E-mail Pass-Around Reviews.
-The main cost will be addressed in the preparation, multiple people dedicating their time and collecting the necessary information \autocite[23--38]{cohen2006best}.
+The preparation for these types of code review demands a lot of time collecting the necessary information, and thus money \autocite[23--38]{cohen2006best}.
 One statement of Cohen et al. I found a bit odd.
 They state that E-mail Pass-Around Reviews ``is the second-most common form of informal code review, and the technique preferred by most open-source projects'' \autocite[30]{cohen2006best}.
 I have worked in open-source projects and the popular code collaboration tooling such as
@@ -45,35 +46,35 @@ GitHub\footnote{https://github.com/},
 GitLab\footnote{https://about.gitlab.com/}
 and FishEye\footnote{https://www.atlassian.com/software/fisheye}
 all support Tool-Assisted Reviews.
-Cohen et al. published their work in 2006. I believe that in the last ten years a lot have changed in this area.
+Cohen et al. published their work in 2006. I believe that in the last ten years a lot has changed in this area.
 
-I have never attended a Formal Inspection but can imagine, just as Cohen et al. address, they are of high costs due to the high number man-hours allocated for the task.
+I have never attended a Formal Inspection but can imagine, just as Cohen et al. address, they are of high costs due to the high number of man-hours allocated for the task.
 Votta showed that around 96\% of the defects could be found when the same individuals reviewed the code on their own \autocite[110]{Votta:1993:INM:256428.167070}.
-Due to the unknown, how much money the remaining 4\% of defects may cost it may better to eliminate the meetings of Formal Inspection and use Tool-Assisted Reviews instead (where the developers sit apart) to save money.
+While I don't know how much money the remaining 4\% of defects may cost to detect, I believe it's better to eliminate the meetings of Formal Inspection and use Tool-Assisted Reviews instead (where the developers sit apart), to save money.
 
-In my experience in the industry I have only worked with Pair-Programming and Tool-Assisted Reviews and a little with Over-the-Shoulder Review. Personally I think that the others are a bit inconvenient.
-For example, for Formal Inspection you have to gather a group of developers on a certain time.
+I have only worked with Pair-Programming and Tool-Assisted Reviews and a little with Over-the-Shoulder Review. Personally I think that the other types are a bit inconvenient.
+Formal Inspection for example, requires gathering a group of busy developers on a certain time.
 I know my colleagues and none of them ever `has time'.
-Additonally, with Formal Inspection you will force a developer to stop his current tasks and switch context on possibly an inconvenient moment.
-This together with the findings from Votta presented in the previous paragraph may show that Tool-Assisted Reviews are more convenient than Formal Inspections.
-Tool-Assisted Reviews allow developers to allocate time when it fits their workflow, which I personally find important while switching context (from your code to someone else's) is hard.
+Additonally, with Formal Inspection you force a developer to stop his current tasks and switch context on possibly an inconvenient moment.
+Considering this, as well as Votta's findings presented in the previous paragraph, I'd conclude that Tool-Assisted Reviews are more convenient than Formal Inspections.
+Tool-Assisted Reviews allow developers to allocate time when it fits their workflow, which I personally find important because switching context (from your code to someone else's) is hard.
 
 The same holds for E-mail Pass-Around Review. There is a workload to gather all changes\footnote{There is tooling available to support this process. For example, version control sysems. But this remains a manual process.},
-send them to colleagues wait for responses and than merge them all together.
-This seems to be an administrative expensive task and error prone.
+send them to colleagues, wait for responses and then merge them all together.
+This seems to be an administratively expensive task and error prone.
 
-I wanted to make a last remark on these types of code review related to Over-the-Shoulder Reviews.
+A last remark on the Over-the-Shoulder Reviews:
 I have only encountered these for bug fixes that had to be deployed on a production environment as fast as possible.
 These fixes are often just a one-line patch.
-Because a formal review was too time consuming and the context was too critical to just commit the code an extra pair of eyes would validate the patch.
-In my opinion this is an appropriate form of code reviewing whereas the situation that the speed to get a new version of the software is important.
+Because a formal review was too time-consuming and the context was too critical to just commit the code, an extra pair of eyes would validate the patch.
+If, therefore, a situation requires a quick release of a new version of the software, Over-the-Shoulder review seems to me the most appropriate form of code reviewing to conduct.
 
 \subsection*{Merits and Drawbacks}
 
 In the earlier previous section I covered some of the merits and drawbacks of the different types of code reviews. In this section I will focus more on code reviews as a blackbox.
-The main advantage is the elimination of defects in an early phase, which gains a decrease in cost as mentioned in \textit{What is Code Review?} and less defects imply less faults in the software.
-This contradics with the fact that people have to spend time on the code review.
-It is unknown if these merits and drawbacks outweigh each other or if one is an umbrella for the other.
+The main advantage of code review is the elimination of defects in an early phase, which gains a decrease in cost as mentioned in \textit{What is Code Review?} and less defects imply less faults in the software.
+However, code review also requires time.
+One could wonder if these merits and drawbacks outweigh each other.
 
 The researched literature omits some of the advantages that I actually find pretty obvious.
 The encountered information mainly focuses on the price tag and the design of code reviews.
@@ -84,7 +85,7 @@ Additional benefits that I see are:
 \item
 For low fault-tolerant systems it is an additional manner to find defects.
 \item
-When reviewing somebody else his code, there is automatically co-ownership of the code.
+When a developer reviews another developer's code, there is automatically co-ownership of the code.
 At least two developers in the organization know about the change.
 This can benefit the organization when the first developer gets sick or leaves the company.
 Especially in smaller teams this may be beneficial where the impact of a missing employee may be more significant.
@@ -96,29 +97,28 @@ Code reviews can also help to expand the style-guide.
 It is a learning and control mechanism for junior programmers, interns or new team members.
 Inexperienced programmers can learn from more experienced programmers by reading their code.
 Also, the experienced programmers can check if the inexperienced developers do not add any invalid code.
-This may be beneficial in a complex domain. For example, financial regulations.
+This may be beneficial in a complex domain, such as financial regulations.
 \end{itemize}
 
 I think these additional benefits may prevail the choice to start using code reviews.
 
 \subsection*{When should you use Code Reviews?}
 
-It is not clear if code reviews out-perform other techniques like functional testing.
+It is not clear from the literature if code reviews out-perform other techniques like functional testing.
 However, it is shown that it is likely that different types of defects are found with the different types of code checking \autocite{Juristo2003}.
 This uncertainty may be removed in the industry. For example, companies applying code reviews and measure what happens with the velocity of a team and the amount of defects.
 If one of the additional advantages, mentioned in the previous paragraph, applies to the organization I would advice to try code reviews.
 
 \subsection*{How to apply Code Reviews?}
 
-The writer of the \textit{Making Software} book presents that when somebody reviews a piece of code,
+The writer of \textit{Making Software} states that when somebody reviews a piece of code,
 the number of lines should not exceed 400 and reviews should not take longer than 60 minutes \autocite[330-332]{MAKING_SOFTWARE} \autocite[81]{cohen2006best} \autocite[470--471]{Dunsmore:2000:OIF:337180.337343}.
 Otherwise this results in a significant performance loss.
 Again, whether this performance loss outweighs the cost of finding defects later in the process is unknown.
 
-From my personal experience I can vouch the maximum of 400 lines.
+From my personal experience I can vouch for the maximum of 400 lines.
 I encountered pull requests that covered over 1000 lines of code.
-One way or another these always impacted my efficiency negatively.
-For example, pulling me out of my daily activities for too long.
+One way or another these always impacted my efficiency negatively, such as pulling me out of my daily activities for too long.
 The 60-minute boundary I encountered less often.
 The environment where I performed my code reviews were usually supported by a good number of automated tests,
 which allowed me to focus more on the structure of the code instead of the actual functioning (this would be checked by the build server).
@@ -126,13 +126,13 @@ I would estimate my review rate in my daily job on 100 lines/5 minutes.
 This makes me verge towards the advice to accompany code reviews with functional tests to decrease the workload.
 
 Cohen showed that a ``self-check'', where people check their own work, would result in around half of the defects to be spotted \autocite[336]{MAKING_SOFTWARE}.
-One can argue that this may show that the need for a review is less than important.
-However, Cohen's research shows that developers would actively ``self-check'' their code.
-In a research environment this may be effctive, but I question if people will have the same discipline in the field to check their code critically.
+That might lead to the conclusion that code review is an unnecessary expense.
+However, in Cohen's research the developers were emphatically instructed to actively check their codes -
+I question if developers in a non-research environment would be just as disciplined in self-checking. Also, it's easy to overlook your own mistakes
 
 \subsection*{Conclusion}
 
 Code reviews will help developers to decrease the number of defects in a code base.
 The main consideration to use code reviews is the gain of quality and decrease of cost in a later phase against the extra allocation of people (and thus costs) to perform the code reviews.
 The actual costs are unknown, but as described in an earlier section \textit{Merits and Drawbacks} there are additional advantages that may help an organization to decide to use code reviews.
-In my opinion I would directly start using code reviews in an uality demanding environment.
+I would suggest you start using code reviews in a quality demanding environment.
