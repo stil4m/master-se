@@ -1,14 +1,14 @@
 \section*{What Is Cost Of Defect About?}
 
 The cost of defect is a research topic that focuses on the classification of the costs of defects.
-In these studies research try to find the relation between different aspects related to fixing the defect.
+In these studies researchers try to find the relation between different aspects related to fixing the defect.
 For example:
 \begin{itemize}[noitemsep]
 \item Who introduced the bug and the one that fixes the bug. Whether it is the same person or a differently classified person.
 \item In what stage of the process the bug was resolved. This relates to the time between the introduction of the bug and the moment it is resolved \autocite{boehm1976software}.
 \end{itemize}
 
-In this reading assignment the main focus in on the moment defects are fixed, on which Boehm dedicated a part his research.
+In this reading assignment the main focus in on the moment defects are fixed, on which Boehm dedicated a part of his research.
 
 
 \section*{The Fuzz Around The Cost Of Defects}
@@ -21,24 +21,24 @@ Boehm states in his first of the two earlier stated papers that
 ``it pays off to invest effort in finding requirements errors early and
 correcting them in, say, 1 man-hour rather than waiting to find the error during operations
 and having to spend 100 man-hours correcting it'' \autocite[4]{boehm1976software}, which is a poorly chosen example because the graph says differently (this is one of the things that can be abstracted from the data, using the median).
-The cost to fix a bug in the requirements phase is lies clearly above between 0.2 and 0.5, and the cost to fix a defect in the operations phase lies clearly in between 10 and 20.
+The cost to fix a bug in the requirements phase lays clearly above between 0.2 and 0.5, and the cost to fix a defect in the operations phase lays between 10 and 20.
 The 1 to 100 ratio that Boehm states in his example, could only be made on outliers, which may indicate a poor conclusion or a exaggeration of the results.
 
 The notion of Cost of Defects is treated in \textit{The Leprechauns of Software Engineering} \autocite{bossavit2013leprechauns} written by Laurent Bossavit.
 In this book, the writer shows that the statement originally made by Boehm lacks the required data and is proven to be inadequate in different studies \autocite[98,102]{bossavit2013leprechauns}.
 The writer also presents that Boehm in collaboration with another writer attenuate Boehm's original ratio of 100:1 to 5:1 \autocite[426]{boehm2005software}.
 
-Although, Boehm original statement is put into perspective, the damage is already done.
+Although, Boehm's original statement is put into perspective, the damage is already done.
 Different papers have adopted the statement, without the validation of Boehm's statement, and sometimes inflect the results.
 For example, by adding currencies to and/or removing the notion of a median from the graph \autocite{bossavit2013leprechauns}.
 
 One of the most interesting `findings' (I'll elaborate later on) of Bossavit, is that Kent Beck or Beck's teacher in college misinterpreted Boehm's statement \autocite[97]{bossavit2013leprechauns} \autocite[21]{beck2000extreme}.
 Resulting Kent to write about ``Cost of Change'' in his book \textit{Extreme Programming Explained: Embrace Change} \autocite{beck2000extreme} and stating that the form of the Boehm's curve is no longer valid.
 Also this work, just as Boehm's work in 1981, was very influential \autocite{beck2000extreme} \autocite{boehm1981software}.
-However, what Bossavit does not show is that there the ``Cost of Change'' from Beck is connected to the ``Cost of Defects'' from Boehm \autocite{bossavit2013leprechauns}.
+However, what Bossavit does not show is that the ``Cost of Change'' from Beck is connected to the ``Cost of Defects'' from Boehm \autocite{bossavit2013leprechauns}.
 There are no citations from Beck to Boehm's work and the possibility that ``Cost of Change'' was a figment of Beck's teacher is not considered \footnote{In 2003, Boehm responded to Beck and changing his own `theory` into ``Cost of Change`` just as Beck stated \autocite{boehm2003balancing}, but this still does not show that Beck's original statement was based on Boehm's work.}.
 The point made, I agree with Bossavit that the research of Boehm and Beck seem to lack the required data,
-but I find the provided information by Beck insubstantial to conclude the ideas relate.
+but I find the provided information by Beck insubstantial to conclude that the ideas relate.
 
 \section*{What We Actually Know?}
 
@@ -47,7 +47,7 @@ The provided `important' research (read: cited a lot), lacks proper empirical re
 But can we actually create a `Holy Scale' that allows us to read the cost of defects from and holds for every team?
 I believe there is not, and maybe we should not try to pursue this.
 The reason why I do not believe this is possible, is because every project has a different environment.
-Fixing a bug in an Erlang program when in operations may be much easier than fixing a bug in a Coboal program when it is in operations
+Fixing a bug in an Erlang program when in operations may be much easier than fixing a bug in a Cobol program when it is in operations
 \footnote{Erlang's virtual machine BEAM has a hot module reloading system, which allows an application to stay online during a redeploy of the software.},
 just because it may take less time to schedule a release.
 
@@ -63,7 +63,7 @@ An iterative approach like Scrum creates more continues flow of releases, which 
 \section*{And Then We Know}
 
 Assume a team can measure what the costs of a defect may be and they have encountered a defect, the question remains what we will do next.
-Beck makes an argument in his book where he explains that you cannot fix every bug (although the known `cost of defects`) \autocite[22]{beck2000extreme}.
+Beck makes an argument in his book where he explains that you cannot fix every bug, eventhough your point of view is that fixing defects in an operations phase may have higher costs \autocite[22]{beck2000extreme}.
 To build on this argument, let say:
 \begin{itemize}[noitemsep]
 \item Some customers are waiting for a feature;
@@ -83,10 +83,10 @@ With common sense we can reason why it may be more expensive to fix software whe
 \begin{itemize}[noitemsep]
 \item You may lose customers when they encounter bugs.
 \item Deploying software may take some planning, when a bug has to be fixed in production a new version of the software may be required and thus the overhead of putting your software in production
-\item After a while programmers lose context. Not only about the domain, for example an financial module that was implemented a few months ago, but the also the understanding of the bug may decrease over time.
+\item After a while programmers lose context. Not only about the domain, for example a financial module that was implemented a few months ago, but also the understanding of the bug may decrease over time.
 \end{itemize}
 
-Another interesting point we can reason about is the adjustment Boehm made over the years (from 100:1 to 5:1).
+Another interesting point we can reason about is the adjustment on the `cost of defects` Boehm made over the years (from 100:1 to 5:1).
 Although Bossavit has presented that the studies were insufficient and in the previous paragraph I have stated that we cannot know,
 I do believe there is something to the decrease in that ratio.
 For example, when looking at the second point of the previous analysis, deploying software in general got easier and more reliable due to tooling as Puppet\footnote{https://puppetlabs.com/}, Chef\footnote{https://www.chef.io/chef/} and Ansible\footnote{https://www.ansible.com/}.
