@@ -48,7 +48,7 @@ but I find the provided information by Bossavit and in Beck's work insubstantial
 
 To conclude shortly: We know nothing.
 The provided `important' literature - which has that status mainly due to it being cited a lot by others - lacks proper empirical research as presented in the previous section.
-But can we actually create a 'Holy Scale' that allows us to read the cost of defects properly for every context and situation?
+But can we actually create a `Holy Scale' that allows us to read the cost of defects properly for every context and situation?
 I believe we cannot, and maybe we should not try to pursue this.
 For example, every project has a different environment.
 Fixing a bug in an Erlang program when it is in the operation phase may be much easier than fixing a bug in a Cobol program when it is in the operation phase
@@ -60,7 +60,7 @@ just because it may take less time to schedule a release.
 As shown, so far no suitable method to determine the cost of defects.
 But if we had such a method and we could determine the cost and we can eliminate the cost,
 it would allow us to better reason about the benefits of code reviews, test-driven development (TDD), fault detection and other practices.
-For example with code reviews it is measurable how much bug report differ when applied, it is measurable how much time is spend on code reviews, but the unknown factor would be the actual costs of bugs.
+For example, with code reviews it is measurable how much bug report differ when applied, it is measurable how much time is spend on code reviews, but the unknown factor would be the actual costs of bugs.
 
 As we may not able to drop a scientific model on it, I would advice companies to start measuring on project level. For example, iterative processes lend themselves to detect effects of the exertion of TDD on the number of defects.
 An iterative approach like Scrum creates more continues flow of releases, which allows tracking of when defects i.e. the x-axis of Boehm's curve would have a more accurate distribution when it was applied on Scrum since there is a continuous interval.
@@ -76,23 +76,23 @@ To build on this argument, let's assume the following situation:
 \item The company has detected a defect in one of the obscure error paths in their system.
 \item This error will only occur on one day in a leap year.
 \end{itemize}
-Will we fix this defect? For many companies the answer is ``No, not right away. Customers are waiting for this feature for this feature''.
+Will we fix this defect? For many companies the answer is ``No, not right away. Customers are waiting for this feature''.
 This is of course a logical choice. A lot of money may be at stake for a problem that can be fixed later.
 In conclusion: Knowing that bugs exist, may not always be an argument to fix them although you may know that it might cost you a bit more in the future.
 
 \section*{A Bit of Common Sense}
 
-Let's resign by the fact that we cannot know the exact ratio between the costs of defects in different phases of the project.
+Let's resign by the fact that we cannot know the exact ratio between the cost of a defect in different phases of the project.
 With common sense we can still reason why it may be more expensive to fix software when it runs in production.
 
 \begin{itemize}[noitemsep]
 \item You may lose customers when they encounter bugs.
 \item Deploying software may take some planning: when a bug has to be fixed a new version of the software may be required, which leads to the overhead of putting your software in production
-\item After a while programmers lose context. Not only the understanding of the domain, for example a financial module that was implemented a few months ago, but also the understanding of the bug may decrease over time.
+\item After a while programmers lose context. Not only the understanding of the domain, such as a financial module that was implemented a few months ago, but also the understanding of the bug may decrease over time.
 \end{itemize}
 
 Another interesting point we can reason about is the adjustment on the cost of defects Boehm made over the years: from 100:1 to 5:1.
-Although Bossavit has presented that the studies were insufficient and in the previous paragraph I have stated that we cannot determine the cost of defects,
+Although Bossavit has presented that the studies were insufficient and in the previous paragraph I have added the assumption that we cannot determine the cost of defects,
 I do believe there is something to the decrease in that ratio.
 For example, when looking at the second point of the above bullet list, deploying software in general got easier and more reliable due to tooling as Puppet\footnote{https://puppetlabs.com/}, Chef\footnote{https://www.chef.io/chef/} and Ansible\footnote{https://www.ansible.com/}.
 The normal analysis (understanding the bug and finding it) may not have changed, but the overhead of putting the software live has decreased in the past years.
