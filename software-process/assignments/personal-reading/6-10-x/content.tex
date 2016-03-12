@@ -3,20 +3,20 @@
 10x is one of the oldest and most researched topics in software engineering where measurements are applied to identify if a 10-fold productivity holds between different programmers \autocite[567]{MAKING_SOFTWARE}.
 These measurements are in place to verify if programmers have an higher productivity when having the same level of experience.
 The `10x' is more a figure of speech than an actual multiplication of performance.
-It is mainly used to show a significant difference in magnitude between two objects.
+It is mainly used to show a significant difference in the order-of-magnitude between two objects.
 As expressed by Bossavit, ``the 10x claims has been around forever'' \autocite[37]{bossavit2013leprechauns}.
-In this expression, as Bossavit mentions himself, you should read `forever' as since the beginning of the software engineering as an academic discipline \autocite[38-39]{bossavit2013leprechauns}.
+In this expression, as Bossavit mentions himself, you should read `forever' as ``since the beginning of the software engineering as an academic discipline'' \autocite[38-39]{bossavit2013leprechauns}.
 
-In my opinion this is not strange, while in business always strives to increase productivity, managers want to know where the money goes.
+In my opinion this is not strange, while the business always strives to increase productivity and managers want to know where the money goes.
 DeMarco and Lister state the measurement of individual productivity as a point of friction \autocite[268]{demarco1985programmer}.
 They state that ``the presumption that there are order-of-magnitude differences in individual performance makes cost projection seem nearly impossible'' \autocite[268]{demarco1985programmer}.
 As a variation on the `10x' research, DeMarco and Lister focused on the performance of workplaces rather than the performance of individuals.
-More on this in the section \textit{Is it Real?}.
+More on this in the section \textit{Is It Effective?}.
 
 \section*{What Do We Know?}
 
-In 1968 Sackman and Erikson published an article on the difference in performance performing different programming tasks \autocite{sackman1968exploratory}.
-The main findings in this article are \autocite{sackman1968exploratory} \autocite[567]{MAKING_SOFTWARE}:
+In 1968 Sackman and Erikson published an article on the difference in performance for programmers that are performing different programming tasks \autocite{sackman1968exploratory}.
+The main findings in this article are \autocite{sackman1968exploratory}\autocite[567]{MAKING_SOFTWARE}:
 \begin{itemize}[noitemsep]
 \item The ratio in coding time between the best and worst programmer was 1 to 20;
 \item The ratio in debugging time between the best and the worst programmer was 1 to 25;
@@ -26,17 +26,17 @@ The main findings in this article are \autocite{sackman1968exploratory} \autocit
 This paper triggered a lot in the software engineering community.
 And as Bossavit shows, there were multiple reproductions on the original experiment \autocite[38,41]{bossavit2013leprechauns}.
 The main part of these studies could not reproduce the original results from Sackman and Erikson \autocite[42-44]{bossavit2013leprechauns}.
-The other part of the studies had inconclusive results.
+The other studies did have inconclusive results.
 
 As McConnel summarizes nicely in his chapter on `10x' in the \textit{Making Software} book \autocite{MAKING_SOFTWARE}:
 ``The general finding that `There are order-of-magnitude differences among programmers' has been confirmed by many other studies of profesional programmers'' \autocite[568]{MAKING_SOFTWARE}.
-The studies that McConnel cites do show that there is this difference in magnitude, but they differ over the different studies.
+The studies that McConnel cites show that there is this difference in magnitude, but these results are different in each study.
 So there are differences, but the question remains what these differences mean.
 
 An another important finding of these studies is that the results that Sackman and Erikson published were actually incorrect.
 Dickey showed that Sackman and Erikson did not make a clear classification on the environment of their test subjects \autocite[844]{dickey1981programmer}.
-For example, letting two subjects program in different programming environment.
-Dickey showed that when the correct classifications were used, the actual debugging time for example was not 1 to 25, but only 1 to 5.
+For example, letting two subjects program in different programming environments.
+Dickey showed that when the correct classification was used, the actual debugging time for example, was not 1 to 25, but only 1 to 5.
 
 \section*{Measurement}
 
@@ -53,8 +53,8 @@ For example:
 \begin{itemize}[noitemsep]
 \item Time to complete:
 The time to complete measurement should indicate that better programmers will finish their work faster,
-but better programmers may also address more (error) cases that a less `performing' programmer may not think about.
-Due to his experience, better programmer may thus need more time, but will end with better software.
+but better programmers may also address more (error) cases of which a less `performing' programmer may not think of.
+Due to his experience, a better programmer may thus need more time, but will end with better software.
 \item LOC per staff per hour:
 With this measurement the researchers tend to show that better performing programmers write more code per hour,
 although in a working environment the high performing developers may be pulled out of their context more often to answer question, make decision or help colleagues.
@@ -62,43 +62,44 @@ This may affect the amount of code the developers actually write, whilst they ac
 \end{itemize}
 
 Another arguable difference is that the researchers use test subjects with equal amount of `experience` usually expressed as years active in the industry.
-But giving a programming task, maybe a Java database expert in Java will be less likely to solve it as a Java webservice programmer.
+But given a programming task, maybe a Java database expert will be less likely to solve it as it is likely for a Java webservice programmer.
 Years active in the industry still makes us compare apples and oranges.
 In my opinion a stronger argument is comparing two persons with the same years of experience:
 One developer that is married and has two children doing nothing in the evening,
 or another developer living in his/her parents basement programming until the wee hours.
-It is not representable to compare these two persons when the point of view is experience of programmers.
+It is not acceptable to say two individuals are equal based on the active years in the industry while they have completely different lives or expertises.
 
 Assume we can eliminate these arguments, and let the programmers that do the experiment sit on a isolated workplace and get the task to finish a problem as fast as possible.
 How effective will this be?
 It may show that some developers perform better under the time pressure (write the feasible code within the timespan) or write a short solution (for example using some obscure constructs in some languages),
-but these kind of setups are far from realistic when aspects such as quality may play an important role.
+but these kind of setups are far from realistic compared to the industry, when aspects such as quality may play an important role.
 The point to be made is: programmers may be more `productive' in a research setup, but are they actually as effective in the industry?
 
 \section*{Is It Effective?}
 
 One problem that exists is that different programmers must work in different environments,
 which makes it almost impossible to apply the same measurements on each individual.
+So if we apply `10x' measurements in the industry, will it be effective?
 
 As McConnel shows in \textit{Making Software}, the measurement must align with the goal \autocite[570-571]{MAKING_SOFTWARE}.
 In which he shows that this is hard and presents the same kind of arguments as I have presented in the previous section \textit{Measurement}.
 All the research I have read on this topic, does not present an conclusive metric that will actually fit the industry.
 
-But assume a manager in a software company does wants to measure how his programmers are performing and he applies one of the inconclusive measurements.
+But assume a manager in a software company wants to measure how his programmers are performing and he applies one of the inconclusive measurements.
 What may happen? I believe this will kick the manager in the face.
 For example, it is really easy to cheat on a LOC metric by splitting statements on different lines, or picking easy tasks of which a programmer knows he can write a lot of code instead of the hard to find one-line bugs.
 What will happen with the good programmers that can actually fix these one-line bugs?
 They perform well in their team, but the applied measurement does not project their actual value.
 These programmers might start to feel under appreciated and stop performing well or even move to different companies.
 
-DeMarco and Lister states that high and low performers tend to cluster in different organizations \autocite[268]{demarco1985programmer}.
-But I question if the high performers are not just moving away from the low performants `slackers' as McConel puts it \autocite[569]{MAKING_SOFTWARE}.
-DeMarco and Lister performed a different kind of experiment than others did.
-Instead of looking for performance of individuals, they looked at the performance of programmers related to their working environment.
+DeMarco and Lister state that high and low performers tend to cluster in different organizations \autocite[268]{demarco1985programmer}.
+But I question if the high performers are not just moving away from the low performant `slackers' as McConel puts it \autocite[569]{MAKING_SOFTWARE}.
+DeMarco and Lister performed a different kind of experiment than the other comparable research papers did.
+Instead of looking for performance of individuals, they looked at the performance of programmers related to their work environment.
 One of what I find most interesting things I have read on this topic are their results on the effects of the environment on performance of individuals \autocite[271]{demarco1985programmer}.
 They present significant differences in the environment of higher performing (programming speed in combination with amount of defects) programmers. Such as:
 \begin{itemize}[noitemsep]
-\item Having moor floor space;
+\item Having more floor space;
 \item Acceptable quiet/private workplace;
 \item Not forced to pick up phone calls;
 \item Less needlessly interrupts;
@@ -107,16 +108,17 @@ They present significant differences in the environment of higher performing (pr
 
 None of the above points relate to the actual programming.
 They relate to how people feel or how happy they are in their job.
-Therefor I do not believe the research to identify programmers with higher performance is beneficial and companies can benefit this by using it in hiring policies.
+Therefor, I do believe the research to identify programmers with higher performance is beneficial and companies can benefit this by using it in hiring policies.
 Although I believe it will have a counter effect when applied continuously in an organization.
 
-\section*{Is it Real?}
+\section*{Is It Real?}
 
-Overall I believe there are programmers that have a significant higher contribution to the project they work in or company they work for.
-This is due to a gut feeling, but also from my experience in the field that developers do not know what to do when one employee is sick or has holidays.
+Overall I believe there are programmers that have a significant higher contribution in the project they work, or for the company they work.
+This is due to a gut feeling, but also from my own experience in the field that developers do not know what to do when one employee is sick or has holidays.
+This one developer is key and identified as the high performing employee.
 
-McConnel tries to put in a good argument to show that it is real, but I still find his argument is too weak.
-He presents the results in lines of code between Microsoft Excel 3.0 and Lotus 123 and highlights that the Microsoft team had a higher velocity \autocite[572]{MAKING_SOFTWARE}.
+McConnel tries to put in a good argument to show that it is real, but I still find his argument too weak.
+He presents the results of the written lines of code between Microsoft Excel 3.0 and Lotus 123 and highlights that the Microsoft team had a higher velocity \autocite[572]{MAKING_SOFTWARE}.
 But we still do not know the context of these projects, did Microsoft copy big parts of their Excel 2.0 project?
 Or did they have a really good architect in place that allowed the developers to be more productive?
 I find it too bold to compare two different companies with each other, even though they developed the same kind of application at the same moment.
