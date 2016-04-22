@@ -1,0 +1,173 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{abaditensorflow}{article}{}
+  \true{moreauthor}
+  \name{author}{10}{}{%
+    {{}%
+     {Abadi}{A.}%
+     {Mart{\i}n}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Agarwal}{A.}%
+     {Ashish}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Barham}{B.}%
+     {Paul}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Brevdo}{B.}%
+     {Eugene}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chen}{C.}%
+     {Zhifeng}{Z.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Citro}{C.}%
+     {Craig}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Corrado}{C.}%
+     {Greg~S}{G.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Davis}{D.}%
+     {Andy}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dean}{D.}%
+     {Jeffrey}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Devin}{D.}%
+     {Matthieu}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AM+1}
+  \strng{fullhash}{AMAABPBECZCCCGSDADJDM+1}
+  \field{sortinit}{A}
+  \field{title}{TensorFlow: Large-scale machine learning on heterogeneous
+  systems, 2015}
+  \field{journaltitle}{Software available from tensorflow.org}
+  \field{year}{2015}
+\endentry
+
+\entry{Catal20114626}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Catal}{C.}%
+     {Cagatay}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Machine learning}
+  \strng{namehash}{CC1}
+  \strng{fullhash}{CC1}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb http://dx.doi.org/10.1016/j.eswa.2010.10.024
+  \endverb
+  \field{issn}{0957-4174}
+  \field{number}{4}
+  \field{pages}{4626 \bibrangedash  4636}
+  \field{title}{Software fault prediction: A literature review and current
+  trends}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S0957417410011681
+  \endverb
+  \field{volume}{38}
+  \field{journaltitle}{Expert Systems with Applications}
+  \field{year}{2011}
+\endentry
+
+\entry{Catal20097346}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Catal}{C.}%
+     {Cagatay}{C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Diri}{D.}%
+     {Banu}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \keyw{Machine learning}
+  \strng{namehash}{CCDB1}
+  \strng{fullhash}{CCDB1}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb http://dx.doi.org/10.1016/j.eswa.2008.10.027
+  \endverb
+  \field{issn}{0957-4174}
+  \field{number}{4}
+  \field{pages}{7346 \bibrangedash  7354}
+  \field{title}{A systematic review of software fault prediction studies}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/S0957417408007215
+  \endverb
+  \field{volume}{36}
+  \field{journaltitle}{Expert Systems with Applications}
+  \field{year}{2009}
+\endentry
+
+\entry{MAKING_SOFTWARE}{incollection}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Nagappan}{N.}%
+     {Nachiappan}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ball}{B.}%
+     {Thomas}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {O'Reilly}%
+  }
+  \strng{namehash}{NNBT1}
+  \strng{fullhash}{NNBT1}
+  \field{sortinit}{N}
+  \field{booktitle}{{Making Software: What Really Works, and Why We Believe
+  It}}
+  \field{chapter}{23}
+  \field{edition}{1}
+  \field{pages}{415\bibrangedash 434}
+  \field{title}{{Evidence-Based Failure Prediction}}
+  \field{year}{2011}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

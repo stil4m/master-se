@@ -1,0 +1,174 @@
+<h1>Workshop Testing and Formal Methods, Week 2</h1>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 1: Sudoku Solver
+  </div>
+  <div class="panel-body">
+    <p>
+      Preconditions:
+    </p>
+    <ul style="list-style:none">
+      <li>$\forall x \in i \forall y \in x (y \in \{0,..,9\})$</li>
+      <li>$\forall x \in i |x| = 9$</li>
+      <li>$|i| = 9$</li>
+    </ul>
+    <p>
+      Postconditions:
+    </p>
+    <ul style="list-style: none">
+      <li>All preconditions</li>
+      <li>\forall x \in o x = {0..9}</li>
+      <li>\forall i \in \{0,1,...,8\} (\{y|\forall x \in o, y = x_i\} = \{1,2,...,9\}) </li>
+      <li>For all elements in $o$, with $o[x,y]$ is an element, and each element is added to a class with $(div x 3, div y 3)$, the set should be equal to $\{1,2,...,9\}$</li>
+  </div>
+  <div class="panel-heading">
+    Notes Lecturer
+  </div>
+  <div class="panel-body">
+    <ul>
+      <li>First define a data type. Then reasoning about the problem is easier. For example <code>[[Maybe Int]]</code>. <code>concatMaybe</code> may be used to filter <code>Nothing</code></li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 2: Consider what items are stronger and weaker.
+  </div>
+  <div class="panel-body">
+    <pre>
+all [
+  test1,
+  not test2,
+  test3,
+  test4
+]
+    </pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 3: Now suppose $\{p\} f \{q\}$ holds for some function $f : a \rightarrow a$ and a pair of properties $p$ and $q$.
+    Recall the meaning of $\{p\} f \{q\}$:<br>
+    For every possible argument $x$ for $f$ it is the case that if $x$ has property $p$ then $f(x)$ has property $q$.
+  </div>
+  <div class="panel-body">
+    <ol>
+      <li>
+        <strong>If $p'$ is stronger than $p$, does it follow that $\{p′\} f \{q\}$ still holds?</strong><br>
+        Yes, while $p'$, while $p'$ results in a smaller or equal domain.
+      </li>
+      <li>
+        <strong>If $p'$ is weaker than $p$, does it follow that $\{p′\} f \{q\}$ still holds?</strong><br>
+        No, while $p'$ will possibly introduce new elements in the image of $f$ for which $q$ does not hold.
+      </li>
+      <li>
+        <strong>If $q'$ is stronger than $q$, does it follow that $\{p\} f \{q\}$ still holds?</strong><br>
+        No, because we can not guarantee that for every element for which $p$ holds, that also $q'$ holds.
+      </li>
+      <li>
+        <strong>If $q'$ is weaker than $q$, does it follow that $\{p\} f \{q\}$ still holds?</strong><br>
+        Yes. If something for which $p$ holds and we know that $q$ holds, we can also say that $q'$ holds for every $p$, because for every $q \rightarrow q'$.
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 4: Which of the following properties is stronger?
+  </div>
+  <div class="panel-body">
+    <ol>
+      <li>$\lambda x \rightarrow x = 0$ is stornger than $\lambda x \rightarrow x \geq 0$</li>
+      <li>$\lambda x \rightarrow x \gt 3$ is stronger than $\lambda x \rightarrow x \not \eq 0$</li>
+      <li>$\lambda x \rightarrow x \leq 3$ is stronger than $\lambda x \rightarrow x \not \eq 0$</li>
+      <li>$\lambda x \rightarrow \bot$ is stronger than $\lambda x \rightarrow x^3 + 7x^2 \geq 3$</li>
+      <li>$\lambda x \rightarrow x \geq 2$ is stronger than $\lambda x \rightarrow x \geq 2 \lor x \leq 3$</li>
+      <li>$\lambda x \rightarrow x \geq 2 \land x \leq 3$ is stronger than $\lambda x \rightarrow x \geq 2$</li>
+    </ol>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 5: Implement all properties of question 4
+  </div>
+  <div class="panel-body">
+    <pre>
+q51a = (==0)
+q51b = (0<)
+q52a = (/=0)
+q52b = (>3)
+q53a = (/=0)
+q53b = (<3)
+q54a = (\x -> x^3 + 7 * x^2 >= 3)
+q54b = (\_ -> False)
+q55a = (\x -> x >= 2 || x <= 3)
+q55b = (>=2)
+q56a = (\x -> x >= 2 &amp;&amp; x <= 3)
+q56b = (>=2)
+    </pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 6: Find the weakest precondition. <small>Use substitution.</small>
+  </div>
+  <div class="panel-body">
+    <ol>
+      <li>$\lambda x \rightarrow 2x = A$</li>
+      <li>$\lambda x \rightarrow x = 3$</li>
+      <li>$\lambda x \rightarrow x = 7$</li>
+      <li>$\lambda x \rightarrow x \geq 0$</li>
+      <li>$\lambda x \rightarrow x \leq 0$</li>
+    </ol>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    Question 7: Validate if the precondition is as weaker than the postcondition.
+  </div>
+  <div class="panel-body">
+    <p>
+      1.<br>
+      Substitute $n$ with $n+1$ in $x = (n-1)^2$:<br>
+      $x = ((n+1) - 1)^2$<br>
+      $x = n^2$<br>
+      Thus the precondition is correct.
+    </p>
+    <p>
+      2.<br>
+      Substitute $x$ with $x+1$ in $A = x - 1$<br>
+      $A = (x + 1) - 1$<br>
+      $A = x$<br>
+      Thus the precondition is correct.
+    </p>
+    <p>
+      3.<br>
+      Substitute $x$ with $x+y$ in $x \geq y$<br>
+      $x + y \geq y$<br>
+      $x + y \geq y + 0$<br>
+      $x \geq 0$<br>
+      Thus the precondition is correct.
+    </p>
+    <p>
+      4.<br>
+      Substitute $x$ with $x+1$ in $0 \leq x \leq 100$<br>
+      $0 \leq x + 1 \leq 100$<br>
+      $-1 \leq x \lt 100$<br>
+      Which is weaker than $0 \leq x \leq 100$, thus the precondition could be less strong.
+    </p>
+    <p>
+      5.<br>
+      Substitute $n$ with $n+1$ in $x = n^2 \land n = A + 1$<br>
+      $x = (n+1)^2 \land n + 1 = A + 1$<br>
+      $x = (n+1)^2 \land n = A$<br>
+      Thus the precondition is correct.
+    </p>
+  </div>
+</div>

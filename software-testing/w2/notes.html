@@ -1,0 +1,155 @@
+<lecture-notes-title
+    title="Specification and Testing"
+    lecturer="Jan van Eijck"
+    week="2"
+    date="2015-09-07"></lecture-notes-title>
+
+
+<h4>Questions Session</h4>
+
+<p><strong>How to create a formula to show that there are indefinitely many primes?</strong></p>
+
+<p>First we write down the properties:</p>
+
+<ul>
+  <li>$n$ is a natural number ($n \in \mathbb{N}$)</li>
+  <li>$n$ is at least 2 ($2 $geq 2$)</li>
+  <li>For no natural number $m$ with $m$ between $1$ and $n$, it is the case that $m$ divides $n$
+    ($\neg \exists m \in \mathbb{N} D m n$)
+  </li>
+</ul>
+
+<p>Then we can state the property of being a prime as:</p>
+
+<p>$P_n := n \in \mathbb{N} \land n \leq 2 \land \neg \exists m \in \mathbb{N} (1 < m < n \land D m n)$</p>
+
+<p>With this definition we can state that:</p>
+
+<p>
+  Theorem *:<br>
+  $\forall n \in \mathbb{N} (P_n \rightarrow \exists m \in \mathbb{N} (P_m \land n \lt m))$
+</p>
+
+<p><strong>Proof (Euclid)</strong></p>
+
+<div class="proof">
+  <p>Thm (*)</p>
+  <ul>
+    <li>Suppose not *</li>
+    <li>Then there is a finite set $\{ P_1,P_2,...,P_n \}$ of all the primes.</li>
+    <li>Now consider the number $N = P_1 \cdot P_2 \cdot ... \cdot P_n + 1$.</li>
+    <li>Take an arbitrary $Q \in \{ P_1,P_2,...,P_n \}$, then not $D Q N$.</li>
+    <li>
+      Then there are two cases possible:
+      <ul>
+        <li>$N$ is prime, then we have shown the contradiction for *.</li>
+        <li>$N$ is not prime, thus $N$ is of the form $K \cdot L$ (composite),<br>
+          which recursively factorizes to a new prime that is not in $\{ P_1,P_2,...,P_n \}$, which shows the
+          contradiction.
+        </li>
+      </ul>
+    </li>
+    <li>Thus the assumption contradicts, thus the theorem holds.</li>
+  </ul>
+</div>
+
+<h4>Preconditions and Postconditions</h4>
+
+<p>The most general form of an <span style="text-decoration: underline;">operation</span>: <code>f :: a -> a</code></p>
+
+<p>
+  Operation is a function that maps from domain a to domain a. Can be seen imperitive programming where you map from
+  environment to environment.
+</p>
+
+<p>$\{p\} f \{q\}$</p>
+<ul>
+  <li>p is the precondition</li>
+  <li>f is the operation</li>
+  <li>q is the postcondition</li>
+</ul>
+
+<p>
+  The precondition should be as week as possible. This way we accept the greatest domain.
+  Example: $a$ should be a list.
+</p>
+
+<pre>
+isTrue :: a -> Bool
+isTrue = True
+</pre>
+
+<p>All cases are relevant. This is the weakest property for a precondition.</p>
+
+<p class="alert alert-info">
+  JvE: To be sure if the wrong code is in your test or in your code, testing involves cleverness
+</p>
+
+<pre>
+isOrdered :: Ord a => [a] -> Bool
+isOrdered [] = True
+isOrdered (x:xs) = all (>=) xs && isOrdered xs
+</pre>
+
+<p class="alert alert-info">Could be optimized just by checking if <code>x < y</code> in <code>(x:y:ys)</code></p>
+
+<h4>Random</h4>
+
+<p>
+  Random is not functional. In functional programming a function always has the same outcome. This is not what random
+  produces. If it is not functional, it is IO. <code>f :: a -> IO ()</code>
+</p>
+
+<p>Random implementations are using monadic functions</p>
+
+<h4>Quicksort and Test Generation</h4>
+
+<p>
+  Automated test generation can be implemented using a relation function that validates the mapped data to a boolean.
+</p>
+<pre>
+f :: a -> ... -> b
+r :: a -> ... -> b -> Bool
+</pre>
+
+<p>Shorthand notations:</p>
+<pre>
+f _ x = succ x
+f = \ _x -> succ x
+f = \ _ x -> succ
+f _ = succ
+</pre>
+
+<p><strong>Testing focus:</strong></p>
+
+<p>Test each property in the post conditions.</p>
+
+<p>Input will be generated based on the preconditions.</p>
+
+<p>
+  If p' is stronger than p and $\{p\} f \{q\}$, then $\{ p' \} f \{ q \}$, because more properties ruling out elements
+  in the domain.
+</p>
+
+<p>
+  If q' gets weaker than $q$ and $\{p\} f \{q\}$, then $\{p\} f \{q'\}$, because a greater set is allowed as image for
+  the same domain on $f$.
+</p>
+
+<p>
+  The goal is to have weak $p$ and strong $q$, this way we allow the greatest domain as possible on a certain image.
+</p>
+
+<p>
+  Read about 'Karl Popper'.
+</p>
+
+<pre>
+(#) :: (a -> a) -> (a -> a) -> a -> a
+(#) = flip (.)
+</pre>
+
+<p>
+  When we have <code>f :: a -> a</code> and <code>g :: a -> a</code>,<br>
+  Then $\{p\} f \{q\} \land \{q\} g \{r\} \rightarrow \{p\} f#g \{r\}$.
+</p>

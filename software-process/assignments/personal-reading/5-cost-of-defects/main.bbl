@@ -1,0 +1,143 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{beck2000extreme}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Beck}{B.}%
+     {Kent}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {addison-wesley professional}%
+  }
+  \strng{namehash}{BK1}
+  \strng{fullhash}{BK1}
+  \field{sortinit}{B}
+  \field{title}{Extreme programming explained: embrace change}
+  \field{year}{2000}
+\endentry
+
+\entry{boehm2005software}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Boehm}{B.}%
+     {Barry}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Basili}{B.}%
+     {Victor~R}{V.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BBBVR1}
+  \strng{fullhash}{BBBVR1}
+  \field{sortinit}{B}
+  \field{title}{Software defect reduction top 10 list}
+  \field{volume}{426}
+  \field{journaltitle}{Foundations of empirical software engineering: the
+  legacy of Victor R. Basili}
+  \field{year}{2005}
+\endentry
+
+\entry{boehm2003balancing}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Boehm}{B.}%
+     {Barry}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Turner}{T.}%
+     {Richard}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison-Wesley Professional}%
+  }
+  \strng{namehash}{BBTR1}
+  \strng{fullhash}{BBTR1}
+  \field{sortinit}{B}
+  \field{title}{Balancing Agility and Discipline: A Guide for the Perplexed,
+  Portable Documents}
+  \field{year}{2003}
+\endentry
+
+\entry{boehm1976software}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Boehm}{B.}%
+     {Barry~W}{B.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BBW1}
+  \strng{fullhash}{BBW1}
+  \field{sortinit}{B}
+  \field{pages}{1226\bibrangedash 1241}
+  \field{title}{Software Engineering}
+  \field{journaltitle}{IEEE Trans Computers}
+  \field{year}{1976}
+\endentry
+
+\entry{boehm1981software}{book}{}
+  \true{moreauthor}
+  \name{author}{1}{}{%
+    {{}%
+     {Boehm}{B.}%
+     {Barry~W}{B.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice-hall Englewood Cliffs (NJ)}%
+  }
+  \strng{namehash}{BBW+1}
+  \strng{fullhash}{BBW+1}
+  \field{sortinit}{B}
+  \field{title}{Software engineering economics}
+  \field{volume}{197}
+  \field{year}{1981}
+\endentry
+
+\entry{bossavit2013leprechauns}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bossavit}{B.}%
+     {Laurent}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Lean Publishing}%
+  }
+  \strng{namehash}{BL1}
+  \strng{fullhash}{BL1}
+  \field{sortinit}{B}
+  \field{title}{Leprechauns of Software Engineering: How Folk Law Turns Into
+  Fact [Electronic Resource]}
+  \field{year}{2013}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

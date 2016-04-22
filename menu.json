@@ -1,0 +1,211 @@
+[
+  {
+    "name": "Software Testing",
+    "key": "software-testing",
+    "children": [
+      {
+        "name": "Week 1: 2015-08-31",
+        "key": "w1",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          },
+          {
+            "name": "Workshop",
+            "key": "workshop"
+          },
+          {
+            "name": "Lab",
+            "key": "lab"
+          }
+        ]
+      },
+      {
+        "name": "Week 2: 2015-09-07",
+        "key": "w2",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          },
+          {
+            "name": "Workshop",
+            "key": "workshop"
+          },
+          {
+            "name": "Lab",
+            "key": "lab"
+          }
+        ]
+      },
+      {
+        "name": "Week 3: 2015-09-14",
+        "key": "w3",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          },
+          {
+            "name": "Workshop",
+            "key": "workshop"
+          },
+          {
+            "name": "Lab",
+            "key": "lab"
+          }
+        ]
+      },
+      {
+        "name": "Week 4: 2015-09-21",
+        "key": "w4",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          },
+          {
+            "name": "Workshop",
+            "key": "workshop"
+          },
+          {
+            "name": "Lab",
+            "key": "lab"
+          }
+        ]
+      },
+      {
+        "name": "Week 5: 2015-09-28",
+        "key": "w5",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          },
+          {
+            "name": "Workshop",
+            "key": "workshop"
+          },
+          {
+            "name": "Lab",
+            "key": "lab"
+          }
+        ]
+      },
+      {
+        "name": "Week 6: 2015-10-05",
+        "key": "w6",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          },
+          {
+            "name": "Workshop",
+            "key": "workshop"
+          },
+          {
+            "name": "Lab",
+            "key": "lab"
+          }
+        ]
+      },
+      {
+        "name": "Resources",
+        "key": "resources"
+      },
+      {
+        "name": "Test Preparation",
+        "key": "test-preparation"
+      },
+      {
+        "name": "Literature",
+        "key": "literature"
+      }
+    ]
+  },
+  {
+    "name": "Software Evolution",
+    "key": "software-evolution",
+    "children": [
+      {
+        "name": "Notes",
+        "key": "notes",
+        "children": [
+          {
+            "name": "Week 1: 2015-10-26",
+            "key": "w1"
+          },
+          {
+            "name": "Week 2: 2015-11-02",
+            "key": "w2"
+          },
+          {
+            "name": "Week 3: 2015-11-09",
+            "key": "w3"
+          },
+          {
+            "name": "Week 4: 2015-11-16",
+            "key": "w4"
+          },
+          {
+            "name": "Week 5: 2015-11-23",
+            "key": "w5"
+          },
+          {
+            "name": "Week 6: 2015-12-30",
+            "key": "w6"
+          },
+          {
+            "name": "Week 7: 2015-12-07",
+            "key": "w7"
+          },
+          {
+            "name": "Week 8: 2015-12-14",
+            "key": "w8"
+          }
+        ]
+      },
+      {
+        "name": "Assignments",
+        "key": "assignments",
+        "children": [
+          {
+            "name": "Series 0",
+            "key": "series0"
+          },
+          {
+            "name": "Series 1",
+            "key": "series1"
+          }
+        ]
+      },
+      {
+        "name": "Resources",
+        "key": "resources"
+      },
+      {
+        "name": "Literature",
+        "key": "literature"
+      }
+    ]
+  },
+  {
+    "name" : "Paper Sessions",
+    "key" : "paper-sessions",
+    "children" : [
+      {"name" : "Session 1 (2015-09-07)", "key" : "session1"},
+      {"name" : "Session 2 (2015-11-02)", "key" : "session2"},
+      {"name" : "Session 3 (2015-11-17)", "key" : "session3"}
+    ]
+  },
+  {
+    "name" : "Master Preparation",
+    "key" : "master-preparation",
+    "children" : [
+      {"name" : "Topics", "key" : "topics"}
+    ]
+  }
+
+]

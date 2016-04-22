@@ -1,0 +1,172 @@
+<h1>Workshop Testing and Formal Methods, Week 5</h1>
+
+<h4>Information</h4>
+
+<h5>Natural Induction</h5>
+
+<p>Given $\varphi$ (property about $\mathbb(N)$)</p>
+<p>To prove for all $n$ $\varphi(n)$ where $n \ge 0$:</p>
+
+<ul>
+  <li>Prove $\varphi(0)$</li>
+  <li>Suppose $\varphi(n)$, prove $\varphi(n+1)$</li>
+</ul>
+
+<h5>Tree induction</h5>
+
+<p>Given $\varphi$ (property about $T$)</p>
+<p>To prove for all $t$ $\varphi(t)$</p>
+
+<ul>
+  <li>Suppose $\varphi(c_1(t)) \land \varphi(c_2(t)) \land ... \land \varphi(c_n(t))$. Prove $\varphi(t)$</li>
+</ul>
+
+<p><i>This only holds for labeled trees (with both children and values)</i></p>
+
+<h4>Questions</h4>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    1) Define a function <code>leafCount :: Blt a -> Int</code> that counts the number of leaf nodes in a binary tree.
+  </div>
+  <div class="panel-body">
+    <pre>
+leafCount :: Blt a -> Int
+leafCount (Leaf _) = 1
+leafCount (Node x y) = leafCount x  + leafCount y
+</pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    2) Define a function mapB that does for binary trees what map does for lists. The type is:
+    <code>mapB :: (a -> b) -> Blt a -> Blt b</code>
+  </div>
+  <div class="panel-body">
+    <pre>
+mapB :: (a -> b) -> Blt a -> Blt b
+mapB f (Leaf x) = Leaf (f x)
+mapB f (Node x y) = Node (leafCount f x) (leafCount f y)
+</pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    3) Define a function <code>count :: Tree a -> Int</code> that counts the number of nodes of a tree.
+  </div>
+  <div class="panel-body">
+    <pre>
+count :: Tree a -> Int
+count (T _ xs) = 1 + sum (map count xs)
+</pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    4) How can you test depth for correctness? Or can you perhaps prove that it is correct?
+  </div>
+  <div class="panel-body">
+    <p>
+      The function gives the correct result on the example trees above. But again we can do better than test. The function is correct
+      for trees without subtrees, for these have depth 0. If the function is correct for all trees in <code>ts</code>,
+      then it is correct of trees of the form <code>T _ ts</code>, for these have depth equal to the maximum of the depth
+      of the subtrees, plus one.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    5) Define a function mapT that does for trees what map does for lists. The type is: <code>mapT :: (a -> b) -> Tree a -> Tree b</code>
+  </div>
+  <div class="panel-body">
+    <pre>
+mapT :: (a -> b) -> Tree a -> Tree b
+mapT f (T v ts) = T (f v) (map (mapT f) ts)
+</pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    6) How can you test mapT from the previous question for correctness? Or can you perhaps prove that it is correct?
+  </div>
+  <div class="panel-body">
+    <p>
+      The base case is the case of a tree of the form T x []. Here the result should be T (f x) [], and that is what the function
+      gives us. For the recursive case, assume mapT f yields the correct result of all trees in ts. Then map collects these
+      results, and finally (f x) is put at the top node. This is also correct.
+    </p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    7) Write a function collect that collects the information in a tree of type Tree a in a list of type [a]. The type specification
+    is <code>collect :: Tree a -> [a]</code>
+  </div>
+  <div class="panel-body">
+    <pre>
+collect :: Tree a -> [a]
+collect T x ts = x : (concatMap collect ts)
+</pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p>8) Redefine count, depth, collect and mapT f in terms of foldT.</p>
+    <pre>
+foldT :: (a -> [b] -> b) -> Tree a -> b
+foldT f (T x ts) = f x (map (foldT f) ts)
+</pre>
+  </div>
+  <div class="panel-body">
+    <pre>
+count :: Tree a -> Int
+count = foldT (\ _ xs -> 1 + length xs)
+</pre>
+    <pre>
+depth :: Tree a -> Int
+depth = foldT (\ _ xs -> if null xs then 0 else 1 + maximum xs)
+</pre>
+    <pre>
+collect :: Tree a -> [a]
+collect = foldT (\ x xs -> x : concat xs)</pre>
+    <pre>
+mapT :: (a -> b) -> Tree a -> Tree b
+mapT f = foldT (\ x xs -> T (f x) xs)</pre>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p>9) Can you predict the value of the following:</p>
+    <pre>
+count (grow (\x -> if x < 6 then [x+1, x+1] else []) 0)
+</pre>
+  </div>
+  <div class="panel-body">
+    <p>Trees produced by grow are fully balanced. The count will give the size. The formula $2^{n+1}-1$ will give the number
+      of nodes. For $n = 6$ this will result in $127$.</p>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p>10) Consider the following tree:</p>
+    <pre>
+tree n = grow (f n) (1,1)
+
+f n = \ (x,y) -> if x+y <= n then [(x,x+y),(x+y,y)] else []
+</pre>
+    <p>Can you show that the number pairs (x, y) that occur in tree n are precisely the pairs in the set:</p>
+    <p>$\{(x, y)\ |\ 1 \le x \le n, 1 \le y \le n\ with\ x,\ y\ co-prime\}$</p>
+  </div>
+  <div class="panel-body">
+    <p>TODO</p>
+  </div>
+</div>

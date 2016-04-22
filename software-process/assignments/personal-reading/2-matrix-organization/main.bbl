@@ -1,0 +1,104 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{Galbraith197129}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Galbraith}{G.}%
+     {Jay~R.}{J.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GJR1}
+  \strng{fullhash}{GJR1}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb http://dx.doi.org/10.1016/0007-6813(71)90037-1
+  \endverb
+  \field{issn}{0007-6813}
+  \field{number}{1}
+  \field{pages}{29 \bibrangedash  40}
+  \field{title}{Matrix organization designs How to combine functional and
+  project forms}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/0007681371900371
+  \endverb
+  \field{volume}{14}
+  \field{journaltitle}{Business Horizons}
+  \field{year}{1971}
+\endentry
+
+\entry{KNIGHT}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Knight}{K.}%
+     {Kenneth}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Blackwell Publishing Ltd}%
+  }
+  \strng{namehash}{KK1}
+  \strng{fullhash}{KK1}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1111/j.1467-6486.1976.tb00528.x
+  \endverb
+  \field{issn}{1467-6486}
+  \field{number}{2}
+  \field{pages}{111\bibrangedash 130}
+  \field{title}{MATRIX ORGANIZATION: A REVIEW}
+  \verb{url}
+  \verb http://dx.doi.org/10.1111/j.1467-6486.1976.tb00528.x
+  \endverb
+  \field{volume}{13}
+  \field{journaltitle}{Journal of Management Studies}
+  \field{year}{1976}
+\endentry
+
+\entry{MEE196470}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Mee}{M.}%
+     {John~F.}{J.~F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{MJF1}
+  \strng{fullhash}{MJF1}
+  \field{sortinit}{M}
+  \verb{doi}
+  \verb http://dx.doi.org/10.1016/0007-6813(64)90038-2
+  \endverb
+  \field{issn}{0007-6813}
+  \field{number}{2}
+  \field{pages}{70 \bibrangedash  72}
+  \field{title}{Matrix organization}
+  \verb{url}
+  \verb http://www.sciencedirect.com/science/article/pii/0007681364900382
+  \endverb
+  \field{volume}{7}
+  \field{journaltitle}{Business Horizons}
+  \field{year}{1964}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

@@ -1,0 +1,262 @@
+[
+  {
+    "name": "GWT",
+    "website": "http://www.gwtproject.org/",
+    "source": "https://github.com/gwtproject/gwt",
+    "description": "Google Web Toolkit, compiles Java to JavaScript. GWT provides a set of classes that can be used to create web applications. The programmer is thus restricted to the capabilities of the framework.",
+    "phase": "mature",
+    "type": "framework",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2014-11-20",
+      "unstable": "2015-11-13"
+    }
+  },
+  {
+    "name": "Java2Script",
+    "website": "http://j2s.sourceforge.net/",
+    "source": "http://sourceforge.net/projects/j2s/",
+    "description": "Eclipse Java to JavaScript compiler plugin and JavaScript version of SWT. It can take an Rich Client Platform (RCP) application and convert it to an Rich Internet Application (RIA)",
+    "phase": "mature",
+    "type": "tool",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2010-06-01",
+      "unstable": "2013-04-24"
+    }
+  },
+  {
+    "name": "j2js",
+    "website": "http://j2js.com/",
+    "source": "https://github.com/decatur/j2js-compiler",
+    "description": "Java bytecode to JavaScript. TODO",
+    "phase": "poc",
+    "type": "tool",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": null,
+      "unstable": "2012-08-24"
+    }
+  },
+  {
+    "name": "Strongly-Typed JavaScript (STJS)",
+    "website": "http://st-js.github.io/",
+    "source": "https://github.com/st-js/st-js/",
+    "description": "STJS is an open source (Apache 2.0 licensed) Javascript code generator from a Java source. It is built as a Maven plugin that can be executed after the compilation of your Java code.",
+    "phase": "development",
+    "type": "plugin",
+    "method": "generator",
+    "latestRelease": {
+      "stable": "2015-11-18",
+      "unstable": "2015-12-15"
+    }
+  },
+  {
+    "name": "BicaJVM",
+    "website": "https://github.com/nurv/BicaVM",
+    "source": "https://github.com/nurv/BicaVM",
+    "description": "This project is an implementation of a JVM in JavaScript. At the moment it runs Java code, but is more like a proof of concept than a real JVM. A lot of work is required to make this JVM run Java code (including writing an entire runtime enviroment).",
+    "phase": "poc",
+    "type": "runtime",
+    "method": "interpreter",
+    "latestRelease": {
+      "stable": null,
+      "unstable": "2014-06-03"
+    }
+  },
+  {
+    "name": "Doppio",
+    "website": "https://plasma-umass.github.io/doppio/about.html",
+    "source": "https://github.com/plasma-umass/doppio",
+    "description": "Doppio is an implementation of the Java Virtual Machine that can run in just about any reasonable JavaScript engine. The goal is to be able to run JVM programs in the browser without any plug-ins, which means that any Java programs running in it are safely sandboxed by the JavaScript engine. Doppio is written in CoffeeScript, which is a nice terse language that maps directly into JavaScript.",
+    "phase": "development",
+    "type": "runtime",
+    "method": "bytecode-execution",
+    "latestRelease": {
+      "stable": "2015-11-07",
+      "unstable": "2016-01-02"
+    }
+  },
+  {
+    "name": "Processing",
+    "website": "http://processingjs.org/",
+    "source": "https://github.com/processing-js/processing-js/",
+    "description": "A port of the Processing visualization language to JavaScript.",
+    "phase": "mature",
+    "type": "language",
+    "method": "interpreter",
+    "latestRelease": {
+      "stable": "2015-08-15",
+      "unstable": "2015-09-25"
+    }
+  },
+  {
+    "name": "Kotlin",
+    "website": "http://kotlinlang.org/",
+    "source": "https://github.com/JetBrains/kotlin",
+    "description": "Statically typed programming language for the JVM, Android and the browser. Kotlin code is targetable for the JS",
+    "phase": "development",
+    "type": "language",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-12-23",
+      "unstable": "2015-12-31"
+    }
+  },
+  {
+    "name": "Ceylon",
+    "website": "http://ceylon-lang.org/",
+    "source": "https://github.com/ceylon/ceylon",
+    "description": "Ceylon is a modern, modular, statically typed programming language for the Java and JavaScript virtual machines. The language features a flexible and very readable syntax, a unique and uncommonly elegant static type system, a powerful module architecture, and excellent tooling, including an awesome Eclipse-based IDE.",
+    "phase": "mature",
+    "type": "language",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-10-28",
+      "unstable": "2016-01-04"
+    }
+  },
+  {
+    "name": "GrooScript",
+    "website": "http://grooscript.org/",
+    "source": "https://github.com/chiquitinxx/grooscript",
+    "description": "Library to convert groovy code to javascript",
+    "phase": "mature",
+    "type": "tool",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-11-10",
+      "unstable": "2015-12-31"
+    }
+  },
+  {
+    "name": "node-jvm",
+    "website": "https://github.com/YaroslavGaponov/node-jvm",
+    "source": "https://github.com/YaroslavGaponov/node-jvm",
+    "description": "Java Virtual Machine in pure Node.js",
+    "phase": "development",
+    "type": "runtime",
+    "method": "bytecode-execution",
+    "latestRelease": {
+      "stable": "2015-09-28",
+      "unstable": "2015-09-28"
+    }
+  },
+  {
+    "name": "Bck2Brwsr",
+    "website": "http://wiki.apidesign.org/wiki/Bck2Brwsr",
+    "source": "http://source.apidesign.org/hg/bck2brwsr",
+    "description": "Bck2Brwsr VM is a Java virtual machine which is capable to take bytecode and convert it (either ahead-of-time e - e.g. during compilation - or just-in-time, e.g. in a browser) into appropriate JavaScript code which does the same thing.",
+    "phase": "development",
+    "type": "runtime",
+    "method": "bytecode-execution",
+    "latestRelease": {
+      "stable": "2015-09-26",
+      "unstable": "2015-12-26"
+    }
+  },
+  {
+    "name": "Qooxdoo Web Toolkit (QWT)",
+    "website": "http://qooxdoo.org/contrib/project.old/qwt",
+    "source": "",
+    "description": "The qooxdoo Web Toolkit is like “qooxdoo for Java”: Write your qooxdoo application in Java, and QWT will translate the client part to JavaScript. QWT is quite similar to Google Web Toolkit, but has the qooxdoo widget set.",
+    "phase": "development",
+    "type": "framework",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "",
+      "unstable": ""
+    }
+  },
+  {
+    "name": "TeaVM",
+    "website": "http://teavm.org/",
+    "source": "https://github.com/konsoletyper/teavm",
+    "description": "TeaVM is an ahead-of-time translator from Java bytecode to JavaScript. It can be compared with GWT, however TeaVM does not require source code of your application and all required libraries.",
+    "phase": "development",
+    "type": "plugin",
+    "method": "generator",
+    "latestRelease": {
+      "stable": "2015-12-30",
+      "unstable": "2015-12-30"
+    }
+  },
+  {
+    "name": "Dragome Web SDK",
+    "website": "http://www.dragome.com/",
+    "source": "https://github.com/dragome/dragome-sdk",
+    "description": "Dragome is an open source tool for creating client side web applications in pure Java (JVM) language. Based on bytecode to javascript compilation, you can execute applications written in Java directly on browsers. You may use your favorite IDE, your favorite Java frameworks and tools because Dragome is totally transparent.",
+    "phase": "development",
+    "type": "tool",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-06-10",
+      "unstable": "2015-06-30"
+    }
+  },
+  {
+    "name": "JSweet",
+    "website": "http://www.jsweet.org/",
+    "source": "https://github.com/cincheo/jsweet",
+    "description": "A transpiler from Java to TypeScript/JavaScript 1000+ well-typed JavaScript libraries available from Java",
+    "phase": "development",
+    "type": "plugin",
+    "method": "generator",
+    "latestRelease": {
+      "stable": "2015-10-04",
+      "unstable": "2016-01-02"
+    }
+  },
+  {
+    "name": "DukeScript",
+    "website": "https://dukescript.com/",
+    "source": "",
+    "description": "DukeScript is a new technology for creating cross-platform mobile,  desktop and web applications.  DukeScript applications are plain Java applications that internally use HTML5 technologies and JavaScript for rendering.  This way developers only need to write clean Java code and can still leverage the latest developments in modern UI technology.",
+    "phase": "development",
+    "type": "framework",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-10-01",
+      "unstable": "2015-10-01"
+    }
+  },
+  {
+    "name": "Vaadin",
+    "website": "https://vaadin.com/home",
+    "source": "https://github.com/vaadin/vaadin",
+    "description": "Java framework for writing browser applications in Java.",
+    "phase": "mature",
+    "type": "framework",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-12-30",
+      "unstable": "2016-01-04"
+    }
+  },
+  {
+    "name": "ClojureScript",
+    "website": "https://github.com/clojure/clojurescript",
+    "source": "https://github.com/clojure/clojurescript",
+    "description": "ClojureScript is a compiler for Clojure that targets JavaScript. It is designed to emit JavaScript code which is compatible with the advanced compilation mode of the Google Closure optimizing compiler.",
+    "phase": "mature",
+    "type": "language",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2015-12-01",
+      "unstable": "2016-01-02"
+    }
+  },
+  {
+    "name": "defrac",
+    "website": "https://www.defrac.com/",
+    "source": "https://www.defrac.com/",
+    "description": "Writing native apps doesn't scale well for multiple platforms. Developers have to adopt different workflows, need to learn different programming languages and different APIs. This is annoying, expensive and error-prone. Our mission is to simplify multi-platform development. We believe the developer should focus on building a great app rather than porting it to different platforms. Let defrac do the work.",
+    "phase": "development",
+    "type": "framework",
+    "method": "compiler",
+    "latestRelease": {
+      "stable": "2014-12-31",
+      "unstable": "2014-12-31"
+    }
+  }
+]

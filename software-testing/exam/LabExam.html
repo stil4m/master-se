@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="../buttondown.css" type="text/css" />
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="lab-exam-software-specification-and-testing">Lab Exam Software Specification and Testing</h1>
+<h1 id="october-19-2015">October 19, 2015</h1>
+<hr />
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt;</span> <span class="kw">module</span> <span class="dt">LabExam</span> <span class="kw">where</span>
+<span class="ot">&gt;</span> 
+<span class="ot">&gt;</span> <span class="kw">import </span><span class="dt">Data.List</span>
+<span class="ot">&gt;</span> <span class="kw">import </span><span class="dt">Data.Ord</span>
+<span class="ot">&gt;</span> <span class="kw">import </span><span class="dt">Test.QuickCheck</span></code></pre></div>
+<p>There are 6 problems plus a bonus problem. If you manage to solve the bonus problem you earn compensation for errors in your answers to the regular problems.</p>
+<hr />
+<p><strong>Problem 1</strong></p>
+<p>Codes are lists of zeros and ones. For convenience we use the datatype <code>[Int]</code> for codes.</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt;</span> <span class="kw">type</span> <span class="dt">Code</span> <span class="fu">=</span> [<span class="dt">Int</span>]</code></pre></div>
+<p>Examples are <code>[1,0]</code> and <code>[0,1]</code> and <code>[1,0,1,1]</code>. Think of these as lists of bits.</p>
+<p>Now assume that these codes represent non-negative integers in binary, with the bits in reverse order of significance: least significant bit first. Thus <code>[1,0]</code> represents 1, <code>[0,1]</code> represents 2, and <code>[1,0,1,1]</code> represents 13.</p>
+<p>Write translation functions <code>bits2integer :: [Int] -&gt; Integer</code> and <code>integer2bits :: Integer -&gt; [Int]</code> that efficiently translate bit lists to the corresponding (non-negative) integers, and back.</p>
+<p>Next, test your code for correctness with QuickCheck (the two translations have to be inverses of each other) and for efficiency (the code has to be fast; you have to devise your own method for establishing this).</p>
+<hr />
+<p><strong>Problem 2</strong></p>
+<p>A function <span class="math inline">\(f: {\mathbb R} \to {\mathbb R}\)</span> (a function on the real numbers) is called <em>even</em> if it holds for all <span class="math inline">\(x \in {\mathbb R}\)</span> that <span class="math inline">\(f(x) =  f(-x)\)</span>. An example of an even function is the squaring function (the function <span class="math inline">\(\lambda x \mapsto x^2\)</span>).</p>
+<p>Please note that this notion of <em>even</em> is different from the well-known property of integer numbers. We are talking about a property of <em>functions</em> here.</p>
+<ul>
+<li><p>Give one more example of an even function on the real numbers.</p></li>
+<li><p>Explain why it is impossible to write an algorithm that checks whether a function of type <code>Float -&gt; Float</code> is even.</p></li>
+<li><p>Implement a test <code>maybeEven</code> for evenness of functions, and explain why the outcome <code>False</code> of this test is more reliable than the outcome <code>True</code>.</p>
+<p>maybeEven :: (Float -&gt; Float) -&gt; Bool maybeEven f = ...</p></li>
+</ul>
+<hr />
+<p><strong>Problem 3</strong></p>
+<p>Give code for constructing a frequency list from a string. The input is a string, the output is a list of pairs <span class="math inline">\((c,i)\)</span> where <span class="math inline">\(c\)</span> is a character and <span class="math inline">\(i\)</span> gives the number of occurrences of <span class="math inline">\(c\)</span> in the input string. The type is:</p>
+<pre><code> freqList :: String -&gt; [(Char,Int)]
+ freqList s = [] -- replace by your own code</code></pre>
+<p>This should give, e.g.:</p>
+<pre><code> *LabExam&gt; freqList &quot;Lab Exam&quot;
+ [(&#39; &#39;,1),(&#39;E&#39;,1),(&#39;L&#39;,1),(&#39;a&#39;,2),(&#39;b&#39;,1),(&#39;m&#39;,1),(&#39;x&#39;,1)]</code></pre>
+<p>Include a test for checking that your implementation is correct.</p>
+<hr />
+<p><strong>Problem 4</strong></p>
+<p>A <em>Huffman tree</em> is a binary tree with characters at the leaf nodes, and weight information (given by an integer) at every node.</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt;</span> <span class="kw">data</span> <span class="dt">HTree</span>  <span class="fu">=</span> <span class="dt">Leaf</span> <span class="dt">Char</span> <span class="dt">Int</span>
+<span class="ot">&gt;</span>             <span class="fu">|</span> <span class="dt">Fork</span> <span class="dt">HTree</span> <span class="dt">HTree</span> <span class="dt">Int</span>
+<span class="ot">&gt;</span>             <span class="kw">deriving</span> (<span class="dt">Show</span>)</code></pre></div>
+<p>The weight of a tree is given by:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; weight ::</span> <span class="dt">HTree</span> <span class="ot">-&gt;</span> <span class="dt">Int</span>
+<span class="ot">&gt;</span> weight (<span class="dt">Leaf</span> _ w)    <span class="fu">=</span> w
+<span class="ot">&gt;</span> weight (<span class="dt">Fork</span> _ _ w)  <span class="fu">=</span> w</code></pre></div>
+<p>Call the following property the <em>Huffman property</em>:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; prop_huffman ::</span> <span class="dt">HTree</span> <span class="ot">-&gt;</span> <span class="dt">Bool</span>
+<span class="ot">&gt;</span> prop_huffman (<span class="dt">Leaf</span> _ _) <span class="fu">=</span> <span class="dt">True</span>
+<span class="ot">&gt;</span> prop_huffman (<span class="dt">Fork</span> t1 t2 w) <span class="fu">=</span> prop_huffman t1 <span class="fu">&amp;&amp;</span> prop_huffman t2 
+<span class="ot">&gt;</span>                      <span class="fu">&amp;&amp;</span> weight t1 <span class="fu">+</span> weight t2 <span class="fu">==</span> w</code></pre></div>
+<p>The following tree merge function can be used to build Huffman trees.</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt;</span> merge t1 t2 <span class="fu">=</span> <span class="dt">Fork</span> t1 t2 (weight t1 <span class="fu">+</span> weight t2)</code></pre></div>
+<p>Consider the following function that builds trees from frequency tables:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; createTree ::</span> [(<span class="dt">Char</span>,<span class="dt">Int</span>)] <span class="ot">-&gt;</span> <span class="dt">HTree</span>
+<span class="ot">&gt;</span> createTree [(c,i)] <span class="fu">=</span> <span class="dt">Leaf</span> c i 
+<span class="ot">&gt;</span> createTree ((c,i)<span class="fu">:</span>t) <span class="fu">=</span> merge (<span class="dt">Leaf</span> c i) (createTree t)</code></pre></div>
+<p>Test with QuickCheck whether for any frequency list <code>xs</code> it is the case that <code>createTree xs</code> has the Huffman property.</p>
+<hr />
+<p><strong>Problem 5</strong></p>
+<p><em>Huffman code</em> is used in compression algorithms. It gives efficient encodings of characters as bit strings, in the sense that more frequent characters get mapped to shorter bit strings. Huffman trees are built from frequency lists, as follows:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; buildTree ::</span> [(<span class="dt">Char</span>, <span class="dt">Int</span>)] <span class="ot">-&gt;</span> <span class="dt">HTree</span>
+<span class="ot">&gt;</span> buildTree table <span class="fu">=</span> <span class="kw">let</span> 
+<span class="ot">&gt;</span>     sortedTable <span class="fu">=</span> sortBy (comparing snd) table
+<span class="ot">&gt;</span>     trees <span class="fu">=</span> map (\ (c,i) <span class="ot">-&gt;</span> <span class="dt">Leaf</span> c i) sortedTable
+<span class="ot">&gt;     bld ::</span> [<span class="dt">HTree</span>] <span class="ot">-&gt;</span> <span class="dt">HTree</span> 
+<span class="ot">&gt;</span>     bld ([t])    <span class="fu">=</span> t
+<span class="ot">&gt;</span>     bld (a<span class="fu">:</span>b<span class="fu">:</span>cs) <span class="fu">=</span> bld <span class="fu">$</span> 
+<span class="ot">&gt;</span>         insertBy (comparing weight) (merge a b) cs
+<span class="ot">&gt;</span>   <span class="kw">in</span> bld trees</code></pre></div>
+<p>Explain how this algorithm works by inspection of the code.</p>
+<p>Next, test with QuickCheck whether all Huffman trees built by means of <code>buildTree</code> have the Huffman property?</p>
+<hr />
+<p><strong>Problem 6</strong></p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt;</span> <span class="kw">type</span> <span class="dt">CodeTable</span> <span class="fu">=</span> [(<span class="dt">Char</span>,<span class="dt">Code</span>)]</code></pre></div>
+<p>Building a code table from a Huffman tree:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; tree2table ::</span> <span class="dt">HTree</span> <span class="ot">-&gt;</span> <span class="dt">CodeTable</span>
+<span class="ot">&gt;</span> tree2table (<span class="dt">Leaf</span> c _)    <span class="fu">=</span> [(c, [])]
+<span class="ot">&gt;</span> tree2table (<span class="dt">Fork</span> l r _)  <span class="fu">=</span> 
+<span class="ot">&gt;</span>   map (addBit <span class="dv">0</span>) (tree2table l) <span class="fu">++</span> map (addBit <span class="dv">1</span>) (tree2table r)
+<span class="ot">&gt;</span>      <span class="kw">where</span> addBit b <span class="fu">=</span> \ (c,xs) <span class="ot">-&gt;</span> (c,b<span class="fu">:</span>xs)</code></pre></div>
+<p>Building a code table from a string: first use the string to build a frequency list, next map that to a Huffman tree, next use the Huffman tree for constructing the table.</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; string2table ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">CodeTable</span>
+<span class="ot">&gt;</span> string2table <span class="fu">=</span> tree2table <span class="fu">.</span> buildTree <span class="fu">.</span> freqList </code></pre></div>
+<p>This uses your code for <code>freqList</code> from an earlier question. Example:</p>
+<pre><code> *LabExam&gt; string2table &quot;the quick brown fox jumps over the lazy dog&quot;
+ [(&#39;s&#39;,[0,0,0,0,0]),(&#39;v&#39;,[0,0,0,0,1]),(&#39;p&#39;,[0,0,0,1,0]),(&#39;q&#39;,[0,0,0,1,1]),
+  (&#39;y&#39;,[0,0,1,0,0]),(&#39;z&#39;,[0,0,1,0,1]),(&#39;w&#39;,[0,0,1,1,0]),(&#39;x&#39;,[0,0,1,1,1]),
+  (&#39;i&#39;,[0,1,0,0,0]),(&#39;j&#39;,[0,1,0,0,1]),(&#39;f&#39;,[0,1,0,1,0]),(&#39;g&#39;,[0,1,0,1,1]),
+  (&#39;m&#39;,[0,1,1,0,0]),(&#39;n&#39;,[0,1,1,0,1]),(&#39;k&#39;,[0,1,1,1,0]),(&#39;l&#39;,[0,1,1,1,1]),
+  (&#39;o&#39;,[1,0,0]),(&#39;e&#39;,[1,0,1,0]),(&#39;t&#39;,[1,0,1,1,0]),(&#39;u&#39;,[1,0,1,1,1]),
+  (&#39;h&#39;,[1,1,0,0,0]),(&#39;r&#39;,[1,1,0,0,1]),(&#39;c&#39;,[1,1,0,1,0,0]),
+  (&#39;d&#39;,[1,1,0,1,0,1]),(&#39;a&#39;,[1,1,0,1,1,0]),(&#39;b&#39;,[1,1,0,1,1,1]),
+  (&#39; &#39;,[1,1,1])]</code></pre>
+<p>Notice that the codes for 'o' and ' ' (space) are the shortest, corresponding to the fact that these are the characters that occur most often in the text.</p>
+<p>Encode a string using a code table:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; ecd ::</span> <span class="dt">CodeTable</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Code</span>
+<span class="ot">&gt;</span> ecd m <span class="fu">=</span> concatMap f <span class="kw">where</span>
+<span class="ot">&gt;</span>    f x <span class="fu">=</span> maybe (myundefined x) id <span class="fu">$</span> lookup x m
+<span class="ot">&gt;</span>    myundefined x <span class="fu">=</span> (error <span class="fu">$</span> <span class="st">&quot;No &#39;&quot;</span><span class="fu">++</span>[x]<span class="fu">++</span><span class="st">&quot;&#39; in the code table&quot;</span>)</code></pre></div>
+<p>The codetable is computed from a string, so we can view encoding as a function that takes a first string for the frequencies, and uses these to encode a second string:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; encode ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Code</span>
+<span class="ot">&gt;</span> encode fqs message <span class="fu">=</span> ecd (string2table fqs) message</code></pre></div>
+<p>Decode using a frequency string:</p>
+<div class="sourceCode"><pre class="sourceCode literate literatehaskell"><code class="sourceCode literatehaskell"><span class="ot">&gt; decode ::</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Code</span> <span class="ot">-&gt;</span> <span class="dt">String</span>
+<span class="ot">&gt;</span> decode s <span class="fu">=</span> dcd tree 
+<span class="ot">&gt;</span>     <span class="kw">where</span>  tree <span class="fu">=</span> buildTree <span class="fu">$</span> freqList s
+<span class="ot">&gt;            dcd ::</span> <span class="dt">HTree</span> <span class="ot">-&gt;</span> <span class="dt">Code</span> <span class="ot">-&gt;</span> <span class="dt">String</span>
+<span class="ot">&gt;</span>            dcd (<span class="dt">Leaf</span> c _) []        <span class="fu">=</span> [c]
+<span class="ot">&gt;</span>            dcd (<span class="dt">Leaf</span> c _) bs        <span class="fu">=</span> c <span class="fu">:</span> dcd tree bs
+<span class="ot">&gt;</span>            dcd (<span class="dt">Fork</span> l r _) (b<span class="fu">:</span>bs)  <span class="fu">=</span> dcd (<span class="kw">if</span> b <span class="fu">==</span> <span class="dv">0</span> <span class="kw">then</span> l <span class="kw">else</span> r) bs</code></pre></div>
+<p>Your task is to test this code for correctness with QuickCheck. Some care should be taken to ensure that the Huffman tree has weight information for all characters. Also, you may assume that the string that is used to compute the frequency table is non-trivial: it should assign weights to at least two characters.</p>
+<p>Deliverables: some suitable QuickCheck properties, plus a test report. If your testing reveals an error, please indicate how it could be corrected. If your testing indicates that the code is correct, please explain why you are confident that you did run enough tests.</p>
+<hr />
+<p><strong>Bonus Problem</strong></p>
+<p>[If you manage to solve this bonus problem you earn compensation for errors in your answers to the regular problems above.]</p>
+<p>Once you have convinced yourself that all code you developed and tested in this exam session is correct and fast, you can use it to compress texts for which you have a frequency table.</p>
+<p>A frequency table for English you can create by taking some sample text from a corpus. Take for instance, the <a href="LabExam.hs">source code of this Lab Exam</a>, or some fragment from the <a href="http://ota.ox.ac.uk/text/3048.txt">ASCII version of the novel <em>Lord Jim</em> by <em>Joseph Conrad</em></a>. Next, use the frequency table you have computed to test your compression software. Count each character in the text you are compressing as 8 bits. Next count the numbers of bits in the Huffman encoding, and compute the compression factor you have achieved.</p>
+<p>To make this into a practical method, you should find a way to represent bit lists in a compact way. Check if you can use <code>bits2integer</code> for this. But maybe you need hexadecimal representation. Have a look at <a href="https://www.fpcomplete.com/school/to-infinity-and-beyond/pick-of-the-week/bytestring-bits-and-pieces">ByteString Bits and Pieces</a> for some inspiration.</p>
+<p>Implement your method, compute the compression factor you have achieved, and test whether your software works correctly by decompressing and comparing with the original input. Can you use QuickCheck for this?</p>
+<hr />
+<div class="references">
+
+</div>
+</body>
+</html>

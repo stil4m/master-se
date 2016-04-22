@@ -1,0 +1,80 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: biblatex.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: main-blx.bib
+Database file #2: main.bib
+Warning--I'm ignoring Catal20114626's extra "keywords" field
+--line 25 of file main.bib
+Warning--I'm ignoring Catal20114626's extra "keywords" field
+--line 26 of file main.bib
+Warning--I'm ignoring Catal20114626's extra "keywords" field
+--line 27 of file main.bib
+Warning--I'm ignoring Catal20114626's extra "keywords" field
+--line 28 of file main.bib
+Warning--I'm ignoring Catal20114626's extra "keywords" field
+--line 30 of file main.bib
+Warning--I'm ignoring Catal20097346's extra "keywords" field
+--line 45 of file main.bib
+Warning--I'm ignoring Catal20097346's extra "keywords" field
+--line 46 of file main.bib
+Warning--I'm ignoring Catal20097346's extra "keywords" field
+--line 47 of file main.bib
+Warning--I'm ignoring Catal20097346's extra "keywords" field
+--line 49 of file main.bib
+Biblatex version: 3.0
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+You've used 5 entries,
+            6047 wiz_defined-function locations,
+            1169 strings with 9239 characters,
+and the built_in function-call counts, 14718 in all, are:
+= -- 514
+> -- 513
+< -- 114
++ -- 181
+- -- 225
+* -- 1254
+:= -- 1112
+add.period$ -- 0
+call.type$ -- 5
+change.case$ -- 46
+chr.to.int$ -- 34
+cite$ -- 8
+duplicate$ -- 1577
+empty$ -- 1517
+format.name$ -- 343
+if$ -- 3231
+int.to.chr$ -- 0
+int.to.str$ -- 9
+missing$ -- 0
+newline$ -- 170
+num.names$ -- 174
+pop$ -- 1337
+preamble$ -- 1
+purify$ -- 63
+quote$ -- 0
+skip$ -- 800
+stack$ -- 0
+substring$ -- 317
+swap$ -- 568
+text.length$ -- 133
+text.prefix$ -- 4
+top$ -- 1
+type$ -- 178
+warning$ -- 0
+while$ -- 125
+width$ -- 0
+write$ -- 164
+(There were 9 warnings)

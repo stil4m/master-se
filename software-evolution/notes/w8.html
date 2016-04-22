@@ -1,0 +1,134 @@
+<lecture-notes-title
+    title="Belgian Compilers in the Wild"
+    lecturer="Darius Blasband"
+    week="8"
+    date="2015-12-14"></lecture-notes-title>
+
+<h2>What is a legacy software system?</h2>
+
+<ul>
+  <li>Large and complex: years, debug, adequate</li>
+  <li>Critical: runs the business</li>
+  <li>Unique: there is no package</li>
+  <li>Old and legacy: This starts at day one</li>
+  <li>Valuable: all above</li>
+  <li>Unknown: Not possible to answer non-trivial questions</li>
+</ul>
+
+<p>Bear in mind:</p>
+<ul>
+  <li>Banks, governments, insurance companies</li>
+  <li>You may not like the system you are working with</li>
+  <li>These system run our lives.</li>
+</ul>
+
+
+<h2>Problem</h2>
+
+<p><strong>Obvious:</strong></p>
+
+<ul>
+  <li>Concrete: Technique, hardware, program language</li>
+  <li>Not obsolete</li>
+  <li>Depends on obsolete components</li>
+</ul>
+
+<p><strong>Vendors</strong></p>
+<ul>
+  <li>Retire products</li>
+  <li>Increase price</li>
+  <li>Revert to blackmail</li>
+  <li>Die</li>
+</ul>
+
+<p><strong>Skilled people</strong></p>
+<ul>
+  <li>Retire</li>
+  <li>Raise</li>
+  <li>Revert to blackmail</li>
+  <li>Die</li>
+</ul>
+
+<h2>Legacy Modernisation</h2>
+
+<ul>
+  <li>Extending live</li>
+  <li>Remove and replicate system</li>
+  <li>Without altering the functionality
+    <ul>
+      <li>Critical</li>
+      <li>Value</li>
+      <li>(unknown)</li>
+    </ul>
+  </li>
+  <li>Not universal</li>
+</ul>
+
+<h2>Constraints</h2>
+
+<ul>
+  <li>Deal with it! Life is not easy.</li>
+  <li>Size: 99% is not enough over 10M lines of code.</li>
+  <li>Operations
+    <ul>
+      <li>Data migration</li>
+      <li>Deployment</li>
+      <li>People-ware</li>
+    </ul>
+  </li>
+  <li>Fight big boys</li>
+</ul>
+
+<h2>The silver lining</h2>
+
+<ul>
+  <li>Money. For its own rights and allows ambitious solutions.</li>
+  <li>Make a difference</li>
+  <li>Having a say
+    <ul>
+      <li>It is not about what the customer wants (he is facing the wall).</li>
+      <li>It is about what can.</li>
+    </ul>
+  </li>
+  <li>Fighting the big boys</li>
+</ul>
+
+
+<h2>Why redevelopment fails</h2>
+
+<ul>
+  <li>Statistically independent events. It is a new project</li>
+  <li>Self inflicted optimistic blindness. I will succeed!</li>
+  <li>Over-engineering and excessive ambition. We want to deal with a class of problems instead of a simple thing.</li>
+  <li>Cost of two ongoing systems</li>
+</ul>
+
+<h2>A scattered market</h2>
+
+<ul>
+  <li>Approach
+    <ul>
+      <li>Transformation</li>
+      <li>Emulate</li>
+      <li>Compile</li>
+      <li>Re-architect</li>
+    </ul>
+  </li>
+  <li>Divided in a collection of tech <em>niches</em>
+    <ul>
+      <li>Database</li>
+      <li>Hardware</li>
+      <li>Transaction processing</li>
+      <li>Language</li>
+    </ul>
+  </li>
+  <li>There is no one-stop-shop</li>
+</ul>
+
+<h2>Important ideas</h2>
+
+<ul>
+  <li>Formalize transformations and proof they are correct</li>
+  <li>Fixing bugs is not an option.</li>
+  <li>Interactive?</li>
+</ul>

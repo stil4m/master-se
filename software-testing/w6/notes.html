@@ -1,0 +1,44 @@
+<lecture-notes-title
+    title="Fast Modular Arithmetic and Public Key Cryptography"
+    lecturer="Jan van Eijck"
+    week="6"
+    date="2015-10-05"></lecture-notes-title>
+
+<h4>Lecture</h4>
+<p>
+  The lecture focuses on algorithm that it is easy to compute the product of two primes, but it is hard to calculate the factors
+  of this product. These are called trapdoor functions. The inverse is time consuming or impossible.
+</p>
+<p>
+  There are function that check primality. These properties are a little bit weaker than the actual property of being a prime.
+  Thus it is possible to fool this check by introducing a composite that also holds this property.
+</p>
+
+<h4>Factorize</h4>
+<p>
+  Naive: Take 2, check factor and else increase by 1. Until value left is 0.
+</p>
+
+<p>
+  Improvements:
+</p>
+
+<ul>
+  <li>Until square root is reached</li>
+  <li>Only test primes as factors, other numbers can't be factors</li>
+</ul>
+
+<div class="alert alert-info">
+  The improved solution is only faster when computing the primality for multiple primes, the factors implementation is lazy
+  and will cost a lot of time for the initial primes.
+</div>
+
+<h4>Mersenne Primes</h4>
+
+<p>
+  <i>Literature: Mersenne in crypography</i>
+</p>
+
+<p>
+  <i>Literature: Mersenne in the Haskell Road book (3.35)</i>
+</p>

@@ -1,0 +1,309 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{beck2000extreme}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Beck}{B.}%
+     {Kent}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {addison-wesley professional}%
+  }
+  \strng{namehash}{BK1}
+  \strng{fullhash}{BK1}
+  \field{sortinit}{B}
+  \field{title}{Extreme programming explained: embrace change}
+  \field{year}{2000}
+\endentry
+
+\entry{10.1109/2.962984}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Boehm}{B.}%
+     {Barry}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Basili}{B.}%
+     {Victor~R.}{V.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE Computer Society}%
+  }
+  \strng{namehash}{BBBVR1}
+  \strng{fullhash}{BBBVR1}
+  \field{sortinit}{B}
+  \field{issn}{0018-9162}
+  \field{number}{1}
+  \field{pages}{135\bibrangedash 137}
+  \field{title}{Software Defect Reduction Top 10 List}
+  \field{volume}{34}
+  \list{location}{1}{%
+    {Los Alamitos, CA, USA}%
+  }
+  \field{journaltitle}{Computer}
+  \field{year}{2001}
+\endentry
+
+\entry{10.1109/MS.2003.1241366}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Ciolkowski}{C.}%
+     {Marcus}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Laitenberger}{L.}%
+     {Oliver}{O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Biffl}{B.}%
+     {Stefan}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE Computer Society}%
+  }
+  \strng{namehash}{CMLOBS1}
+  \strng{fullhash}{CMLOBS1}
+  \field{sortinit}{C}
+  \verb{doi}
+  \verb http://doi.ieeecomputersociety.org/10.1109/MS.2003.1241366
+  \endverb
+  \field{issn}{0740-7459}
+  \field{number}{6}
+  \field{pages}{46\bibrangedash 51}
+  \field{title}{Software Reviews: The State of the Practice}
+  \field{volume}{20}
+  \list{location}{1}{%
+    {Los Alamitos, CA, USA}%
+  }
+  \field{journaltitle}{IEEE Software}
+  \field{year}{2003}
+\endentry
+
+\entry{cockburn2000costs}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Cockburn}{C.}%
+     {Alistair}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Williams}{W.}%
+     {Laurie}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison--Wesley Publishing Co. Reading}%
+  }
+  \strng{namehash}{CAWL1}
+  \strng{fullhash}{CAWL1}
+  \field{sortinit}{C}
+  \field{pages}{223\bibrangedash 247}
+  \field{title}{The costs and benefits of pair programming}
+  \field{journaltitle}{Extreme programming examined}
+  \field{year}{2000}
+\endentry
+
+\entry{MAKING_SOFTWARE}{incollection}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Cohen}{C.}%
+     {Jason}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {O'Reilly}%
+  }
+  \strng{namehash}{CJ1}
+  \strng{fullhash}{CJ1}
+  \field{sortinit}{C}
+  \field{booktitle}{{Making Software: What Really Works, and Why We Believe
+  It}}
+  \field{chapter}{18}
+  \field{edition}{1}
+  \field{pages}{329\bibrangedash 338}
+  \field{title}{{Modern Code Review}}
+  \field{year}{2011}
+\endentry
+
+\entry{cohen2006best}{book}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Cohen}{C.}%
+     {Jason}{J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Brown}{B.}%
+     {Eric}{E.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {DuRette}{D.}%
+     {Brandon}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Teleki}{T.}%
+     {Steven}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Smart Bear}%
+  }
+  \strng{namehash}{CJ+1}
+  \strng{fullhash}{CJBEDBTS1}
+  \field{sortinit}{C}
+  \field{title}{Best kept secrets of peer code review}
+  \field{year}{2006}
+\endentry
+
+\entry{Dunsmore:2000:OIF:337180.337343}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Dunsmore}{D.}%
+     {Alastair}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Roper}{R.}%
+     {Marc}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wood}{W.}%
+     {Murray}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \keyw{code inspection, delocalisation, object-oriented}
+  \strng{namehash}{DARMWM1}
+  \strng{fullhash}{DARMWM1}
+  \field{sortinit}{D}
+  \field{booktitle}{Proceedings of the 22Nd International Conference on
+  Software Engineering}
+  \verb{doi}
+  \verb 10.1145/337180.337343
+  \endverb
+  \field{isbn}{1-58113-206-9}
+  \field{pages}{467\bibrangedash 476}
+  \field{series}{ICSE '00}
+  \field{title}{Object-oriented Inspection in the Face of Delocalisation}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/337180.337343
+  \endverb
+  \field{year}{2000}
+\endentry
+
+\entry{Juristo2003}{inbook}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Juristo}{J.}%
+     {Natalia}{N.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Vegas}{V.}%
+     {Sira}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{2}{}{%
+    {{}%
+     {Conradi}{C.}%
+     {Reidar}{R.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wang}{W.}%
+     {Alf~Inge}{A.~I.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Springer Berlin Heidelberg}%
+  }
+  \strng{namehash}{JNVS1}
+  \strng{fullhash}{JNVS1}
+  \field{sortinit}{J}
+  \field{chapter}{Functional Testing, Structural Testing and Code Reading: What
+  Fault Type Do They Each Detect?}
+  \verb{doi}
+  \verb 10.1007/978-3-540-45143-3_12
+  \endverb
+  \field{isbn}{978-3-540-45143-3}
+  \field{pages}{208\bibrangedash 232}
+  \field{title}{Empirical Methods and Studies in Software Engineering:
+  Experiences from ESERNET}
+  \verb{url}
+  \verb http://dx.doi.org/10.1007/978-3-540-45143-3_12
+  \endverb
+  \list{location}{1}{%
+    {Berlin, Heidelberg}%
+  }
+  \field{year}{2003}
+\endentry
+
+\entry{Votta:1993:INM:256428.167070}{inproceedings}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Votta}{V.}%
+     {Lawrence~G.}{L.~G.}%
+     {}{}%
+     {Jr.}{J.}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{VJLG1}
+  \strng{fullhash}{VJLG1}
+  \field{sortinit}{V}
+  \field{booktitle}{Proceedings of the 1st ACM SIGSOFT Symposium on Foundations
+  of Software Engineering}
+  \verb{doi}
+  \verb 10.1145/256428.167070
+  \endverb
+  \field{isbn}{0-89791-625-5}
+  \field{pages}{107\bibrangedash 114}
+  \field{series}{SIGSOFT '93}
+  \field{title}{Does Every Inspection Need a Meeting?}
+  \verb{url}
+  \verb http://doi.acm.org/10.1145/256428.167070
+  \endverb
+  \field{year}{1993}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

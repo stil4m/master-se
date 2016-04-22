@@ -1,0 +1,103 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{SAC-J-2003-GeorgeW04}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {George}{G.}%
+     {Boby}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Williams}{W.}%
+     {Laurie~A.}{L.~A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GBWLA1}
+  \strng{fullhash}{GBWLA1}
+  \field{sortinit}{G}
+  \verb{doi}
+  \verb 10.1016/j.infsof.2003.09.011
+  \endverb
+  \field{number}{5}
+  \field{pages}{337\bibrangedash 342}
+  \field{title}{{A structured experiment of test-driven development}}
+  \field{volume}{46}
+  \field{journaltitle}{{Information and Software Technology}}
+  \field{year}{2004}
+\endentry
+
+\entry{MAKING_SOFTWARE}{incollection}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Oram}{O.}%
+     {Andy}{A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Wilson}{W.}%
+     {Greg}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {O'Reilly}%
+  }
+  \strng{namehash}{OAWG1}
+  \strng{fullhash}{OAWG1}
+  \field{sortinit}{O}
+  \field{booktitle}{{Making Software: What Really Works, and Why We Believe
+  It}}
+  \field{chapter}{12}
+  \field{edition}{1}
+  \field{pages}{207\bibrangedash 219}
+  \field{title}{{How Effective Is Test-Driven Development}}
+  \field{year}{2011}
+\endentry
+
+\entry{XP_EXAMINED}{incollection}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Tim~Mackinnon}{T.~M.}%
+     {Steve~Freeman}{S.~F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Craig}{C.}%
+     {Philip}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Addison-Wesley Longman Publishing Co}%
+  }
+  \strng{namehash}{TMSFCP1}
+  \strng{fullhash}{TMSFCP1}
+  \field{sortinit}{T}
+  \field{booktitle}{{Extreme programming examined}}
+  \field{chapter}{17}
+  \field{pages}{287\bibrangedash 301}
+  \field{title}{{Endo-testing: unit testing with mock objects}}
+  \field{year}{2001}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

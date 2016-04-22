@@ -1,0 +1,125 @@
+<h1>Essay: A Metrics Suite for Object Oriented Design</h1>
+
+<p>
+    <strong>
+        <i>Abstract - </i>
+        This is an essay on the paper 'A Metrics Suite for Object Oriented Design' by S. Chidamber and C.
+        Kermerer which is dated from june 1994. Firstly there will be a brief summary about the paper itself followed by
+        its merits and drawbacks.
+    </strong>
+</p>
+
+<p>
+    When object oriented design (OOD) starts to unfold in the industry, the need for feedback on this kind of software
+    development increases. The writer addresses the problems that cause the need for a metrics suite that provides the
+    required feedback of OOD. The existing metrics lack the theoretical ground [TODO], are not sufficient of OOD,
+    technology dependent or too labor intensive to collect.<br>
+    The paper introduces six metrics as a suite: 'Weighted Methods Per Class' (WMC), 'Depth of Inheritance Tree' (DIT),
+    'Number of Children' (NOC), 'Coupling between object classes' (CBO), 'Response For a Class' (RFC) and 'Lack of
+    Cohesion of Methods' (LCOM). These metrics are assessed with the software complexity metric properties introduced by
+    [Weyuker] and found to comply with most of them.<br>
+    Criticism on previous research was the lack of theoretical basis which is refuted on this paper by the use of the
+    model provided by [Weyuker] and lack of empirical data which is added in this paper by the results from an automated
+    tool that collected data from two different OO applications (C++ and Smalltalk).<br>
+    The main contribution of the paper can be summarized as a suite of six individual software complexity methods that
+    can be combined to illuminate design problems and/or choices within an OOD.
+</p>
+
+<p>
+    The paper is well structured and meets the expectations from the reader. Where the writer introduces the problem
+    (section II), he succeeds this with separate sections on the point of view and approach, which produce a
+    approximation to OOD (section III) form which sufficient metrics could be abstracted and how solve the lack of
+    theoretical ground (section IV) and empirical data (section V). Section VI contains the actual research results. The
+    writer iterates over different metrics and defines accompanied with a point of view, performs an analytical
+    evaluation and presents the empirical data and its interpretation. This section is concluded with a summary.
+    The writer ends the paper with some concluding remarks.
+</p>
+
+<p>
+    While the paper does not have a research question it has a clear research problem, which is actually tackled.
+    However the problem is divided in two parts. The first is the lack of metrics that relate to the properties that
+    emerge from OOD, which indicated the need for such metrics. The second part concentrates on the theoretical
+    criticism of metrics applied to conventional non-OO applications. The second part is a valid argument to include a
+    theoretical base in the research, but the previous research that brings the argument merely focuses on complexity
+    metrics. The writer lacks of explicitly scoping the research to complexity metrics, but abides to this point of view
+    throughout the rest of the paper. With the constructive use of complexity as point of view and the use of a
+    theoretical basis that is based on complexity measures [Weyuker], the writer should have added this in the title,
+    abstract or introduction of the paper. For example I find that 'A Complexity Metrics Suite for Object Oriented
+    Design' would be a more appropriate title. <br>
+    Also the concept of complexity is never introduced. The concept of software complexity could be interpreted in
+    different ways [Brooks - Silver Bullet].
+</p>
+
+<p>
+    Focusing on the first argument, existing metrics do not relate to the properties of OOD, the writer fails to
+    demonstrate this or refer to previous works that indicate this. Although the reader can assume the lack of these
+    metrics due to maturation of object oriented development at that time, it is not proper from the writers perspective
+    to omit this assumption, references to previous work. The previous work that is referenced include suggestions and
+    attempts for suitable metrics, but these sources, or the author lacks to indicate the missing relations of existing
+    metrics with the OOD properties.
+</p>
+
+<p>
+    In the most important section of the paper the writer iterates over each proposed metric. The writer applies the
+    same pattern for each metric, which implicitly sets the expectation for the reader, which I found pretty comforting.
+    For each metric the writer gives a clear definition, theoretical basis and point of view. The description and the
+    theoretical basis result in the what and the motivation. The point of view for each metric add a more vivid argument
+    for the sense of the metric. Some of these arguments are more application type specific. For example: 'The larger
+    the number of methods that can be invoked from a class, the greater the complexity of the class.'. I cannot reason
+    about the types of application that were developed in the time of the paper, but for example in the present day
+    there are a lot of APIs that separate their data from their logic. This is more procedural than OO, but more
+    practical. The method count however would be much higher in the data objects while they tend to be much simpler than
+    the code in the domain specific layer of an application. Independently from small doubtful point of views, the
+    arguments that made are solid.<br>
+    Where the point of view of the paper is convincing, the theoretical basis lacks detail on a few points. For example:
+</p>
+<ul>
+    <li>
+        The Definition of the NOC metric states: 'number of immediate subclasses subordinated of a class in the class
+        hierarchy', however the theoretical basis states: 'it is a measure of how many subclasses are going to inherit
+        the methods of the parent class'. The number of inheriting classes is not equal to the immediate subclasses of a
+        class.
+    </li>
+    <li>
+        The LCOM metric is computation based on the intersection of accessed fields of two methods. To identify two
+        methods with or without accessed field similarity, the writer uses the notion of pairs. These pairs however are
+        computed using the cartesian product of a list containing field access sets (which are mapped from the
+        methods). The cartesian product holds the reflexive relational property, which by the definition will decrease
+        the outcome with at least the number of the number of elements in the set consistent of the field access sets.
+        The theoretical basis of LCOM states 'the larger the number of similar methods, the more cohesive the class',
+        but a simple counter example shows that there is a bug in the definition. Assume we have a set of instance
+        variables: ${I_1, I_2}$ and a set of methods ${M_1, M_2}$ where $M_1$ uses $I_1$ and $M_2$ uses $I_1$, then from
+        the LCOM definition, $P = \{( \{I_1\}, \{I_2\} ), ( \{I_2\}, \{I_1\} ) \}$ and
+        $Q = \{( \{I_1\}, \{I_1\} ), ( \{I_2\}, \{I_2\} ) \}$. This will produce the LCOM value $0$ that indicates that
+        the class is most cohesive, but $M_1$ and $M_2$ do not relate in a single matter. This is shown in other papers
+        as well [1].
+    </li>
+</ul>
+<p>
+    These points show the some metrics are not sound in a manner that there is no symbiosis between the definition and
+    the application.
+</p>
+<p>
+    After each metric is made clear the writer gives an analytical evaluation of the metric and presents the empirical
+    data. The analytical evaluation is a formal proof which indicates that each metric complies to the metric properties
+    specified by [Weyuker].
+</p>
+
+<p>
+    The writer summarizes the result in the last part of the paper, but also introduces new concepts of how the combined
+    metrics could be used as design indicators, why some properties of the metrics model are not met and why and the
+    future direction of research. I rather have seen this in separate sections, mainly due to the reason that these
+    components deserve their own section. The introduced point of views of combined metrics is a main contribution of
+    the paper as it may improve design, which directly relates to the title. As well as future work, which normally gets
+    its own section.
+</p>
+
+<p>
+    To round up, the paper is well structured and has a clear contribution. The research problem is clear, but the
+    approach tends to focus mainly on complexity metrics and has some that could be described more explicitly, and it
+    has some inconsistencies in th metric definition and application. However the presented data is solid.
+    As intended, the metrics can be be used as indicators to prevent fault as Basili et al. showed [1].
+</p>
+
+
+[1][A Validation of Object-Oriented Design Metrics as Quality Indicators]

@@ -1,0 +1,163 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{augustine}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Augustine}{A.}%
+     {N.R.}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{AN1}
+  \strng{fullhash}{AN1}
+  \field{sortinit}{A}
+  \field{pages}{50\bibrangedash 76}
+  \field{title}{Augustine's Laws and Major System Development Programs}
+  \field{journaltitle}{Defense Systems Management Review}
+  \field{year}{1979}
+\endentry
+
+\entry{bossavit2013leprechauns}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bossavit}{B.}%
+     {Laurent}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Lean Publishing}%
+  }
+  \strng{namehash}{BL1}
+  \strng{fullhash}{BL1}
+  \field{sortinit}{B}
+  \field{title}{Leprechauns of Software Engineering: How Folk Law Turns Into
+  Fact [Electronic Resource]}
+  \field{year}{2013}
+\endentry
+
+\entry{demarco1985programmer}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {DeMarco}{D.}%
+     {Tom}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lister}{L.}%
+     {Tim}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{organization}{1}{%
+    {IEEE Computer Society Press}%
+  }
+  \strng{namehash}{DTLT1}
+  \strng{fullhash}{DTLT1}
+  \field{sortinit}{D}
+  \field{booktitle}{Proceedings of the 8th international conference on Software
+  engineering}
+  \field{pages}{268\bibrangedash 272}
+  \field{title}{Programmer performance and the effects of the workplace}
+  \field{year}{1985}
+\endentry
+
+\entry{dickey1981programmer}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Dickey}{D.}%
+     {Thomas~E}{T.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {IEEE}%
+  }
+  \strng{namehash}{DTE1}
+  \strng{fullhash}{DTE1}
+  \field{sortinit}{D}
+  \field{number}{7}
+  \field{pages}{844\bibrangedash 845}
+  \field{title}{Programmer variability}
+  \field{volume}{69}
+  \field{journaltitle}{Proceedings of the IEEE}
+  \field{year}{1981}
+\endentry
+
+\entry{MAKING_SOFTWARE}{incollection}{}
+  \name{author}{1}{}{%
+    {{}%
+     {McConnell}{M.}%
+     {Steve}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {O'Reilly}%
+  }
+  \strng{namehash}{MS1}
+  \strng{fullhash}{MS1}
+  \field{sortinit}{M}
+  \field{booktitle}{{Making Software: What Really Works, and Why We Believe
+  It}}
+  \field{chapter}{30}
+  \field{edition}{1}
+  \field{pages}{567\bibrangedash 573}
+  \field{title}{{What Does 10x Mean? Measuring Variations in Programmer
+  Productivity}}
+  \field{year}{2011}
+\endentry
+
+\entry{sackman1968exploratory}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Sackman}{S.}%
+     {Harold}{H.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Erikson}{E.}%
+     {Warren~J}{W.~J.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Grant}{G.}%
+     {E~Eugene}{E.~E.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM}%
+  }
+  \strng{namehash}{SHEWJGEE1}
+  \strng{fullhash}{SHEWJGEE1}
+  \field{sortinit}{S}
+  \field{number}{1}
+  \field{pages}{3\bibrangedash 11}
+  \field{title}{Exploratory experimental studies comparing online and offline
+  programming performance}
+  \field{volume}{11}
+  \field{journaltitle}{Communications of the ACM}
+  \field{year}{1968}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
