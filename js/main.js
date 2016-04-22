@@ -8,7 +8,22 @@ angular.module('masterSE', ['ngRoute'])
     };
 
     $http.get('menu.json').success(function (data) {
-      $scope.menu = data
+      $scope.menu = data;
+
+      var components = $location.path().split('/');
+      var target = $scope.menu;
+      components.shift();
+
+      while(components.length > 0) {
+        var nextComponent = components.shift();
+        var nextTarget = target.filter(function(item) {return item.key == nextComponent})[0];
+        if (nextTarget && nextTarget.children) {
+          nextTarget.open = true;
+          target = nextTarget.children;
+        } else {
+          break;
+        }
+      }
     });
 
     function loadTemplate(event) {
@@ -17,7 +32,7 @@ angular.module('masterSE', ['ngRoute'])
         return
       }
       $scope.data.template = "." + $location.path() + ".html?" + new Date().getTime();
-      window.scrollTo(0, 0);
+      //window.scrollTo(0, 0);
 
       $timeout(function () {
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);

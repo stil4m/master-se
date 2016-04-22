@@ -8,6 +8,11 @@
           <ul class="nav-level3" ng-if="item2.children && item2.open">
             <li ng-repeat="item3 in item2.children">
               <nav-menu-item item="item3" parents="[item1, item2]"></nav-menu-item>
+              <ul class="nav-level4" ng-if="item3.children && item3.open">
+                <li ng-repeat="item4 in item3.children">
+                  <nav-menu-item item="item4" parents="[item1, item2, item3]"></nav-menu-item>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>

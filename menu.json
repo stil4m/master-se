@@ -192,6 +192,32 @@
     ]
   },
   {
+    "name": "Software Process",
+    "key": "software-process",
+    "children": [
+      {
+        "name": "Week 1: 2015-02-01",
+        "key": "w1",
+        "children": [
+          {
+            "name": "Notes",
+            "key": "notes"
+          }
+        ]
+      },
+      {
+        "name": "Assignments",
+        "key": "assignments",
+        "children": [
+          {
+            "name": "Personal Reading",
+            "key": "personal-reading/0-reading-list"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "name" : "Paper Sessions",
     "key" : "paper-sessions",
     "children" : [
