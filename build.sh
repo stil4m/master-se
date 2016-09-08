@@ -1,3 +1,3 @@
 #!/bin/sh
 
-elm-make src/App.js --output index.js
+elm-make src/App.elm --output index.js

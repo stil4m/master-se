@@ -4,6 +4,7 @@ import Menu.SoftwareTesting
 import Menu.SoftwareEvolution
 import Menu.SoftwareProcess
 import Menu.RequirementsEngineering
+import Menu.PaperSessions
 import Menu.Base exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -26,6 +27,7 @@ initialModel =
     , Menu.SoftwareEvolution.menu
     , Menu.SoftwareProcess.menu
     , Menu.RequirementsEngineering.menu
+    , Menu.PaperSessions.menu
     ]
 
 view : Model -> Html Msg
