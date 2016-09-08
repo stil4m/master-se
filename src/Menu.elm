@@ -2,6 +2,8 @@ module Menu exposing (initialModel, view, Model, Msg, update)
 
 import Menu.SoftwareTesting
 import Menu.SoftwareEvolution
+import Menu.SoftwareProcess
+import Menu.RequirementsEngineering
 import Menu.Base exposing (..)
 import Html exposing (..)
 import Html.Attributes exposing (..)
@@ -23,6 +25,7 @@ initialModel =
     [ Menu.SoftwareTesting.menu
     , Menu.SoftwareEvolution.menu
     , Menu.SoftwareProcess.menu
+    , Menu.RequirementsEngineering.menu
     ]
 
 view : Model -> Html Msg
