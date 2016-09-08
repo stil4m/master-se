@@ -61,5 +61,5 @@ view model =
 
 loadPage : String -> Cmd Msg
 loadPage p =
-    Http.getString ("../" ++p ++ ".md")
+    Http.getString (p ++ ".md")
         |> Task.perform (toString >> Err >> StatusUpdate) (Loaded >> StatusUpdate)

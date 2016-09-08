@@ -9300,10 +9300,7 @@ var _user$project$PageLoader$loadPage = function (p) {
 				_user$project$PageLoader$Loaded(_p3));
 		},
 		_evancz$elm_http$Http$getString(
-			A2(
-				_elm_lang$core$Basics_ops['++'],
-				'../',
-				A2(_elm_lang$core$Basics_ops['++'], p, '.md'))));
+			A2(_elm_lang$core$Basics_ops['++'], p, '.md')));
 };
 var _user$project$PageLoader$update = F2(
 	function (msg, model) {
